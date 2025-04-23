@@ -1,1 +1,202 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+@import './variables';
+
+// 🌒 DARK MODE DEFAULTS (body only)
+body {
+  background-color: $dark-gray-900;
+  padding: 2rem;
+  font-family: sans-serif;
+
+  h1 {
+    color: $gold-700;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    color: $gold-500;
+  }
+
+  p {
+    color: $gold-200;
+    max-width: 700px;
+    margin: 0 auto 1.5rem auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  strong {
+    color: $gold-600;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      margin: 0.3rem 0;
+      line-height: 1.5;
+      color: $gold-100;
+
+      strong {
+        color: $gold-600;
+      }
+    }
+  }
+
+  a {
+    color: $gold-300;
+    text-decoration: underline;
+
+    &:hover {
+      color: $gold-100;
+    }
+  }
+  
+  .video-row .video-description {
+    background-color: $dark-gray-700;
+  }
+}
+
+// 🌿 LIGHT MODE
+body.light-mode {
+  background-color: $green-gray-100;
+  color: $green-dark-900;
+
+  h1 {
+    color: $green-700;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    color: $green-600;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+  }
+
+  p {
+    color: $green-800;
+    max-width: 700px;
+    margin: 0 auto 1.5rem auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  strong {
+    color: $green-700;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      margin: 0.3rem 0;
+      line-height: 1.5;
+      border-left: 4px solid $green-300;
+      padding-left: 0.75rem;
+      color: $green-800;
+
+      strong {
+        color: $green-700;
+      }
+    }
+  }
+
+  a {
+    color: $green-600;
+
+    &:hover {
+      color: $green-500;
+    }
+  }
+
+  .highlight {
+    background-color: $green-100;
+    padding: 0.25em 0.5em;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  .video-row .video-description {
+    background-color: $green-200 !important;
+  }
+}
+
+//
+// 🧭 NAVIGATION STYLING
+//
+.top-nav {
+  background-color: #222;
+}
+
+.nav-list-horizontal {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  color: $gold-500;
+}
+
+.nav-item {
+  flex: 1;
+  text-align: center;
+}
+
+.nav-item a,
+.settings-button button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  color: $gold-500;
+  text-decoration: none;
+  background-color: #333;
+  border: none;
+  font-weight: bold;
+}
+
+.theme-toggle {
+  background-color: $gray-400;
+  font-size: 1rem;
+}
+
+.theme-toggle:hover {
+  background-color: #444;
+}
+
+.nav-item a:hover,
+.settings-button button:hover {
+  background-color: #444;
+}
+
+// 🌿 Light mode nav styling
+body.light-mode {
+  .top-nav {
+    background-color: $green-300;
+  }
+
+  .nav-list-horizontal {
+    color: $green-700; // fallback
+  }
+
+  .nav-item a,
+  .settings-button button {
+    background-color: $green-300;
+    color: $green-700 !important; // force override if needed
+  }
+
+  .nav-item a:hover,
+  .settings-button button:hover {
+    background-color: $green-100 !important; // make hover lighter
+    color: $green-800 !important;
+  }
+
+  .theme-toggle {
+    background-color: $green-300;
+  }
+
+  .theme-toggle:hover {
+    background-color: $green-100;
+  }
+  
+}

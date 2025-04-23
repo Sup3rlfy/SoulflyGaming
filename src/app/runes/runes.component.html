@@ -1,0 +1,37 @@
+<div class="runes-page">
+  <h1 class="centered-headline">Runes of Elana</h1>
+
+  <div class="description-section">
+    <runes-description [content]="gameDescription"></runes-description>
+  </div>
+<!--
+  <div class="description-section">
+    <button (click)="toggleDescription()">{{ showFullDescription ? 'Hide' : 'Show More' }}</button>
+    <div [class.collapsed]="!showFullDescription">
+      <p>
+        Here will go a long-form description of the game project. This section is expandable and can hold a detailed write-up of the game's mechanics, lore, style, etc.
+      </p>
+    </div>
+  </div>
+-->
+  <div class="video-section" *ngFor="let video of videoList; let i = index">
+    <div class="video-row" [ngClass]="{ 'reverse': i % 2 !== 0 }">
+      <iframe
+        class="video-embed"
+        width="560"
+        height="315"
+        [src]="video.url | safe"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+
+      <div class="video-description">
+        <h3>Video {{ videoList.length - i }}: {{ video.title || 'Gameplay Overview' }}</h3>
+        <p>
+          {{ video.description }}
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>

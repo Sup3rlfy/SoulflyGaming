@@ -1,0 +1,7 @@
+<div class="description-text">
+    <p>{{ showFullDescription ? content : firstTenLines }}</p>
+  
+    <button (click)="toggleDescription()">
+      {{ showFullDescription ? 'Show Less' : 'Show More' }}
+    </button>
+  </div>

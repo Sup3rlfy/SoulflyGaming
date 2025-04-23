@@ -1,0 +1,57 @@
+@import '../../variables';
+.sisyphus-page {
+    text-align: center;
+    color: #eee;
+  
+    .steam-widget {
+      margin: 1rem auto;
+      display: block;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+  
+    .links {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  
+    .steam-link,
+    .trailer-button {
+      background-color: $gold-600;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+  
+    .trailer-button:hover,
+    .steam-link:hover {
+        background-color: $gold-800;
+      }
+      
+      
+  }
+  // ✅ Light mode overrides — declared OUTSIDE the `.sisyphus-page` scope
+body.light-mode {
+    .trailer-button {
+      background-color: $green-600 !important;
+      color: white;
+  
+      &:hover {
+        background-color: $green-500 !important;
+      }
+    }
+  
+    .steam-link {
+      background-color: $green-600 !important;
+  
+      &:hover {
+        background-color: $green-500 !important;
+      }
+    }
+  }

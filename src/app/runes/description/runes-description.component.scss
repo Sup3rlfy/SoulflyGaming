@@ -1,0 +1,29 @@
+@import '../../../variables';  // Adjust the path based on the folder structure
+
+.description-text {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: $gold-600;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: $gold-800;
+}
+
+/* If the description is larger than the 10 lines, hide the overflow */
+.description-text p {
+  max-height: 200px;  /* Adjust according to your desired number of lines */
+  overflow: hidden;
+}

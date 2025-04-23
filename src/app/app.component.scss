@@ -1,0 +1,159 @@
+/* Light Mode (Default) */
+@import '../variables';
+
+:host {
+  --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+    180deg,
+    var(--orange-red) 0%,
+    var(--vivid-pink) 50%,
+    var(--electric-violet) 100%
+  );
+
+  --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+    90deg,
+    var(--orange-red) 0%,
+    var(--vivid-pink) 50%,
+    var(--electric-violet) 100%
+  );
+
+  --pill-accent: $bright-blue;
+
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 3.125rem;
+  color: $gray-900;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.125rem;
+  margin: 0;
+  font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
+
+p {
+  margin: 0;
+  color: $gray-700;
+}
+
+main {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: inherit;
+  position: relative;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem; /* Space between content and ad */
+}
+
+.content {
+  width: 70%; /* Content width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ads-container {
+  width: 30%; /* Ad width */
+  padding: 1rem;
+  background-color: #f4f4f4;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Divider between content and ad */
+.divider {
+  width: 1px;
+  background: var(--red-to-pink-to-purple-vertical-gradient);
+  margin-inline: 0.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .ads-container {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: var(--red-to-pink-to-purple-horizontal-gradient);
+    margin-block: 1.5rem;
+  }
+}
+
+.circle-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  display: block;
+}
+
+:host.dark-mode {
+  h1 {
+    color: $gold-500;
+  }
+
+  p {
+    color: $dark-gray-700;
+  }
+
+  .divider {
+    background: linear-gradient(180deg, $gold-500 0%, $dark-gray-700 100%);
+  }
+
+  .pill {
+    --pill-accent: $gold-500;
+    background: color-mix(in srgb, $gold-500 10%, $dark-gray-900);
+    color: $gold-500;
+  }
+
+  .pill:hover {
+    background: color-mix(in srgb, $gold-500 20%, $dark-gray-900);
+  }
+
+  .social-links path {
+    fill: $dark-gray-700;
+  }
+
+  .social-links a:hover svg path {
+    fill: $gold-500;
+  }
+
+  .settings-button svg {
+    fill: $dark-gray-700;
+  }
+
+  .settings-button:hover svg {
+    fill: $gold-500;
+  }
+}
