@@ -1,7 +1,7 @@
 # Soulfly Gaming
 
 <p align="center">
-  <a href="https://sup3rlfy.github.io/SoulflyGamingHome/" target="_blank">
+  <a href="https://sup3rlfy.github.io/SoulflyGaming/" target="_blank">
     <img src="https://img.shields.io/badge/🌐-View%20Live%20Site-blue?style=for-the-badge" alt="View Live Site"/>
   </a>
 </p>
