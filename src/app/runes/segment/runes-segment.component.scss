@@ -1,37 +1,71 @@
 @use './variables' as vars;  // Adjust the path based on the folder structure
+
+/* Empty Anchor (for non-visible segments) */
+.empty-anchor {
+  height: 0;
+  visibility: hidden;  /* Ensures it's invisible */
+}
+
+/* Segment Styles */
 .segment {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 4rem;
-    scroll-margin-top: 80px; // offset for navbar
-  
-    .segment-image {
-      width: 40%;
-      max-width: 300px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-  
-    .segment-content {
-      width: 60%;
-      h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-      }
-  
-      p {
-        white-space: pre-line;
-        line-height: 1.6;
-      }
-    }
+  margin-bottom: 2px;  // Reduce the space between segments (changed from 2px to 5px)
+  padding: 10px;
+  border-radius: 10px;
+  background-color: vars.$dark-gray-700; /* Default for dark mode */
+
+  /* Hide empty segments visually */
+  &.empty {
+    visibility: hidden; /* Makes the segment invisible */
+    height: 0; /* Removes height from layout */
+    margin: 0; /* Removes margin */
+    padding: 0; /* Removes padding */
   }
-   // Light mode overrides
-   body.light-mode 
-   .segment
-   {
-       color: vars.$green-900;
-   
-       .link-label {
-       color: vars.$green-700;
-       }
-   }
+}
+/* Styling for the segment inner content */
+.segment-inner {
+  display: flex;
+  flex-direction: row; /* Keeps the image on the left and text on the right */
+  gap: 15px; /* Reduce the gap between image and text */
+}
+
+/* Image wrapper within the segment */
+.image-wrapper {
+  flex-shrink: 0;
+  width: 500px; /* Adjusted to make the image slightly smaller */
+  height: auto;
+}
+
+/* Image within the segment */
+.segment-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensure the image covers the area */
+  border-radius: 8px;
+}
+
+/* Content wrapper within the segment */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+/* Title within the segment */
+.segment-title {
+  font-size: 1.4em; /* Reduced font size */
+  margin-bottom: 5px;
+  color: vars.$gold-500; /* Default for dark mode */
+}
+
+/* Content text within the segment */
+.segment-content {
+  font-size: 1rem;
+  color: vars.$gold-200; /* Default for dark mode */
+  line-height: 1.6;
+}
+
+/* Adjust the empty content for invisible segments */
+.empty-content {
+  height: 0; /* Ensure the empty content has no height */
+}

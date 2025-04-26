@@ -66,6 +66,6 @@ export class HomeComponent {
         const total = this.projectList[i].images.length;
         return (currentIndex + 1) % total;
       });
-    }, 7000); // 5 seconds
+    }, 5000); // 5 seconds
   }
 }

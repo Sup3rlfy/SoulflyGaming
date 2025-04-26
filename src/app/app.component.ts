@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, NavigationEnd } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 import { TopNavComponent } from './top-nav/top-nav.component';
 
@@ -19,13 +20,39 @@ import { TopNavComponent } from './top-nav/top-nav.component';
   `,
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'RoE Home';
-  
   isLightMode = false;
 
+  constructor(private router: Router) {}
+
+  // Toggle between light and dark modes
   toggleTheme(): void {
     this.isLightMode = !this.isLightMode;
     document.body.classList.toggle('light-mode', this.isLightMode);
+  }
+
+  ngOnInit() {
+    // Listen for route changes to scroll to fragments
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        // Check if the URL contains a fragment (i.e., #id)
+        if (event.urlAfterRedirects.includes('#')) {
+          // Scroll to the fragment
+          this.scrollToFragment(event.urlAfterRedirects);
+        }
+      }
+    });
+  }
+
+  // Function to scroll to the fragment
+  private scrollToFragment(url: string) {
+    const fragment = url.split('#')[1];
+    if (fragment) {
+      const element = document.getElementById(fragment);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   }
 }

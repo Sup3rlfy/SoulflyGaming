@@ -1,7 +1,15 @@
-<div class="segment" [id]="id">
-    <img [src]="image" [alt]="title" class="segment-image" />
-    <div class="segment-content">
-      <h2>{{ title }}</h2>
-      <p [innerText]="content"></p>
+<div *ngIf="!isEmpty" [id]="id" class="segment">
+  <div class="segment-inner">
+    <div class="image-wrapper">
+      <img [src]="image" [alt]="title" class="segment-image" />
+    </div>
+
+    <div class="content-wrapper">
+      <h2 class="segment-title">{{ title }}</h2>
+      <p class="segment-content">{{ content }}</p>
     </div>
   </div>
+</div>
+
+<!-- For empty segments, we only render a div with the anchor ID but no content -->
+<div *ngIf="isEmpty" [id]="id" class="empty-anchor"></div>

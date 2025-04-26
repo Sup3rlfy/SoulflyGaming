@@ -2,16 +2,13 @@
   <h1 class="centered-headline">Runes of Elana</h1>
   
 
+
+
 <div class="runes-layout">
   <!-- Sidebar Menu -->
   <nav class="runes-sidebar">
     <div class="sidebar-box">
-      
-      <a
-        *ngFor="let segment of segmentList"
-        class="sidebar-button"
-        [href]="'#' + segment.id"
-      >
+      <a *ngFor="let segment of segmentList" class="sidebar-button" [href]="'/runes#' + segment.id">
         {{ segment.title }}
       </a>
     </div>
@@ -19,15 +16,17 @@
 
   <!-- Content Section -->
   <div class="runes-content">
-    <runes-segment
-      *ngFor="let segment of segmentList"
+    <runes-segment *ngFor="let segment of segmentList"
       [image]="segment.image"
       [title]="segment.title"
       [content]="segment.content"
       [id]="segment.id"
-    ></runes-segment>
+      [isEmpty]="segment.isEmpty">
+    </runes-segment>
   </div>
 </div>
+
+
 
 
 

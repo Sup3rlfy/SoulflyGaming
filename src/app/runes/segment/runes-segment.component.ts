@@ -13,4 +13,5 @@ export class RunesSegmentComponent {
   @Input() title!: string;
   @Input() content!: string;
   @Input() id!: string;
+  @Input() isEmpty: boolean = false;
 }

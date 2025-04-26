@@ -1,5 +1,11 @@
 @use './variables' as vars;
 
+
+
+html {
+  scroll-behavior: smooth;  // This will add smooth scrolling for anchor links
+}
+
 // 🌒 DARK MODE DEFAULTS (body only)
 body {
   background-color: vars.$dark-gray-900;
@@ -217,6 +223,35 @@ body.light-mode {
     background-color: vars.$green-500;
   }
 
+  .sidebar-box {
+    background-color: vars.$green-300;
+  }
+  .sidebar-button {
+    background-color: vars.$green-100 !important; // Light green background
+    color: vars.$green-700 !important; // Light green text color
+    
+    &:hover {
+      background-color: vars.$green-200 !important; // Lighter green background on hover
+      color: vars.$green-900 !important; // Light green text color
+    }
+  }
+  
+.segment {
+  background-color: vars.$green-300 !important;
+  .link-label {
+    color: vars.$green-700;
+  }
+}
+
+/* Light mode overrides for title and content */
+ .segment-title {
+  color: vars.$green-700; /* Title color for light mode */
+}
+
+.segment-content {
+  color: vars.$green-800; /* Text color for light mode */
+}
+
 
 
 
@@ -237,9 +272,5 @@ body.light-mode {
       background-color: vars.$green-500 !important;
     }
   }
-
-
-
-
 
 }
