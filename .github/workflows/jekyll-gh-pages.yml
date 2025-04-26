@@ -49,8 +49,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-
-this is my SoulflyGaming/.github/workflows
-/jekyll-gh-pages.yml file. fix it so it  can build from my SoulflyGaming/dist/ro-ehome
-/browser/ folder where the prebuilt index.html is
