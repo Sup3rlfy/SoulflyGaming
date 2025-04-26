@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 export class RunesSegmentComponent {
   @Input() image!: string;
   @Input() title!: string;
-  @Input() content!: string;
+  @Input() content!: string[];  // <-- changed from string to string[]
   @Input() id!: string;
   @Input() isEmpty: boolean = false;
 }

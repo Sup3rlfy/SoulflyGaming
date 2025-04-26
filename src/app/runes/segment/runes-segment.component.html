@@ -6,10 +6,16 @@
 
     <div class="content-wrapper">
       <h2 class="segment-title">{{ title }}</h2>
-      <p class="segment-content">{{ content }}</p>
+
+      <div class="segment-content">
+        <p *ngFor="let paragraph of content">
+          {{ paragraph }}
+        </p>
+      </div>
+
     </div>
   </div>
 </div>
 
-<!-- For empty segments, we only render a div with the anchor ID but no content -->
+<!-- For empty segments, just the anchor -->
 <div *ngIf="isEmpty" [id]="id" class="empty-anchor"></div>

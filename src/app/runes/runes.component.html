@@ -44,20 +44,20 @@
         <div class="video-description"
           (mouseenter)="video.showShort = true"
           (mouseleave)="video.showShort = false">
-        <h3>Video {{ videoList.length - i }}: {{ video.title || 'Gameplay Overview' }}</h3>
+          <h3>Video {{ videoList.length - i }}: {{ video.title || 'Gameplay Overview' }}</h3>
 
-        <ng-container *ngIf="!video.showShort">
-          <div *ngFor="let paragraph of video.description">
-            <p>{{ paragraph }}</p>
-          </div>
-        </ng-container>
+          <ng-container *ngIf="!video.showShort">
+            <div *ngFor="let paragraph of video.description">
+              <p>{{ paragraph }}</p>
+            </div>
+          </ng-container>
 
-        <ng-container *ngIf="video.showShort">
-          <div class="short-description">
-            <div *ngFor="let line of video.sdescription">{{ line }}</div>
-          </div>
-        </ng-container>
-      </div>
+          <ng-container *ngIf="video.showShort">
+            <div class="short-description">
+              <div *ngFor="let line of video.sdescription">{{ line }}</div>
+            </div>
+          </ng-container>
+       </div>
     </div>
   </div>
 </div>
