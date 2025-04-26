@@ -1,5 +1,5 @@
 /* Light Mode (Default) */
-@import '../variables';
+@use '../variables' as vars;
 
 :host {
   --red-to-pink-to-purple-vertical-gradient: linear-gradient(
@@ -16,7 +16,7 @@
     var(--electric-violet) 100%
   );
 
-  --pill-accent: $bright-blue;
+  --pill-accent: vars.$bright-blue;
 
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
@@ -28,7 +28,7 @@
 
 h1 {
   font-size: 3.125rem;
-  color: $gray-900;
+  color: vars.$gray-900;
   font-weight: 500;
   line-height: 100%;
   letter-spacing: -0.125rem;
@@ -40,7 +40,7 @@ h1 {
 
 p {
   margin: 0;
-  color: $gray-700;
+  color: vars.$gray-700;
 }
 
 main {
@@ -120,40 +120,40 @@ main {
 
 :host.dark-mode {
   h1 {
-    color: $gold-500;
+    color: vars.$gold-500;
   }
 
   p {
-    color: $dark-gray-700;
+    color: vars.$dark-gray-700;
   }
 
   .divider {
-    background: linear-gradient(180deg, $gold-500 0%, $dark-gray-700 100%);
+    background: linear-gradient(180deg, vars.$gold-500 0%, vars.$dark-gray-700 100%);
   }
 
   .pill {
-    --pill-accent: $gold-500;
-    background: color-mix(in srgb, $gold-500 10%, $dark-gray-900);
-    color: $gold-500;
+    --pill-accent: vars.$gold-500;
+    background: color-mix(in srgb, vars.$gold-500 10%, vars.$dark-gray-900);
+    color: vars.$gold-500;
   }
 
   .pill:hover {
-    background: color-mix(in srgb, $gold-500 20%, $dark-gray-900);
+    background: color-mix(in srgb, vars.$gold-500 20%, vars.$dark-gray-900);
   }
 
   .social-links path {
-    fill: $dark-gray-700;
+    fill: vars.$dark-gray-700;
   }
 
   .social-links a:hover svg path {
-    fill: $gold-500;
+    fill: vars.$gold-500;
   }
 
   .settings-button svg {
-    fill: $dark-gray-700;
+    fill: vars.$dark-gray-700;
   }
 
   .settings-button:hover svg {
-    fill: $gold-500;
+    fill: vars.$gold-500;
   }
 }

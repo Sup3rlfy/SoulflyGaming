@@ -1,4 +1,4 @@
-@import '../../variables';
+@use '../../variables' as vars;
 
 $border-radius: 8px; // or your desired global corner rounding
 
@@ -46,7 +46,7 @@ $border-radius: 8px; // or your desired global corner rounding
 }
 
 .nav-item a {
-  color: $gold-600;
+  color: vars.$gold-600;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -59,12 +59,12 @@ $border-radius: 8px; // or your desired global corner rounding
 }
 
 .nav-item a:hover {
-  color: $gray-400;
+  color: vars.$gray-400;
   background-color: rgba(255, 255, 255, 0.05); /* Optional subtle hover */
 }
 
 .nav-item a.active {
-  color: $gold-800;
+  color: vars.$gold-800;
   font-weight: 700;
 }
 

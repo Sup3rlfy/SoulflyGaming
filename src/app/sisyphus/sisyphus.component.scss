@@ -1,4 +1,4 @@
-@import '../../variables';
+@use '../../variables' as vars;
 .sisyphus-page {
     text-align: center;
     color: #eee;
@@ -20,7 +20,7 @@
   
     .steam-link,
     .trailer-button {
-      background-color: $gold-600;
+      background-color: vars.$gold-600;
       color: white;
       padding: 0.6rem 1.2rem;
       text-decoration: none;
@@ -31,27 +31,8 @@
   
     .trailer-button:hover,
     .steam-link:hover {
-        background-color: $gold-800;
+        background-color: vars.$gold-800;
       }
       
       
-  }
-  // ✅ Light mode overrides — declared OUTSIDE the `.sisyphus-page` scope
-body.light-mode {
-    .trailer-button {
-      background-color: $green-600 !important;
-      color: white;
-  
-      &:hover {
-        background-color: $green-500 !important;
-      }
-    }
-  
-    .steam-link {
-      background-color: $green-600 !important;
-  
-      &:hover {
-        background-color: $green-500 !important;
-      }
-    }
   }

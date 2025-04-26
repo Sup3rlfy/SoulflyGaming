@@ -1,36 +1,26 @@
 <main>
-    <div class="home-page">
-      <div class="project-link">
-        <img src="assets/images/sisyphus.jpg" class="circle-image" alt="Sisyphus the Game" />
-        <div class="project-desc">
-          <h2>Sisyphus the Game</h2>
-          <p>
-            A challenging single player experience on Steam developed by Michael Reinegger and myself. 
-            Jump into the role of Sisyphus and his punishing conquest of the mountain. 
-            Can you endure the rock with its ever mocking and hurtful comments on your way to the top?
-          </p>
-          <a routerLink="/sisyphus">View More</a>
-        </div>
-      </div>
-  
-      <div class="project-link">
-        <img src="assets/runes-of-elana.png" class="circle-image" alt="Runes of Elana" />
-        <div class="project-desc">
-          <h2>Runes of Elana</h2>
-          <p>
-            Soulfly's solo game development project showcasing immersive mechanics and art.
-          </p>
-          <a routerLink="/runes">View More</a>
-        </div>
-      </div>
-  
-      <div class="project-link">
-        <img src="assets/bio.png" class="circle-image" alt="About Soulfly" />
-        <div class="project-desc">
-          <h2>About Me</h2>
-          <p>Discover the journey and real name behind Soulfly.</p>
-          <a routerLink="/bio">Read Bio</a>
-        </div>
-      </div>
+  <div class="home-page">
+    <a
+      class="link-section"
+      *ngFor="let project of projectList; let i = index"
+      [routerLink]="project.link"
+      [ngClass]="{ reverse: i % 2 !== 0 }"
+    >
+    <div class="image-wrapper">
+      <img
+        *ngFor="let img of project.images; let j = index"
+        [src]="img"
+        [alt]="project.title"
+        class="project-image"
+        [class.visible]="j === imageIndexes[i]"
+      />
     </div>
-  </main>
+
+      <div class="project-description">
+        <h2>{{ project.title }}</h2>
+        <p *ngFor="let line of project.description">{{ line }}</p>
+        <span class="link-label">View More →</span>
+      </div>
+    </a>
+  </div>
+</main>

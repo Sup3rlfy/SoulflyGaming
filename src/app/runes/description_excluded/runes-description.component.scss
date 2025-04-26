@@ -1,16 +1,17 @@
-@import '../../../variables';  // Adjust the path based on the folder structure
+@use './variables' as vars;  // Adjust the path based on the folder structure
 
 .description-text {
   max-width: 800px;
   margin: 0 auto;
   font-size: 1rem;
   line-height: 1.6;
+  //p {white-space: pre-line}
 }
 
 button {
   padding: 0.5rem 1rem;
   border: none;
-  background-color: $gold-600;
+  background-color: vars.$gold-600;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -19,7 +20,7 @@ button {
 }
 
 button:hover {
-  background-color: $gold-800;
+  background-color: vars.$gold-800;
 }
 
 /* If the description is larger than the 10 lines, hide the overflow */

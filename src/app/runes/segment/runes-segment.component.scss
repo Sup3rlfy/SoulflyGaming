@@ -1,0 +1,37 @@
+@use './variables' as vars;  // Adjust the path based on the folder structure
+.segment {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    scroll-margin-top: 80px; // offset for navbar
+  
+    .segment-image {
+      width: 40%;
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+  
+    .segment-content {
+      width: 60%;
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+  
+      p {
+        white-space: pre-line;
+        line-height: 1.6;
+      }
+    }
+  }
+   // Light mode overrides
+   body.light-mode 
+   .segment
+   {
+       color: vars.$green-900;
+   
+       .link-label {
+       color: vars.$green-700;
+       }
+   }
