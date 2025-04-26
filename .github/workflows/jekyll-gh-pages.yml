@@ -1,8 +1,8 @@
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy to GitHub Pages from dist/ro-ehome/browser
+name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
 on:
-  # Runs on pushes targeting the default branch (main)
+  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
 
@@ -26,20 +26,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
-
-      # If you are using any specific build tools, like Parcel, Webpack, etc., you might need to add additional steps here
-      # But since you're prebuilding, you can skip this part
-
-      - name: Setup Pages for deployment
+      - name: Setup Pages
         uses: actions/configure-pages@v5
-
-      # Specify where your prebuilt site is located (dist/ro-ehome/browser)
-      - name: Upload prebuilt artifact from dist/ro-ehome/browser
-        uses: actions/upload-pages-artifact@v3
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
         with:
-          path: ./dist/ro-ehome/browser
+          source: ./src
+          destination: ./_site
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
 
   # Deployment job
   deploy:
@@ -52,3 +49,8 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+
+this is my SoulflyGaming/.github/workflows
+/jekyll-gh-pages.yml file. fix it so it  can build from my SoulflyGaming/dist/ro-ehome
+/browser/ folder where the prebuilt index.html is
