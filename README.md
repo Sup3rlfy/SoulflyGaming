@@ -1,5 +1,11 @@
 # RoEHome
 
+<p align="center">
+  <a href="https://sup3rlfy.github.io/SoulflyGamingHome/" target="_blank">
+    <img src="https://img.shields.io/badge/🌐-View%20Live%20Site-blue?style=for-the-badge" alt="View Live Site"/>
+  </a>
+</p>
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
 
 ## Development server
