@@ -32,7 +32,7 @@ jobs:
       - name: Upload prebuilt artifact from dist/ro-ehome/browser
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/ro-ehome/browser
+          path: ./dist/browser
 
   # Deployment job
   deploy:
