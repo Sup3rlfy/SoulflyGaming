@@ -29,17 +29,20 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build the project
-        run: npm run build  # Replace with your specific build command
-
-      - name: Check if dist directory exists
+      - name: Check if dist folder exists
+        id: dist-check
         run: |
-          if [ ! -d "dist" ]; then
-            echo "Build failed or dist folder is missing. Skipping build step.";
-            exit 1;  # Fail this step but move on to the next job
+          if [ -d "dist" ]; then
+            echo "Dist folder found.";
+            echo "dist_exists=true" >> $GITHUB_ENV;  # Set an environment variable if dist exists
           else
-            echo "Build successful, dist folder found.";
+            echo "Dist folder not found, building the project.";
+            echo "dist_exists=false" >> $GITHUB_ENV;  # Set an environment variable if dist doesn't exist
           fi
+
+      - name: Build the project (if dist doesn't exist)
+        if: env.dist_exists == 'false'
+        run: npm run build  # Replace with your specific build command
 
   deploy:
     needs: build
@@ -54,13 +57,13 @@ jobs:
       - name: Clean up working directory
         run: git rm -rf .  # Removes all files from the gh-pages branch, leaving it empty
 
-      - name: Check if dist exists and deploy
+      - name: Copy dist files to root (from existing dist folder or newly built)
         run: |
           if [ -d "dist" ]; then
             echo "Found dist folder. Deploying to GitHub Pages.";
             cp -r dist/* .  # Copy built files to the root of the gh-pages branch
           else
-            echo "Dist folder is missing. No deployment done.";
+            echo "Dist folder is missing, unable to deploy.";
             exit 1;  # If dist is missing, exit with error
           fi
 
