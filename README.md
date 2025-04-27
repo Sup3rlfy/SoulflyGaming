@@ -77,3 +77,6 @@ ng build --output-path=dist --base-href="/SoulflyGaming/"
 
 ## trying:
 ng build --output-path=dist --base-href="/"
+
+## iffy:
+ng build --configuration production --base-href=/
