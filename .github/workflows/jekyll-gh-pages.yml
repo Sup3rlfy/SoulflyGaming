@@ -16,7 +16,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14'  # Set your Node.js version here
+        node-version: '22.14.0'  # Set your Node.js version here
     
     - name: Install dependencies
       run: |
@@ -26,10 +26,14 @@ jobs:
     - name: Build SCSS files
       run: |
         sass src/styles.scss dist/styles.css  # Compile your SCSS to CSS (adjust path if necessary)
+     
+    - name: Prepare dist directory
+      run: |
+        rm -rf dist  # Remove the dist directory if it exists
+        mkdir dist  # Recreate the dist directory
     
     - name: Copy the required files
       run: |
-        mkdir dist
         cp -r * dist/  # Copy all files to the dist folder
     
     - name: Set up Git for deployment
