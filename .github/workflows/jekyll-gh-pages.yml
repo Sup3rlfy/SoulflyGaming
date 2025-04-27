@@ -44,10 +44,10 @@ jobs:
     
     - name: Deploy to GitHub Pages
       run: |
-        git clone --branch gh-pages https://github.com/Sup3rlfy/SoulflyGaming.git gh-pages
-        cd gh-pages
+        git fetch origin gh-pages || echo "No gh-pages branch found, creating one."
+        git checkout -b gh-pages origin/gh-pages || git checkout --orphan gh-pages
         rm -rf *  # Clear the existing files in the gh-pages branch
         cp -r ../dist/* .  # Copy the new build files to the gh-pages branch
         git add .
         git commit -m "Deploy to GitHub Pages"
-        git push origin gh-pages
+        git push --force origin gh-pages  # Force push to update the gh-pages branch
