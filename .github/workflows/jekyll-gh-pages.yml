@@ -57,14 +57,14 @@ jobs:
       - name: Clean up working directory
         run: git rm -rf .  # Removes all files from the gh-pages branch, leaving it empty
 
-      - name: Copy dist files to root (from existing dist folder or newly built)
+      - name: Copy dist files from the browser folder (from existing dist folder or newly built)
         run: |
-          if [ -d "dist" ]; then
-            echo "Found dist folder. Deploying to GitHub Pages.";
-            cp -r dist/* .  # Copy built files to the root of the gh-pages branch
+          if [ -d "dist/browser" ]; then
+            echo "Found dist/browser folder. Deploying to GitHub Pages.";
+            cp -r dist/browser/* .  # Copy built files from the dist/browser folder to the root of gh-pages
           else
-            echo "Dist folder is missing, unable to deploy.";
-            exit 1;  # If dist is missing, exit with error
+            echo "Dist/browser folder is missing, unable to deploy.";
+            exit 1;  # If dist/browser is missing, exit with error
           fi
 
       - name: Commit and push to gh-pages
