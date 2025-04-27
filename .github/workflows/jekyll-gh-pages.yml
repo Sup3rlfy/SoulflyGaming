@@ -7,9 +7,13 @@ on:
   workflow_dispatch:  # Allows manual trigger of the workflow
 
 permissions:
-  contents: write  # Allow write access to repository contents (for pushing changes)
+  contents: write  # Allow write access to repository contents
   pages: write     # Allow write access to GitHub Pages
-  id-token: write  # Allow write access to ID token for deploying
+  id-token: write  # Allow write access to ID token for deployment
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -33,15 +37,23 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      # Checkout the repository again in the deploy job
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Create and switch to the gh-pages branch (orphan branch)
       - name: Checkout gh-pages branch
-        run: git checkout --orphan gh-pages  # Create gh-pages branch
+        run: git checkout --orphan gh-pages  # Create a new orphan branch for gh-pages
 
+      # Remove all files that were checked out (because it's an orphan branch)
+      - name: Clean up working directory
+        run: git rm -rf .  # Removes all files from the gh-pages branch, leaving it empty
+
+      # Copy only the build files from dist/ to the gh-pages branch
       - name: Copy build files to gh-pages
-        run: cp -r dist/* .  # Copy built files to the root
+        run: cp -r dist/* .  # Copy built files to the root of the gh-pages branch
 
+      # Commit and push the changes to gh-pages
       - name: Commit and push to gh-pages
         run: |
           git config --global user.name "GitHub Actions"
