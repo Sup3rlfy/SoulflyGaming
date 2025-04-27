@@ -27,40 +27,22 @@ jobs:
       run: |
         sass src/styles.scss dist/styles.css  # Compile your SCSS to CSS (adjust path if necessary)
     
-    - name: Prepare dist directory
+    - name: Copy the required files
       run: |
-        rm -rf dist  # Remove the dist directory if it exists
-        mkdir dist  # Recreate the dist directory
-    
-    - name: Copy the required files excluding dist directory
-      run: |
-        # Copy all necessary files except 'dist' into the 'dist' folder
-        find . -maxdepth 1 ! -name 'dist' -exec cp -r {} dist/ \;
+        mkdir dist
+        cp -r * dist/  # Copy all files to the dist folder
     
     - name: Set up Git for deployment
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
     
-    - name: Copy dist to a temporary directory
-      run: |
-        cp -r dist ../dist_temp  # Copy the contents of the dist folder to a temporary directory
-
     - name: Deploy to GitHub Pages
       run: |
-        # Fetch the gh-pages branch and ensure no conflicts
-        git fetch origin gh-pages || echo "No gh-pages branch found, creating one."
-        git checkout -b gh-pages origin/gh-pages || git checkout --orphan gh-pages
-        
-        # Clean the current working directory of the gh-pages branch
+        git clone --branch gh-pages https://github.com/Sup3rlfy/SoulflyGaming.git gh-pages
+        cd gh-pages
         rm -rf *  # Clear the existing files in the gh-pages branch
-        
-        # Copy the new build files into the gh-pages branch
-        cp -r ../dist_temp/* .  # Copy the new build files from the temp folder to the gh-pages branch
-
-        # Add, commit, and push changes
+        cp -r ../dist/* .  # Copy the new build files to the gh-pages branch
         git add .
         git commit -m "Deploy to GitHub Pages"
-
-        # Push changes using GITHUB_TOKEN for authentication
-        git push --force https://github-actions:${{ secrets.GITHUB_TOKEN }}@github.com/Sup3rlfy/SoulflyGaming.git gh-pages
+        git push origin gh-pages
