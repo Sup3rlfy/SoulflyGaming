@@ -1,22 +1,20 @@
-name: Deploy to GitHub Pages
+# .github/workflows/deploy.yml
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: write  # Allow pushing to the repo
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,48 +22,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22.14.0'
+          node-version: '22.14.0'  # Your Node version
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build the project (if dist folder doesn't exist)
-        id: build-project
-        run: |
-          if [ ! -d "dist" ]; then
-            echo "Dist folder doesn't exist, building project."
-            npm run build  # Replace with your specific build command
-          else
-            echo "Dist folder found, skipping build."
-          fi
+      - name: Build the project
+        run: npm run build  # <-- Make sure this builds your project correctly!
 
-  deploy:
-    needs: build  # This job depends on the build job
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Checkout gh-pages branch
-        run: git checkout --orphan gh-pages
-
-      - name: Clean up working directory
-        run: git rm -rf .
-
-      - name: Copy dist files from the browser folder
-        run: |
-          if [ -d "dist/browser" ]; then
-            echo "Found dist/browser folder. Deploying to GitHub Pages."
-            cp -r dist/browser/* .
-          else
-            echo "Dist/browser folder is missing, unable to deploy."
-            exit 1  # Exit if dist/browser is missing
-          fi
-
-      - name: Commit and push to gh-pages
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "github-actions@users.noreply.github.com"
-          git add .
-          git commit -m "Deploy site"
-          git push --force https://github-actions:${{ secrets.GITHUB_TOKEN }}@github.com/Sup3rlfy/SoulflyGaming.git gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/browser  # <-- Where your built files are!
