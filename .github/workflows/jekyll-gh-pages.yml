@@ -29,7 +29,6 @@ jobs:
     
     - name: Copy the required files
       run: |
-        mkdir dist
         cp -r * dist/  # Copy all files to the dist folder
     
     - name: Set up Git for deployment
