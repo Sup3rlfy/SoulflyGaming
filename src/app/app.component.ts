@@ -21,7 +21,7 @@ import { TopNavComponent } from './top-nav/top-nav.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'RoE Home';
+  title = 'Soulfly Gaming';
   isLightMode = false;
 
   constructor(private router: Router) {}
