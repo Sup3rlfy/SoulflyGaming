@@ -39,7 +39,7 @@ To build the project run:
 ```bash
 ng build
 
-ng build --prod --output-path=dist --base-href="/"
+ ng build --output-path=dist --base-href="/"         
 ```
 
 
