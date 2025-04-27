@@ -62,5 +62,5 @@ jobs:
         git add .
         git commit -m "Deploy to GitHub Pages"
 
-        # Force push to overwrite the gh-pages branch (this avoids conflicts)
-        git push --force origin gh-pages
+        # Push changes using GITHUB_TOKEN for authentication
+        git push --force https://github-actions:${{ secrets.GITHUB_TOKEN }}@github.com/Sup3rlfy/SoulflyGaming.git gh-pages
