@@ -2,13 +2,13 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]  # Runs on pushes to the main branch
-  workflow_dispatch:  # Allows manual trigger of the workflow
+    branches: ["main"]
+  workflow_dispatch:
 
 permissions:
-  contents: write  # Allow write access to repository contents
-  pages: write     # Allow write access to GitHub Pages
-  id-token: write  # Allow write access to ID token for deployment
+  contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: "pages"
@@ -24,7 +24,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22.14.0'  # Use your desired Node.js version
+          node-version: '22.14.0'
 
       - name: Install dependencies
         run: npm install
@@ -33,11 +33,11 @@ jobs:
         id: dist-check
         run: |
           if [ -d "dist" ]; then
-            echo "Dist folder found.";
-            echo "dist_exists=true" >> $GITHUB_ENV;  # Set an environment variable if dist exists
+            echo "Dist folder found."
+            echo "dist_exists=true" >> $GITHUB_ENV  # Set the environment variable for later jobs
           else
-            echo "Dist folder not found, building the project.";
-            echo "dist_exists=false" >> $GITHUB_ENV;  # Set an environment variable if dist doesn't exist
+            echo "Dist folder not found, building the project."
+            echo "dist_exists=false" >> $GITHUB_ENV
           fi
 
       - name: Build the project (if dist doesn't exist)
@@ -45,26 +45,26 @@ jobs:
         run: npm run build  # Replace with your specific build command
 
   deploy:
-    needs: build
+    needs: build  # This job depends on the build job
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Checkout gh-pages branch
-        run: git checkout --orphan gh-pages  # Create a new orphan branch for gh-pages
+        run: git checkout --orphan gh-pages
 
       - name: Clean up working directory
-        run: git rm -rf .  # Removes all files from the gh-pages branch, leaving it empty
+        run: git rm -rf .
 
-      - name: Copy dist files from the browser folder (from existing dist folder or newly built)
+      - name: Copy dist files from the browser folder
         run: |
           if [ -d "dist/browser" ]; then
-            echo "Found dist/browser folder. Deploying to GitHub Pages.";
-            cp -r dist/browser/* .  # Copy built files from the dist/browser folder to the root of gh-pages
+            echo "Found dist/browser folder. Deploying to GitHub Pages."
+            cp -r dist/browser/* .
           else
-            echo "Dist/browser folder is missing, unable to deploy.";
-            exit 1;  # If dist/browser is missing, exit with error
+            echo "Dist/browser folder is missing, unable to deploy."
+            exit 1  # Exit if dist/browser is missing
           fi
 
       - name: Commit and push to gh-pages
