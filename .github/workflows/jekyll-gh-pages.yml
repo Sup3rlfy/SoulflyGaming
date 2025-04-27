@@ -3,7 +3,6 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: ["main"]  # Runs on pushes to the main branch
-
   workflow_dispatch:  # Allows manual trigger of the workflow
 
 permissions:
@@ -33,27 +32,38 @@ jobs:
       - name: Build the project
         run: npm run build  # Replace with your specific build command
 
+      - name: Check if dist directory exists
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "Build failed or dist folder is missing. Skipping build step.";
+            exit 1;  # Fail this step but move on to the next job
+          else
+            echo "Build successful, dist folder found.";
+          fi
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      # Checkout the repository again in the deploy job
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Create and switch to the gh-pages branch (orphan branch)
       - name: Checkout gh-pages branch
         run: git checkout --orphan gh-pages  # Create a new orphan branch for gh-pages
 
-      # Remove all files that were checked out (because it's an orphan branch)
       - name: Clean up working directory
         run: git rm -rf .  # Removes all files from the gh-pages branch, leaving it empty
 
-      # Copy only the build files from dist/ to the gh-pages branch
-      - name: Copy build files to gh-pages
-        run: cp -r dist/* .  # Copy built files to the root of the gh-pages branch
+      - name: Check if dist exists and deploy
+        run: |
+          if [ -d "dist" ]; then
+            echo "Found dist folder. Deploying to GitHub Pages.";
+            cp -r dist/* .  # Copy built files to the root of the gh-pages branch
+          else
+            echo "Dist folder is missing. No deployment done.";
+            exit 1;  # If dist is missing, exit with error
+          fi
 
-      # Commit and push the changes to gh-pages
       - name: Commit and push to gh-pages
         run: |
           git config --global user.name "GitHub Actions"
