@@ -32,10 +32,11 @@ jobs:
         rm -rf dist  # Remove the dist directory if it exists
         mkdir dist  # Recreate the dist directory
     
-    - name: Copy the required files
+    - name: Copy the required files excluding dist directory
       run: |
-        cp -r * dist/  # Copy all files to the dist folder
-    
+        # Copy all necessary files except 'dist' into the 'dist' folder
+        find . -maxdepth 1 ! -name 'dist' -exec cp -r {} dist/ \;
+
     - name: Set up Git for deployment
       run: |
         git config --global user.name "GitHub Actions"
