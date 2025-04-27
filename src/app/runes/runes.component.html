@@ -1,0 +1,63 @@
+<div class="runes-page">
+  <h1 class="centered-headline">Runes of Elana</h1>
+  
+
+
+
+<div class="runes-layout">
+  <!-- Sidebar Menu -->
+  <nav class="runes-sidebar">
+    <div class="sidebar-box">
+      <a *ngFor="let segment of segmentList" class="sidebar-button" [href]="'/runes#' + segment.id">
+        {{ segment.title }}
+      </a>
+    </div>
+  </nav>
+
+  <!-- Content Section -->
+  <div class="runes-content">
+    <runes-segment *ngFor="let segment of segmentList"
+      [image]="segment.image"
+      [title]="segment.title"
+      [content]="segment.content"
+      [id]="segment.id"
+      [isEmpty]="segment.isEmpty">
+    </runes-segment>
+  </div>
+</div>
+
+
+
+
+
+    <div class="video-section" *ngFor="let video of videoList; let i = index">
+      <div class="video-row" [ngClass]="{ 'reverse': i % 2 !== 0 }">
+        <iframe
+          class="video-embed"
+          width="560"
+          height="315"
+          [src]="video.url | safe"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+
+        <div class="video-description"
+          (mouseenter)="video.showShort = true"
+          (mouseleave)="video.showShort = false">
+          <h3>Video {{ videoList.length - i }}: {{ video.title || 'Gameplay Overview' }}</h3>
+
+          <ng-container *ngIf="!video.showShort">
+            <div *ngFor="let paragraph of video.description">
+              <p>{{ paragraph }}</p>
+            </div>
+          </ng-container>
+
+          <ng-container *ngIf="video.showShort">
+            <div class="short-description">
+              <div *ngFor="let line of video.sdescription">{{ line }}</div>
+            </div>
+          </ng-container>
+       </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div *ngIf="!isEmpty" [id]="id" class="segment">
+  <div class="segment-inner">
+    <div class="image-wrapper">
+      <img [src]="image" [alt]="title" class="segment-image" />
+    </div>
+
+    <div class="content-wrapper">
+      <h2 class="segment-title">{{ title }}</h2>
+
+      <div class="segment-content">
+        <p *ngFor="let paragraph of content">
+          {{ paragraph }}
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- For empty segments, just the anchor -->
+<div *ngIf="isEmpty" [id]="id" class="empty-anchor"></div>
