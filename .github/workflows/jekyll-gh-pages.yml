@@ -41,7 +41,11 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      # Checkout gh-pages branch (creates an orphan branch if not already there)
+      # Checkout the repository again in the deploy job
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Create and switch to the gh-pages branch (orphan branch)
       - name: Checkout gh-pages branch
         run: git checkout --orphan gh-pages  # This creates a new orphan branch for gh-pages
 
