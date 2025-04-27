@@ -1,41 +1,59 @@
-name: Build and Deploy to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main  # Trigger the workflow only on pushes to the 'main' branch
+    branches: ["main"]  # Runs on pushes to the main branch
+
+  workflow_dispatch:  # Allows manual trigger of the workflow
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '22.14.0'  # Set your Node.js version here
-     
-    - name: Install dependencies
-      run: |
-        npm install  # Run any build tool or package manager like npm/yarn
+      # Checkout the code
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Build project (if needed)
-      run: |
-        npm run build  # Or the build command you use (e.g., `npm run build`, `yarn build`)
+      # Set up Node.js with version 22.14.0
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22.14.0'  # Updated Node.js version
 
-    - name: Deploy to GitHub Pages
-      run: |
-        # Create a new gh-pages branch (if it doesn't already exist)
-        git checkout --orphan gh-pages
-        git reset --hard
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
 
-        # Copy the build files from dist/ or the correct folder
-        cp -r dist/* .  # Replace `dist/*` with the correct folder if needed
+      # Run the build command to generate the 'dist/' folder
+      - name: Build the project
+        run: npm run build  # Or the appropriate build command for your project
 
-        # Add, commit and push the files to gh-pages branch
-        git add .
-        git commit -m "Deploy to GitHub Pages"
-        git push --force https://github-actions:${{ secrets.GITHUB_TOKEN }}@github.com/Sup3rlfy/SoulflyGaming.git gh-pages
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout gh-pages branch (creates an orphan branch if not already there)
+      - name: Checkout gh-pages branch
+        run: git checkout --orphan gh-pages  # This creates a new orphan branch for gh-pages
+
+      # Copy build files to the gh-pages branch
+      - name: Copy build files to gh-pages
+        run: cp -r dist/* .  # Copy the contents of dist/ to the root of the gh-pages branch
+
+      # Commit and push the changes to gh-pages
+      - name: Commit and push to gh-pages
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@users.noreply.github.com"
+          git add .
+          git commit -m "Deploy site"
+          git push --force https://github-actions:${{ secrets.GITHUB_TOKEN }}@github.com/Sup3rlfy/SoulflyGaming.git gh-pages
