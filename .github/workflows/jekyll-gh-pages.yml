@@ -30,7 +30,7 @@ jobs:
         run: npm ci
 
       - name: Build Angular app
-        run: npm run build --configuration production --base-href=/  # Build with the correct base-href
+        run: npm run build -- --configuration=production --base-href=/  # Build with the correct base-href
 
       - name: Upload artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v3
