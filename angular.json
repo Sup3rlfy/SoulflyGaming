@@ -17,8 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist",
-            "baseHref": "/",
+            "outputPath": "dist/SoulflyGaming",
             "index": "index.html",
             "browser": "src/main.ts",
             "polyfills": [
