@@ -72,5 +72,8 @@ For more information on using the Angular CLI, including detailed command refere
 ## hard reset:
 git reset --hard
 
-## current build?
+## current build WORKING!!
 ng build --output-path=dist --base-href="/SoulflyGaming/"
+
+## trying:
+ng build --output-path=dist --base-href="/"
