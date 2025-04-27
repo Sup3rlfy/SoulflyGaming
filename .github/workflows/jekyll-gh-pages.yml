@@ -26,18 +26,16 @@ jobs:
       run: |
         npm run build  # Or the build command you use (e.g., `npm run build`, `yarn build`)
 
-    - name: Prepare deployment
-      run: |
-        mkdir gh-pages
-        cp -r * gh-pages/  # Ensure you're copying the right files (like build files)
-
-    - name: Set up Git for deployment
-      run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
-
     - name: Deploy to GitHub Pages
       run: |
+        # Create a new gh-pages branch (if it doesn't already exist)
+        git checkout --orphan gh-pages
+        git reset --hard
+
+        # Copy the build files from dist/ or the correct folder
+        cp -r dist/* .  # Replace `dist/*` with the correct folder if needed
+
+        # Add, commit and push the files to gh-pages branch
         git add .
         git commit -m "Deploy to GitHub Pages"
         git push --force https://github-actions:${{ secrets.GITHUB_TOKEN }}@github.com/Sup3rlfy/SoulflyGaming.git gh-pages
