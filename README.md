@@ -74,4 +74,3 @@ git reset --hard
 
 ## current build?
 ng build --output-path=dist --base-href="/SoulflyGaming/"
-## .
