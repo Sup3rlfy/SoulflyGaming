@@ -43,7 +43,7 @@
               },
               {
                 "glob": "404.html",
-                "input": "public",
+                "input": "src",
                 "output": "/"     
               }
             ],
