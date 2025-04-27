@@ -17,7 +17,7 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '22.14.0'  # Set your Node.js version here
-    
+     
     - name: Install dependencies
       run: |
         npm install -g sass  # Install Sass to compile SCSS
@@ -42,12 +42,16 @@ jobs:
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
     
+    - name: Copy dist to a temporary directory
+      run: |
+        cp -r dist ../dist_temp  # Copy the contents of the dist folder to a temporary directory
+
     - name: Deploy to GitHub Pages
       run: |
         git fetch origin gh-pages || echo "No gh-pages branch found, creating one."
         git checkout -b gh-pages origin/gh-pages || git checkout --orphan gh-pages
         rm -rf *  # Clear the existing files in the gh-pages branch
-        cp -r dist/* .  # Copy the new build files from the dist directory to the gh-pages branch
+        cp -r ../dist_temp/* .  # Copy the new build files from the temp folder to the gh-pages branch
         git add .
         git commit -m "Deploy to GitHub Pages"
         git push --force origin gh-pages  # Force push to update the gh-pages branch
