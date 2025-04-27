@@ -7,53 +7,41 @@ on:
   workflow_dispatch:  # Allows manual trigger of the workflow
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  contents: write  # Allow write access to repository contents (for pushing changes)
+  pages: write     # Allow write access to GitHub Pages
+  id-token: write  # Allow write access to ID token for deploying
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Checkout the code
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Set up Node.js with version 22.14.0
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22.14.0'  # Updated Node.js version
+          node-version: '22.14.0'  # Use your desired Node.js version
 
-      # Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # Run the build command to generate the 'dist/' folder
       - name: Build the project
-        run: npm run build  # Or the appropriate build command for your project
+        run: npm run build  # Replace with your specific build command
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      # Checkout the repository again in the deploy job
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Create and switch to the gh-pages branch (orphan branch)
       - name: Checkout gh-pages branch
-        run: git checkout --orphan gh-pages  # This creates a new orphan branch for gh-pages
+        run: git checkout --orphan gh-pages  # Create gh-pages branch
 
-      # Copy build files to the gh-pages branch
       - name: Copy build files to gh-pages
-        run: cp -r dist/* .  # Copy the contents of dist/ to the root of the gh-pages branch
+        run: cp -r dist/* .  # Copy built files to the root
 
-      # Commit and push the changes to gh-pages
       - name: Commit and push to gh-pages
         run: |
           git config --global user.name "GitHub Actions"
