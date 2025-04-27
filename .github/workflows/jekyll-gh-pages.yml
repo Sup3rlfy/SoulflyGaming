@@ -29,20 +29,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Check if dist folder exists
-        id: dist-check
+      - name: Build the project (if dist folder doesn't exist)
+        id: build-project
         run: |
-          if [ -d "dist" ]; then
-            echo "Dist folder found."
-            echo "dist_exists=true" >> $GITHUB_ENV  # Set the environment variable for later jobs
+          if [ ! -d "dist" ]; then
+            echo "Dist folder doesn't exist, building project."
+            npm run build  # Replace with your specific build command
           else
-            echo "Dist folder not found, building the project."
-            echo "dist_exists=false" >> $GITHUB_ENV
+            echo "Dist folder found, skipping build."
           fi
-
-      - name: Build the project (if dist doesn't exist)
-        if: env.dist_exists == 'false'
-        run: npm run build  # Replace with your specific build command
 
   deploy:
     needs: build  # This job depends on the build job
