@@ -25,14 +25,14 @@
 /* Segment inner layout */
 .segment-inner {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 15px;
 }
 
 /* Image wrapper inside segment */
 .image-wrapper {
   flex-shrink: 0;
-  width: 100%;  /* Default width for portrait mode */
+  width: 500px;
   height: auto;
 }
 
@@ -79,13 +79,12 @@
     text-align: center;
   }
 
-  /* For mobile portrait mode, make the image and content take 95% width */
   .image-wrapper {
-    width: 95%;  /* Image takes 95% of the screen width */
+    width: 100%;
   }
 
   .content-wrapper {
-    width: 95%;  /* Content takes 95% of the screen width */
+    width: 95%;
   }
 
   .segment-title {
@@ -97,24 +96,14 @@
   }
 }
 
-/* Landscape Mode Adjustments */
+/* Mobile Landscape (optional for horizontal mobile) */
 @media (orientation: landscape) and (max-width: 768px) {
   .segment-inner {
     flex-direction: row;
     align-items: center;
     text-align: left;
-
-    /* Make image and content share space equally (50% each) */
     .image-wrapper, .content-wrapper {
-      width: 50%;  /* Share space equally between image and content */
+      width: 45%;  /* Ensure images and content share space equally */
     }
-  }
-
-  .image-wrapper {
-    width: 50%;  /* Image should take 50% of the space */
-  }
-
-  .content-wrapper {
-    width: 50%;  /* Content should take 50% of the space */
   }
 }
