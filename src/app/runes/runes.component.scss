@@ -49,7 +49,7 @@
 
 .sidebar-button {
   display: block;
-  width: 90%;
+  width: 94%;
   padding: 0.3rem;
   margin-bottom: 0.2rem;
   margin-left: 0.5rem;
@@ -88,7 +88,7 @@
 .video-row {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   gap: 2rem;
   width: 100%;
   justify-content: center;
@@ -96,12 +96,16 @@
 
   .video-embed, .project-image {
     width: 50%;
-    height: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
     border-radius: 8px;
   }
 
   .video-description {
     width: 50%;
+    display: flex; /* ✅ flex so inner text is vertically nicely aligned if you want */
+    flex-direction: column;
+    justify-content: center; /* center the text vertically if you like */
     padding: 1rem;
     font-size: 1rem;
     line-height: 1.4;
@@ -111,7 +115,7 @@
   }
 
   .short-description {
-    width: 50%;
+    width: 100%;
     font-style: italic;
     color: vars.$gold-100;
     margin: 0;
