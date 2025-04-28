@@ -49,7 +49,7 @@ export class RunesComponent {
       id: 'curr',
       title: 'Current Features',
       image: 'assets/images/roe2.jpg',
-      content: [`Players can have a main class...`,
+      content: [`video diary to see more`,
       ],
       isEmpty: false
     },
