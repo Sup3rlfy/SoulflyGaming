@@ -13,7 +13,7 @@
   padding: 10px;
   border-radius: 10px;
   background-color: vars.$dark-gray-700;
-
+  width: 70%; 
 
   &.empty {
     visibility: hidden;
@@ -29,6 +29,7 @@
   flex-direction: row;
   gap: 15px;
   width: 100%;
+  align-items: center; /* <-- 💥 THIS vertically centers both image and text */
 }
 
 /* Image wrapper inside segment */
@@ -36,6 +37,9 @@
   flex-shrink: 0;
   width: 50%; /* Take 50% of the available width */
   height: auto;
+  display: flex;          /* <-- 💥 Make the wrapper a flex container */
+  align-items: center;    /* <-- 💥 Center image vertically */
+  justify-content: center;/* (optional) center horizontally inside wrapper *
 }
 
 /* Segment Image */
