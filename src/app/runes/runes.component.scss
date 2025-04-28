@@ -1,4 +1,4 @@
-//runes.component.scss
+/* runes.component.scss */
 @use '../../variables' as vars;
 
 .project-image {
@@ -32,14 +32,16 @@
   gap: 2rem;
   justify-content: center;
   border-radius: 10px;
+  overflow: hidden;
 
   &.reverse {
     flex-direction: row-reverse;
   }
 
   .video-embed {
-    width: 50%;
-    height: 315px;
+    width: 100%;  /* Full width in landscape mode */
+    max-width: 100%;
+    height: auto;
     border-radius: 8px;
   }
 
@@ -157,7 +159,7 @@
 
   /* Remove the reversed layout for mobile */
   .video-row.reverse {
-  flex-direction: column !important; /* Force stacking on mobile */
+    flex-direction: column !important; /* Force stacking on mobile */
   }
 
   img, video, iframe {
@@ -166,13 +168,59 @@
   }
 }
 
-/* ----- Responsive: Mobile landscape mode (optional, extra fine tuning) ----- */
+/* ----- Landscape Mode Adjustments ----- */
 @media (orientation: landscape) and (max-width: 768px) {
-  .video-row {
+  /* Fix the layout for the Rune Segment Images and Sidebar */
+  .runes-layout {
     flex-direction: row;
+    padding: 0 1rem;
+  }
+
+  .runes-sidebar {
+    width: 30%;  /* Sidebar takes up a larger portion */
+    min-width: 140px;
+    margin-right: 1rem;
+    overflow-y: auto; /* Make sidebar scrollable */
+    height: calc(100vh - 60px); /* Ensure sidebar is full height */
+  }
+
+  .runes-content {
+    width: 70%;  /* Content takes the remaining width */
+  }
+
+  /* Ensure segment layout respects screen width */
+  .segment-inner {
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+  }
+
+  /* Ensure image and content inside the segment share space equally */
+  .image-wrapper, .content-wrapper {
+    width: 50%;  /* Split space equally between image and content */
+  }
+
+  /* Video rows should not overflow */
+  .video-row {
+    flex-direction: column; /* Stack video and description vertically */
     align-items: center;
-    .video-embed, .video-description {
-      width: 45%;
-    }
+    gap: 1rem;
+    width: 100%; /* Ensure video and description together take 100% width */
+  }
+
+  .video-embed {
+    width: 95%; /* Video takes 95% of screen width */
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+
+  .video-description {
+    width: 95%; /* Description takes 95% of screen width */
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: vars.$gold-700;
+    border-radius: 8px;
+    cursor: pointer;
   }
 }
