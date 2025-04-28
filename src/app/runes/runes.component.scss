@@ -26,7 +26,7 @@
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  width: 80%;    /* Page content centered and limited to 60% */
+  width: 85%;    /* Page content centered and limited to 60% */
   margin: 0 auto;   /* Center horizontally */
   padding: 0rem;
 }
@@ -36,6 +36,10 @@
   top: 60px;
   align-self: flex-start;
   flex: 0 0 12%;
+  display: flex;
+  flex-direction: column; /* Stack the buttons vertically */
+  justify-content: flex-start; /* Ensure buttons are stacked from the top */
+  align-items: center; /* Center the buttons horizontally */
 }
 
 .sidebar-box {
@@ -50,7 +54,6 @@
   width: 90%;
   padding: 0.3rem;
   margin-bottom: 0.2rem;
-  margin-left: 0.5rem;
   background-color: vars.$gray-700;
   color: vars.$gold-600;
   border: none;
@@ -61,6 +64,8 @@
   font-size: 1.1rem;
   font-weight: bold;
   text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
 
   &:hover {
     color: vars.$gold-800;
@@ -73,6 +78,8 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: calc(100% - 15%); /* Make the content take up the remaining space after the sidebar */
+  margin-left: 15%;
 }
 
 /* ----- Video Section Layout (Desktop) ----- */
