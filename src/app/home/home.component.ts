@@ -39,7 +39,8 @@ export class HomeComponent {
       ],
       link: '/runes',
       description: [
-        'Inspired by ADOM, Final Fantasy, Warframe and a great many other games i set out to create my own game world while also honing my skills in Java and JavaFX. Check out the state of "Runes of Elana" and what you might expect it to become in the future.'
+        'Inspired by ADOM, Final Fantasy, Warframe and a great many other games i set out to create my own game world while also honing my skills in Java and JavaFX.',
+        'Check out the state of "Runes of Elana" and what you might expect it to become in the future.'
       ]
     },
     {
