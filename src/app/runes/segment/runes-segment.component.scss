@@ -79,12 +79,13 @@
     text-align: center;
   }
 
+  /* For mobile portrait mode, make the image and content take 95% width */
   .image-wrapper {
-    width: 100%;
+    width: 95%;  /* Image takes 95% of the screen width */
   }
 
   .content-wrapper {
-    width: 95%;
+    width: 95%;  /* Content takes 95% of the screen width */
   }
 
   .segment-title {
@@ -103,8 +104,17 @@
     align-items: center;
     text-align: left;
 
+    /* Make image and content share space equally (50% each) */
     .image-wrapper, .content-wrapper {
       width: 50%;  /* Share space equally between image and content */
     }
+  }
+
+  .image-wrapper {
+    width: 50%;  /* Image should take 50% of the space */
+  }
+
+  .content-wrapper {
+    width: 50%;  /* Content should take 50% of the space */
   }
 }
