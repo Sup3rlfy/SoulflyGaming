@@ -90,7 +90,7 @@
 
 .sidebar-button {
   display: block;
-  width: 100%;
+  width: 90%;
   padding: 0.5rem;
   margin-bottom: 0.4rem;
   background-color: vars.$gray-700;
@@ -129,6 +129,8 @@
     position: static; /* Reset sticky to normal position */
     top: auto; /* Make sure no sticky top behavior */
     margin-right: 0; /* Remove any extra right margin */
+    min-width: 140px;
+    max-width: 500px;
   }
 
   .runes-content {
@@ -152,7 +154,7 @@
       text-align: center;
     }
   }
-  
+
   /* Remove the reversed layout for mobile */
   .video-row.reverse {
   flex-direction: column !important; /* Force stacking on mobile */
