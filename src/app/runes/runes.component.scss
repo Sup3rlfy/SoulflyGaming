@@ -26,7 +26,7 @@
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   padding: 0;
   align-items: flex-start; /* Ensure items align to the start of the container */
@@ -91,7 +91,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: 100%; /* Changed to 100% to fill available space */
+  width: 75%; /* Changed to 100% to fill available space */
 }
 
 .video-row {
