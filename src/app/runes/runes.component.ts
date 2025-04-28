@@ -237,6 +237,7 @@ export class RunesComponent {
 
 
 
+  /* Video*/
     {
       id: 'vidDiaryEmpty',
       title: 'Video Diary',
