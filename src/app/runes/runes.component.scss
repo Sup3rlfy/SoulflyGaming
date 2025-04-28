@@ -18,6 +18,7 @@
   gap: 2rem;
 }
 
+/* ----- Video Section ----- */
 .video-section {
   display: flex;
   flex-direction: column;
@@ -32,7 +33,6 @@
   justify-content: center;
   border-radius: 10px;
 
-  // Reverse layout for alternating rows
   &.reverse {
     flex-direction: row-reverse;
   }
@@ -63,16 +63,21 @@
   }
 }
 
+/* ----- Layout: Sidebar and Content ----- */
 .runes-layout {
   display: flex;
+  flex-direction: row;
+  gap: 2rem;
   padding-top: 1rem;
 }
 
 .runes-sidebar {
   position: sticky;
-  top: 60px; // Adjust to height of your navbar
+  top: 60px;
   align-self: flex-start;
-  width: 180px;
+  width: 15%;
+  min-width: 140px;
+  max-width: 180px;
   margin-right: 2rem;
 }
 
@@ -85,27 +90,26 @@
 
 .sidebar-button {
   display: block;
-  width: 90%;
-  padding: 0.5rem 0.5rem;
+  width: 100%;
+  padding: 0.5rem;
   margin-bottom: 0.4rem;
-  background-color: vars.$gray-700; // Default for dark mode background
-  color: vars.$gold-600; // Default text color for dark mode
+  background-color: vars.$gray-700;
+  color: vars.$gold-600;
   border: none;
   border-radius: 5px;
   text-align: left;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
-  font-size: 1.1rem; // Increase the font size to make the text larger
+  font-size: 1.1rem;
   font-weight: bold;
-  text-decoration: none; // Remove underline (since anchor tags are usually underlined)
+  text-decoration: none;
 
   &:hover {
     color: vars.$gold-800;
-    background-color: vars.$gray-900;;
+    background-color: vars.$gray-900;
   }
 }
 
-// Adjusting the content layout
 .runes-content {
   flex: 1;
   display: flex;
@@ -113,58 +117,51 @@
   gap: 2rem;
 }
 
+/* ----- Responsive: Mobile portrait mode ----- */
 @media (max-width: 768px) {
-  .link-section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-    .image-wrapper, .project-image {
-      width: 90%;
-      height: auto;
-      max-width: 300px;
-    }
-
-    .project-description {
-      width: 90%;
-      font-size: 1rem;
-      text-align: center;
-    }
-  }
-  
-  .video-row {
-    flex-direction: column;
-    .video-embed {
-      width: 90%;
-      height: auto;
-      aspect-ratio: 16/9;
-    }
-    .video-description {
-      width: 90%;
-      text-align: center;
-    }
-  }
-
   .runes-layout {
     flex-direction: column;
   }
 
   .runes-sidebar {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 2rem;
+    width: 90%;
+    margin: 0 auto 2rem auto;
   }
 
   .runes-content {
     width: 100%;
   }
 
-  .links {
+  .video-row {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+
+    .video-embed {
+      width: 90%;
+      height: auto;
+      aspect-ratio: 16/9;
+    }
+
+    .video-description {
+      width: 90%;
+      text-align: center;
+    }
   }
+
   img, video, iframe {
     max-width: 100%;
     height: auto;
+  }
+}
+
+/* ----- Responsive: Mobile landscape mode (optional, extra fine tuning) ----- */
+@media (orientation: landscape) and (max-width: 768px) {
+  .video-row {
+    flex-direction: row;
+    align-items: center;
+    .video-embed, .video-description {
+      width: 45%;
+    }
   }
 }

@@ -1,4 +1,4 @@
-//home.component.scss
+// home.component.scss
 @use '../../variables' as vars;
 
 .home-page {
@@ -25,6 +25,7 @@
     height: 200px;
     overflow: hidden;
     border-radius: 12px;
+    flex-shrink: 0; // prevent shrinking weirdly
   }
 
   .project-image {
@@ -36,7 +37,7 @@
     object-fit: cover;
     opacity: 0;
     transition: opacity 2s ease-in-out;
-    pointer-events: none; // prevents ghost-hover issues
+    pointer-events: none;
   }
 
   .project-image.visible {
@@ -55,12 +56,6 @@
     .project-description {
       align-items: flex-end;
     }
-  }
-
-  .project-image {
-    max-width: 300px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: opacity 0.5s ease-in-out;
   }
 
   .project-description {
@@ -92,7 +87,7 @@ body.light-mode .project-description {
   }
 }
 
-// --- Mobile and small screen responsiveness ---
+// --- MOBILE FIXES ---
 @media (max-width: 768px) {
   .home-page {
     padding: 0.5rem;
@@ -104,12 +99,16 @@ body.light-mode .project-description {
     align-items: center;
     text-align: center;
     padding: 1rem;
-    
+
+    &.reverse {
+      flex-direction: column; // RESET reverse to normal stacking
+    }
+
     .image-wrapper {
       width: 100%;
       max-width: 90%;
       height: auto;
-      aspect-ratio: 3 / 2; // keeps roughly the same proportions
+      aspect-ratio: 3 / 2; // maintains 3:2 shape nicely
     }
 
     .project-image {
@@ -120,8 +119,9 @@ body.light-mode .project-description {
     }
 
     .project-description {
-      width: 100%;
+      width: 100%; // <<< FIX the squeezed text problem
       font-size: 1rem;
+      text-align: center; // Optional: center the text
 
       h2 {
         font-size: 1.5rem;
@@ -134,4 +134,3 @@ body.light-mode .project-description {
     }
   }
 }
-  
