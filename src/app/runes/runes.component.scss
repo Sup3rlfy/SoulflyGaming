@@ -120,31 +120,35 @@
 /* ----- Responsive: Mobile portrait mode ----- */
 @media (max-width: 768px) {
   .runes-layout {
-    flex-direction: column;
+    flex-direction: column; /* Stack layout vertically */
   }
 
   .runes-sidebar {
-    width: 90%;
+    width: 25%; /* Sidebar takes 25% of the screen width */
     margin: 0 auto 2rem auto;
+    position: static; /* Reset sticky to normal position */
+    top: auto; /* Make sure no sticky top behavior */
+    margin-right: 0; /* Remove any extra right margin */
   }
 
   .runes-content {
-    width: 100%;
+    width: 75%; /* Main content takes the remaining 75% */
+    margin: 0 auto; /* Center the content */
   }
 
   .video-row {
-    flex-direction: column;
+    flex-direction: column; /* Stack video and description vertically */
     align-items: center;
     gap: 1rem;
 
     .video-embed {
-      width: 90%;
+      width: 90%; /* Ensure video is centered and responsive */
       height: auto;
       aspect-ratio: 16/9;
     }
 
     .video-description {
-      width: 90%;
+      width: 90%; /* Ensure description is centered and fits */
       text-align: center;
     }
   }

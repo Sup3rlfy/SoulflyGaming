@@ -90,47 +90,69 @@ body.light-mode .project-description {
 // --- MOBILE FIXES ---
 @media (max-width: 768px) {
   .home-page {
-    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
+    padding: 1rem;
   }
 
   .link-section {
-    flex-direction: column;
+    display: flex;
+    flex-direction: column;  /* Stack content vertically */
     align-items: center;
     text-align: center;
+    gap: 1rem;
     padding: 1rem;
+    position: relative;
+    overflow: hidden; /* Prevent content overflow */
 
     &.reverse {
       flex-direction: column; // RESET reverse to normal stacking
     }
-
-    .image-wrapper {
-      width: 100%;
-      max-width: 90%;
-      height: auto;
-      aspect-ratio: 3 / 2; // maintains 3:2 shape nicely
+  }
+  .image-wrapper {
+    position: relative;
+    width: 100%; /* Ensure the image takes the full width */
+    height: 250px;  /* Set a fixed height for mobile images */
+    overflow: hidden;
+    border-radius: 12px;
     }
 
     .project-image {
-      position: relative;
-      width: 100%;
-      height: auto;
-      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%; /* Make sure the image takes up the full width */
+      height: 100%; /* Ensure it takes up the full height */
+      object-fit: cover; /* Maintain aspect ratio */
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+      pointer-events: none;
     }
 
+    .project-image.visible {
+      opacity: 1;
+      z-index: 1;
+    }
+  
     .project-description {
-      width: 100%; // <<< FIX the squeezed text problem
+      width: 100%;
       font-size: 1rem;
-      text-align: center; // Optional: center the text
-
-      h2 {
-        font-size: 1.5rem;
-      }
-
-      .link-label {
-        margin-top: 0.8rem;
-        font-size: 1rem;
-      }
+      color: vars.$gold-700;
+      line-height: 1.5;
+    
+  
+    /* Additional fixes for vertical mode */
+    .h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    .link-label {
+      display: inline-block;
+      margin-top: 1rem;
+      color: vars.$gold-600;
+      font-weight: bold;
     }
   }
 }
