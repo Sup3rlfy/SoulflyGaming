@@ -6,5 +6,5 @@ import { routes } from './app.routes';
 
 export const appProviders = [
   importProvidersFrom(BrowserModule),
-  provideRouter(routes, withHashLocation() )
+  provideRouter(routes )
 ];
