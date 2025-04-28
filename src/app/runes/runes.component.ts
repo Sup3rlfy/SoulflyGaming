@@ -220,7 +220,7 @@ export class RunesComponent {
       '- Wizardry 8: Gadgeteer as inspiration for Gundgeteer class',
       '- Potion Craft - Alchemy simulator: simply WOW for a crafting system!!!',
       '- Night Angel series (Brent Weeks): Krul Summoners, simply too good to pass on',
-      '- ... LotR, Dune, Saga of the 7 Suns, Kingskiller Chronicles, Atlantis, ...',
+      '- ... LotR, Dune, Saga of the 7 Suns, Kingskiller Chronicles, Atlantis, ....',
     ],
       isEmpty: false
     },
