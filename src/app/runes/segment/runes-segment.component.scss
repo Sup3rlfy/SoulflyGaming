@@ -27,12 +27,13 @@
   display: flex;
   flex-direction: row;
   gap: 15px;
+  width: 100%; /* Ensure this takes up the full available width */
 }
 
 /* Image wrapper inside segment */
 .image-wrapper {
   flex-shrink: 0;
-  width: 500px;
+  width: 50%; /* Take 50% of the available width */
   height: auto;
 }
 
@@ -50,6 +51,7 @@
   flex-direction: column;
   justify-content: center;
   flex-grow: 1;
+  width: 50%; /* Take the other 50% of the available width */
 }
 
 /* Title */
