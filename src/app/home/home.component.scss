@@ -1,98 +1,137 @@
+//home.component.scss
 @use '../../variables' as vars;
+
 .home-page {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 1rem;
+}
+
+.link-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: vars.$gray-900;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  padding: 0.5rem;
+
+  .image-wrapper {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px;
   }
 
+  .project-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    pointer-events: none; // prevents ghost-hover issues
+  }
+
+  .project-image.visible {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  &:hover {
+    background-color: vars.$dark-gray-700;
+  }
+
+  &.reverse {
+    flex-direction: row-reverse;
+    text-align: left;
+
+    .project-description {
+      align-items: flex-end;
+    }
+  }
+
+  .project-image {
+    max-width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .project-description {
+    width: 65%;
+    color: vars.$gold-700;
+    font-size: 1.1rem;
+    line-height: 1.6;
+
+    h2 {
+      margin-bottom: 0.5rem;
+      font-size: 1.8rem;
+    }
+
+    .link-label {
+      display: inline-block;
+      margin-top: 1rem;
+      color: vars.$gold-600;
+      font-weight: bold;
+    }
+  }
+}
+
+// Light mode overrides
+body.light-mode .project-description {
+  color: vars.$green-900;
+
+  .link-label {
+    color: vars.$green-700;
+  }
+}
+
+// --- Mobile and small screen responsiveness ---
+@media (max-width: 768px) {
+  .home-page {
+    padding: 0.5rem;
+    gap: 2rem;
+  }
 
   .link-section {
-    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    cursor: pointer;
-    border-radius: 10px;
-    background-color: vars.$gray-900;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
-    padding: 0.5rem;
-  
+    text-align: center;
+    padding: 1rem;
+    
     .image-wrapper {
-        position: relative;
-        width: 300px;
-        height: 200px;
-        overflow: hidden;
-        border-radius: 12px;
-      }
-      
-      .project-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 300px;
-        height: 200px;
-        object-fit: cover;
-        opacity: 0;
-        transition: opacity 2s ease-in-out;
-        pointer-events: none; // prevents ghost-hover issues
-      }
-      
-      .project-image.visible {
-        opacity: 1;
-        z-index: 1;
+      width: 100%;
+      max-width: 90%;
+      height: auto;
+      aspect-ratio: 3 / 2; // keeps roughly the same proportions
+    }
+
+    .project-image {
+      position: relative;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .project-description {
+      width: 100%;
+      font-size: 1rem;
+
+      h2 {
+        font-size: 1.5rem;
       }
 
-    &:hover {
-      background-color: vars.$dark-gray-700;
-    }
-  
-    &.reverse {
-      flex-direction: row-reverse;
-      text-align: left;
-  
-      .project-description {
-        align-items: flex-end;
-      }
-    }
-  
-    .project-image {
-      //width: 40%;
-      max-width: 300px;
-      //border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      transition: opacity 0.5s ease-in-out;
-    }
-  
-    .project-description {
-      width: 65%;
-      color: vars.$gold-700;
-      font-size: 1.1rem;
-      line-height: 1.6;
-  
-      h2 {
-        margin-bottom: 0.5rem;
-        font-size: 1.8rem;
-      }
-  
       .link-label {
-        display: inline-block;
-        margin-top: 1rem;
-        color: vars.$gold-600;
-        font-weight: bold;
+        margin-top: 0.8rem;
+        font-size: 1rem;
       }
     }
   }
-  
-  // Light mode overrides
-  body.light-mode 
-    .project-description 
-    {
-        color: vars.$green-900;
-    
-        .link-label {
-        color: vars.$green-700;
-        }
-    }
-
+}
   

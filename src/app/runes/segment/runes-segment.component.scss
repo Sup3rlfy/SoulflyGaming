@@ -1,4 +1,5 @@
-@use './variables' as vars;  // Adjust the path based on the folder structure
+//runes-segment.component.scss
+@use '../../../variables' as vars;  // Adjust the path based on the folder structure
 
 /* Empty Anchor (for non-visible segments) */
 .empty-anchor {

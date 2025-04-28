@@ -1,38 +1,70 @@
-@use '../../variables' as vars;
+//sisyphus.component.scss
+@use './variables' as vars;
 .sisyphus-page {
-    text-align: center;
-    color: #eee;
-  
+  text-align: center;
+  color: #eee;
+  padding: 1rem;
+
+  .steam-widget {
+    margin: 1rem auto;
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+  }
+
+  .links {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .steam-link,
+  .trailer-button {
+    background-color: vars.$gold-600;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+  }
+
+  .trailer-button:hover,
+  .steam-link:hover {
+    background-color: vars.$gold-800;
+  }
+}
+
+// --- Mobile and small screen responsiveness ---
+@media (max-width: 768px) {
+  .sisyphus-page {
+    padding: 0.5rem;
+
     .steam-widget {
-      margin: 1rem auto;
-      display: block;
-      border-radius: 8px;
-      overflow: hidden;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
     }
-  
+
     .links {
-      margin-top: 1.5rem;
-      display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       gap: 1rem;
-      flex-wrap: wrap;
     }
-  
+
     .steam-link,
     .trailer-button {
-      background-color: vars.$gold-600;
-      color: white;
-      padding: 0.6rem 1.2rem;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
+      width: 90%;
+      text-align: center;
+      font-size: 1rem;
+      padding: 0.8rem 1rem;
     }
-  
-    .trailer-button:hover,
-    .steam-link:hover {
-        background-color: vars.$gold-800;
-      }
-      
-      
   }
+}
