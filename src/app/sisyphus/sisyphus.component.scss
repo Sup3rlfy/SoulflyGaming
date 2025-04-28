@@ -9,10 +9,12 @@
     margin: 1rem auto;
     display: block;
     border-radius: 8px;
-    overflow: hidden;
-    max-width: 800px;
-    width: 100%;
+    overflow: hidden;  /* Hide overflow content */
+    max-width: 100%;   /* Ensure full width up to 100% */
+    width: 100%;       /* Make it responsive */
     height: auto;
+    max-height: 500px; /* Optional: Set a max height to prevent vertical overflow */
+    aspect-ratio: 16 / 9;  /* Keep aspect ratio */
   }
 
   .links {
@@ -48,9 +50,10 @@
 
     .steam-widget {
       width: 100%;
-      max-width: 100%;
+      max-width: 100%;     /* Ensure it takes up the full width */
+      max-height: 300px;   /* Optional: Limit height on small screens */
       height: auto;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 16 / 9; /* Maintain aspect ratio */
     }
 
     .links {

@@ -124,7 +124,7 @@
   }
 
   .runes-sidebar {
-    width: 25%; /* Sidebar takes 25% of the screen width */
+    width: 100%; /* Sidebar takes 25% of the screen width */
     margin: 0 auto 2rem auto;
     position: static; /* Reset sticky to normal position */
     top: auto; /* Make sure no sticky top behavior */
@@ -132,7 +132,7 @@
   }
 
   .runes-content {
-    width: 75%; /* Main content takes the remaining 75% */
+    width: 100%; /* Main content takes the remaining 75% */
     margin: 0 auto; /* Center the content */
   }
 
@@ -142,15 +142,20 @@
     gap: 1rem;
 
     .video-embed {
-      width: 90%; /* Ensure video is centered and responsive */
+      width: 95%; /* Ensure video is centered and responsive */
       height: auto;
       aspect-ratio: 16/9;
     }
 
     .video-description {
-      width: 90%; /* Ensure description is centered and fits */
+      width: 95%; /* Ensure description is centered and fits */
       text-align: center;
     }
+  }
+  
+  /* Remove the reversed layout for mobile */
+  .video-row.reverse {
+  flex-direction: column !important; /* Force stacking on mobile */
   }
 
   img, video, iframe {
