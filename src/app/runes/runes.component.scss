@@ -26,7 +26,7 @@
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  width: 85%;    /* Page content centered and limited to 60% */
+  width: 85%;    
   margin: 0 auto;   /* Center horizontally */
   padding: 0rem;
 }
@@ -36,8 +36,6 @@
   top: 60px;
   align-self: flex-start;
   flex:0 0 12%;
-  min-width: 80px;
-  max-width: 220px;
 }
 
 .sidebar-box {
@@ -49,10 +47,10 @@
 
 .sidebar-button {
   display: block;
-  width: 91%;
+  width: 90%;
   padding: 0.3rem;
   margin-bottom: 0.2rem;
-  margin-left: 0.5rem;
+  margin-left: 0.1rem;
   background-color: vars.$gray-700;
   color: vars.$gold-600;
   border: none;
@@ -71,7 +69,7 @@
 }
 
 .runes-content {
-  flex: 1 1 auto;
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 2rem;
