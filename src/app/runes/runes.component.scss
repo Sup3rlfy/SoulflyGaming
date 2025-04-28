@@ -9,7 +9,7 @@
 .centered-headline {
   text-align: center;
   margin: 0 auto;
-  width: 90%; /* Always 90% width for navbar and big headings */
+  width: 90%;
 }
 
 /* ----- Page Layout ----- */
@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  align-items: center; /* Center the whole page */
+  align-items: center;
 }
 
 /* ----- Sidebar + Content Layout ----- */
@@ -26,9 +26,10 @@
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  width: 100%;    /* Page content centered and limited to 60% */
-  margin: 0 auto;   /* Center horizontally */
-  padding: 0rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  align-items: flex-start; /* Ensure items align to the start of the container */
 }
 
 .runes-sidebar {
@@ -37,9 +38,11 @@
   align-self: flex-start;
   flex: 0 0 12%;
   display: flex;
-  flex-direction: column; /* Stack the buttons vertically */
-  justify-content: flex-start; /* Ensure buttons are stacked from the top */
-  align-items: center; /* Center the buttons horizontally */
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 140px;
+  max-width: 500px;
 }
 
 .sidebar-box {
@@ -47,6 +50,7 @@
   padding: 0.3rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 100%; /* Make the sidebar box take full width of sidebar */
 }
 
 .sidebar-button {
@@ -65,7 +69,7 @@
   font-weight: bold;
   text-decoration: none;
   margin-left: auto;
-  margin-right: auto;;
+  margin-right: auto;
 
   &:hover {
     color: vars.$gold-800;
@@ -74,12 +78,12 @@
 }
 
 .runes-content {
-  flex: 1;
+  flex: 1; /* Allow content to take up remaining space */
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: calc(100% - 15%); /* Make the content take up the remaining space after the sidebar */
-  margin-right: 15%;
+  width: calc(100% - 12%); /* Adjusted width to account for the sidebar */
+  margin-left: 0; /* Remove left margin, this was causing extra space */
 }
 
 /* ----- Video Section Layout (Desktop) ----- */
@@ -87,7 +91,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: 80%;
+  width: 100%; /* Changed to 100% to fill available space */
 }
 
 .video-row {
@@ -99,7 +103,8 @@
   justify-content: center;
   border-radius: 10px;
 
-  .video-embed, .project-image {
+  .video-embed,
+  .project-image {
     width: 50%;
     height: auto;
     aspect-ratio: 16/9;
@@ -108,9 +113,9 @@
 
   .video-description {
     width: 50%;
-    display: flex; /* ✅ flex so inner text is vertically nicely aligned if you want */
+    display: flex;
     flex-direction: column;
-    justify-content: center; /* center the text vertically if you like */
+    justify-content: center;
     padding: 1rem;
     font-size: 1rem;
     line-height: 1.4;
@@ -134,50 +139,50 @@
 }
 
 /* ----- Mobile Portrait + Landscape (true mobile detection) ----- */
-//(hover: none) and (pointer: coarse) or
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .runes-layout {
-    flex-direction: column; /* Stack layout vertically */
+    flex-direction: column;
   }
 
   .runes-sidebar {
-    width: 100%; /* Sidebar takes 25% of the screen width */
+    width: 100%;
     margin: 0 auto 2rem auto;
-    position: static; /* Reset sticky to normal position */
-    top: auto; /* Make sure no sticky top behavior */
-    margin-right: 0; /* Remove any extra right margin */
+    position: static;
+    top: auto;
+    margin-right: 0;
     min-width: 140px;
     max-width: 500px;
   }
 
   .runes-content {
-    width: 100%; /* Main content takes the remaining 75% */
-    margin: 0 auto; /* Center the content */
+    width: 100%;
+    margin: 0 auto;
   }
 
   .video-row {
-    flex-direction: column; /* Stack video and description vertically */
+    flex-direction: column;
     align-items: center;
     gap: 1rem;
 
     .video-embed {
-      width: 95%; /* Ensure video is centered and responsive */
+      width: 95%;
       height: auto;
       aspect-ratio: 16/9;
     }
 
     .video-description {
-      width: 95%; /* Ensure description is centered and fits */
+      width: 95%;
       text-align: center;
     }
   }
 
-  /* Remove the reversed layout for mobile */
   .video-row.reverse {
-  flex-direction: column !important; /* Force stacking on mobile */
+    flex-direction: column !important;
   }
 
-  img, video, iframe {
+  img,
+  video,
+  iframe {
     max-width: 100%;
     height: auto;
   }

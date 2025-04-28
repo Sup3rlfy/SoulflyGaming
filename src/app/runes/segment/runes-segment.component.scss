@@ -1,7 +1,6 @@
 /* runes-segment.component.scss */
 @use '../../../variables' as vars;
 
-/* Empty Anchor (for non-visible segments) */
 .empty-anchor {
   height: 0;
   visibility: hidden;
@@ -12,42 +11,27 @@
   padding: 10px;
   border-radius: 10px;
   background-color: vars.$dark-gray-700;
-  width: 100%; /* original width, now we will increase this for more space */
-  margin-left: 0; /* This shifts it more towards the right side of the screen */
-
-  /* Optional: Use a media query to adjust on smaller screens */
-  @media (max-width: 768px) {
-    width: 95%; /* Ensure it takes more space on smaller screens */
-    margin-left: 5%; /* Bring it back to center on mobile */
-  }
-
-  /* Optional: Ensure right side alignment on wider screens */
-  @media (min-width: 1200px) {
-    width: 80%; /* More control on large screens */
-    margin-left: 20%; /* Off-center it more on large screens */
-  }
+  width: 100%;
+  margin-left: 0;
 }
 
-/* Segment inner layout */
 .segment-inner {
   display: flex;
   flex-direction: row;
   gap: 15px;
   width: 100%;
-  align-items: center; /* <-- 💥 THIS vertically centers both image and text */
+  align-items: center;
 }
 
-/* Image wrapper inside segment */
 .image-wrapper {
   flex-shrink: 0;
-  width: 50%; /* Take 50% of the available width */
+  width: 50%;
   height: auto;
-  display: flex;          /* <-- 💥 Make the wrapper a flex container */
-  align-items: center;    /* <-- 💥 Center image vertically */
-  justify-content: center;/* (optional) center horizontally inside wrapper */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Segment Image */
 .segment-image {
   width: 100%;
   height: auto;
@@ -55,23 +39,20 @@
   border-radius: 8px;
 }
 
-/* Content inside segment */
 .content-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-grow: 1;
-  width: 50%; /* Take the other 50% of the available width */
+  width: 50%;
 }
 
-/* Title */
 .segment-title {
   font-size: 1.4em;
   margin-bottom: 5px;
   color: vars.$gold-500;
 }
 
-/* Content paragraphs */
 .segment-content {
   font-size: 1rem;
   color: vars.$gold-200;
@@ -83,7 +64,6 @@
   }
 }
 
-/* Mobile Adjustments */
 @media (max-width: 768px) {
   .segment-inner {
     width: 100%;
@@ -109,14 +89,15 @@
   }
 }
 
-/* Mobile Landscape (optional for horizontal mobile) */
 @media (orientation: landscape) and (max-width: 768px) {
   .segment-inner {
     flex-direction: row;
     align-items: center;
     text-align: left;
-    .image-wrapper, .content-wrapper {
-      width: 45%;  /* Ensure images and content share space equally */
+
+    .image-wrapper,
+    .content-wrapper {
+      width: 45%;
     }
   }
 }
