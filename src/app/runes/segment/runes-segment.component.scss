@@ -13,7 +13,7 @@
   border-radius: 10px;
   background-color: vars.$dark-gray-700;
   width: 100%; /* original width, now we will increase this for more space */
-  margin-left: 15%; /* This shifts it more towards the right side of the screen */
+  margin-left: 0; /* This shifts it more towards the right side of the screen */
 
   /* Optional: Use a media query to adjust on smaller screens */
   @media (max-width: 768px) {

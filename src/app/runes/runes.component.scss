@@ -75,6 +75,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: calc(100% - 15%); /* Reduce the content width so it doesn't go beyond sidebar */
 }
 
 /* ----- Video Section Layout (Desktop) ----- */
