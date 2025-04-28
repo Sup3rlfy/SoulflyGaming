@@ -26,7 +26,7 @@
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  width: 100%;    /* Page content centered and limited to 60% */
+  width: 85%;    /* Page content centered and limited to 60% */
   margin: 0 auto;   /* Center horizontally */
   padding: 0rem;
 }
@@ -65,7 +65,7 @@
   font-weight: bold;
   text-decoration: none;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto;;
 
   &:hover {
     color: vars.$gold-800;
@@ -79,7 +79,7 @@
   flex-direction: column;
   gap: 2rem;
   width: calc(100% - 15%); /* Make the content take up the remaining space after the sidebar */
-  margin-left: 15%;
+  margin-right: 15%;
 }
 
 /* ----- Video Section Layout (Desktop) ----- */
