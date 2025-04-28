@@ -110,6 +110,7 @@
     aspect-ratio: 16/9;
     border-radius: 8px;
     object-fit: contain;
+    max-height: unset;
   }
 
   .video-description {
@@ -123,6 +124,7 @@
     color: vars.$gold-700;
     border-radius: 8px;
     cursor: pointer;
+    height: auto;
   }
 
   .short-description {
