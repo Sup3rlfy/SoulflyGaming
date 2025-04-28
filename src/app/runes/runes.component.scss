@@ -39,13 +39,14 @@
   }
 
   .video-embed {
-    width: 100%;  /* Full width in landscape mode */
-    max-width: 100%;
+    width: 45%;  /* Video takes 45% of screen width */
+    max-width: 45%;
     height: auto;
     border-radius: 8px;
   }
 
   .video-description {
+    width: 45%;  /* Description takes 45% of screen width */
     padding: 1rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -166,6 +167,16 @@
     max-width: 100%;
     height: auto;
   }
+
+  /* Ensure images and descriptions stack above each other */
+  .segment-inner {
+    flex-direction: column; /* Stack image above description */
+    gap: 1rem;
+  }
+
+  .image-wrapper, .content-wrapper {
+    width: 95%; /* Ensure image and content take up the full width */
+  }
 }
 
 /* ----- Landscape Mode Adjustments ----- */
@@ -190,14 +201,14 @@
 
   /* Ensure segment layout respects screen width */
   .segment-inner {
-    flex-direction: row;
-    gap: 15px;
+    flex-direction: column; /* Stack image above description */
+    gap: 1rem;
     width: 100%;
   }
 
   /* Ensure image and content inside the segment share space equally */
   .image-wrapper, .content-wrapper {
-    width: 50%;  /* Split space equally between image and content */
+    width: 95%;  /* Split space equally between image and content */
   }
 
   /* Video rows should not overflow */
