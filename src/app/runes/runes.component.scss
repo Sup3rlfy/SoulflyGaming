@@ -27,27 +27,25 @@
 
 .video-row {
   display: flex;
-  flex-direction: column; /* Ensure videos and descriptions stack vertically in landscape */
+  flex-direction: row;
   align-items: center;
-  gap: 1rem; /* Reduced gap */
+  gap: 2rem;
   justify-content: center;
-  width: 100%;
   border-radius: 10px;
   overflow: hidden;
 
   &.reverse {
-    flex-direction: column-reverse;
+    flex-direction: row-reverse;
   }
 
   .video-embed {
-    width: 95%;  /* Make video take up 95% of screen width */
+    width: 100%;  /* Full width in landscape mode */
+    max-width: 100%;
     height: auto;
-    aspect-ratio: 16/9;
     border-radius: 8px;
   }
 
   .video-description {
-    width: 95%;  /* Make description take up 95% of screen width */
     padding: 1rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -71,7 +69,7 @@
 .runes-layout {
   display: flex;
   flex-direction: row;
-  gap: 1rem; /* Reduced gap between sidebar and content */
+  gap: 2rem;
   padding-top: 1rem;
 }
 
@@ -79,12 +77,10 @@
   position: sticky;
   top: 60px;
   align-self: flex-start;
-  width: 30%; /* Sidebar takes up 30% of screen width */
+  width: 15%;
   min-width: 140px;
-  max-width: 200px;
-  margin-right: 1rem;
-  overflow-y: auto; /* Make the sidebar scrollable if content overflows */
-  height: calc(100vh - 60px); /* Ensure sidebar takes up full screen height */
+  max-width: 180px;
+  margin-right: 2rem;
 }
 
 .sidebar-box {
@@ -185,38 +181,41 @@
     min-width: 140px;
     margin-right: 1rem;
     overflow-y: auto; /* Make sidebar scrollable */
-    height: calc(100vh - 60px); /* Full screen height for sidebar */
+    height: calc(100vh - 60px); /* Ensure sidebar is full height */
   }
 
   .runes-content {
     width: 70%;  /* Content takes the remaining width */
   }
 
+  /* Ensure segment layout respects screen width */
   .segment-inner {
     flex-direction: row;
     gap: 15px;
-    width: 100%; /* Ensure the segment layout respects screen width */
+    width: 100%;
   }
 
-  /* Ensure image and content inside the segment share space */
+  /* Ensure image and content inside the segment share space equally */
   .image-wrapper, .content-wrapper {
-    width: 50%;  /* Share space equally between image and content */
+    width: 50%;  /* Split space equally between image and content */
   }
 
+  /* Video rows should not overflow */
   .video-row {
-    flex-direction: column; /* Make video stack above its description */
-    gap: 1rem; /* Reduced gap */
-    width: 100%;  /* Ensure videos take up full width */
+    flex-direction: column; /* Stack video and description vertically */
+    align-items: center;
+    gap: 1rem;
+    width: 100%; /* Ensure video and description together take 100% width */
   }
 
   .video-embed {
-    width: 95%; /* Video occupies 95% of the width */
+    width: 95%; /* Video takes 95% of screen width */
     height: auto;
     aspect-ratio: 16/9;
   }
 
   .video-description {
-    width: 95%; /* Description occupies 95% of the width */
+    width: 95%; /* Description takes 95% of screen width */
     padding: 1rem;
     font-size: 1rem;
     line-height: 1.5;
