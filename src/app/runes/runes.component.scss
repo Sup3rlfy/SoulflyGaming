@@ -26,8 +26,7 @@
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  width: 60%;    /* Page content centered and limited to 60% */
-  max-width: 1200px; /* Optional: protect from being too wide on big screens */
+  width: 75%;    /* Page content centered and limited to 60% */
   margin: 0 auto;   /* Center horizontally */
   padding: 0rem;
 }
@@ -36,7 +35,7 @@
   position: sticky;
   top: 60px;
   align-self: flex-start;
-  width: 20%;
+  width: 30%;
   min-width: 140px;
   max-width: 200px;
 }
@@ -125,47 +124,48 @@
 /* ----- Mobile Portrait + Landscape (true mobile detection) ----- */
 @media (hover: none) and (pointer: coarse) {
   .runes-layout {
-    flex-direction: column;
-    width: 100%;
-    padding: 0 1rem;
+    flex-direction: column; /* Stack layout vertically */
   }
 
   .runes-sidebar {
-    position: static;
-    width: 100%;
+    width: 100%; /* Sidebar takes 25% of the screen width */
     margin: 0 auto 2rem auto;
+    position: static; /* Reset sticky to normal position */
+    top: auto; /* Make sure no sticky top behavior */
+    margin-right: 0; /* Remove any extra right margin */
     min-width: 140px;
     max-width: 500px;
   }
 
   .runes-content {
-    width: 100%;
+    width: 100%; /* Main content takes the remaining 75% */
+    margin: 0 auto; /* Center the content */
   }
 
   .video-row {
-    flex-direction: column; /* Stack image/video + description vertically */
+    flex-direction: column; /* Stack video and description vertically */
     align-items: center;
     gap: 1rem;
 
-    .video-embed, .project-image {
-      width: 100%;
-      aspect-ratio: 16/9; /* Nice responsive video */
-      max-width: 600px; /* Optional: prevent over stretching */
+    .video-embed {
+      width: 95%; /* Ensure video is centered and responsive */
+      height: auto;
+      aspect-ratio: 16/9;
     }
 
     .video-description {
-      width: 100%;
+      width: 95%; /* Ensure description is centered and fits */
       text-align: center;
     }
   }
 
+  /* Remove the reversed layout for mobile */
   .video-row.reverse {
-    flex-direction: column; /* Always normal stacking on mobile */
+  flex-direction: column !important; /* Force stacking on mobile */
   }
-}
 
-/* ----- Default Media Resets (for both mobile and desktop) ----- */
-img, video, iframe {
-  max-width: 100%;
-  height: auto;
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
+  }
 }
