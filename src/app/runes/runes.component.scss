@@ -36,6 +36,7 @@
   top: 60px;
   align-self: flex-start;
   flex:0 0 12%;
+  margin-right: 0;
 }
 
 .sidebar-box {
@@ -69,11 +70,13 @@
 }
 
 .runes-content {
-  flex: 1;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: calc(100% - 15%); /* Reduce the content width so it doesn't go beyond sidebar */
+  width: 100%//calc(100% - 15%); /* Reduce the content width so it doesn't go beyond sidebar */
+  margin-left: 0; /* Ensure no left margin, directly next to the sidebar */
+  padding: 0; /* Remove any padding */
 }
 
 /* ----- Video Section Layout (Desktop) ----- */
