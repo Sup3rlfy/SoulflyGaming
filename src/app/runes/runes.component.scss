@@ -35,7 +35,7 @@
   position: sticky;
   top: 60px;
   align-self: flex-start;
-  width: 15%;
+  flex:0 0 12%;
   min-width: 80px;
   max-width: 220px;
 }
@@ -71,7 +71,7 @@
 }
 
 .runes-content {
-  flex: 1;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   gap: 2rem;
