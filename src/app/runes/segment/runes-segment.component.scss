@@ -27,7 +27,7 @@
   display: flex;
   flex-direction: row;
   gap: 15px;
-  width: 100%; /* Ensure this takes up the full available width */
+  width: 70%; /* Ensure this takes up the full available width */
 }
 
 /* Image wrapper inside segment */
@@ -39,7 +39,7 @@
 
 /* Segment Image */
 .segment-image {
-  width: 100%;
+  width: 45%;
   height: auto;
   object-fit: cover;
   border-radius: 8px;
@@ -76,6 +76,7 @@
 /* Mobile Adjustments */
 @media (max-width: 768px) {
   .segment-inner {
+    width: 100%;
     flex-direction: column;
     align-items: center;
     text-align: center;

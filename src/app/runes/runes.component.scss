@@ -1,4 +1,4 @@
-/* runes.component.scss */
+//runes.component.scss
 @use '../../variables' as vars;
 
 .project-image {
@@ -11,11 +11,8 @@
   width: 100%;
 }
 
-/* Container for centering content */
-.runes-container {
-  max-width: 70%; /* Limit width to 70% of the screen */
-  margin: 0 auto; /* Center content horizontally */
-  padding: 0 2rem; /* Add padding for some space on left and right */
+.runes-page {
+  padding: 0.2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -29,21 +26,20 @@
 }
 
 .video-row {
+  width: 95%;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 2rem;
   justify-content: center;
   border-radius: 10px;
-  overflow: hidden;
 
   &.reverse {
     flex-direction: row-reverse;
   }
 
   .video-embed {
-    width: 100%;  /* Full width in landscape mode */
-    max-width: 100%;
+    width: 45%;
     height: auto;
     border-radius: 8px;
   }
@@ -64,6 +60,8 @@
     margin: 0;
     padding: 0;
     border-radius: 8px;
+    width: 45%;
+    height: auto;
     font-size: 1.3rem;
   }
 }
@@ -120,6 +118,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: 70%;
 }
 
 /* ----- Responsive: Mobile portrait mode ----- */
@@ -162,7 +161,7 @@
 
   /* Remove the reversed layout for mobile */
   .video-row.reverse {
-    flex-direction: column !important; /* Force stacking on mobile */
+  flex-direction: column !important; /* Force stacking on mobile */
   }
 
   img, video, iframe {
@@ -171,46 +170,13 @@
   }
 }
 
-/* ----- Landscape Mode Adjustments ----- */
+/* ----- Responsive: Mobile landscape mode (optional, extra fine tuning) ----- */
 @media (orientation: landscape) and (max-width: 768px) {
-  /* Fix the layout for the Rune Segment Images and Sidebar */
-  .runes-layout {
-    flex-direction: row;
-    padding: 0 1rem;
-  }
-
-  .runes-sidebar {
-    width: 30%;  /* Sidebar takes up a larger portion */
-    min-width: 140px;
-    margin-right: 1rem;
-  }
-
-  .runes-content {
-    width: 70%;  /* Content takes the remaining width */
-  }
-
-  .segment-inner {
-    flex-direction: row;
-    gap: 15px;
-    width: 100%; /* Ensure the segment layout respects screen width */
-  }
-
-  /* Ensure image and content inside the segment share space */
-  .image-wrapper, .content-wrapper {
-    width: 50%;  /* Split space equally between image and content */
-  }
-
-  /* Video rows should not overflow */
   .video-row {
-    width: 100%;  /* Ensure videos take up the full width */
-    justify-content: space-between; /* Ensure proper spacing between video and description */
-  }
-
-  .video-embed {
-    width: 45%; /* Limit video width to 45% */
-  }
-
-  .video-description {
-    width: 45%; /* Limit description width to 45% */
+    flex-direction: row;
+    align-items: center;
+    .video-embed, .video-description {
+      width: 45%;
+    }
   }
 }
