@@ -97,7 +97,7 @@
 .video-row {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
+  align-items: center;
   gap: 2rem;
   width: 100%;
   justify-content: center;
@@ -105,10 +105,11 @@
 
   .video-embed,
   .project-image {
-    width: 50%;
+    width: 100%;
     height: auto;
     aspect-ratio: 16/9;
     border-radius: 8px;
+    object-fit: contain;
   }
 
   .video-description {
