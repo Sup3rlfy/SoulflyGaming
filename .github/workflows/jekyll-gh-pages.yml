@@ -1,4 +1,4 @@
-name: Build and Deploy to sup3rlfy.github.io
+name: Build and Deploy to sup3rlfy.github.io yes!
 
 on:
   push:
