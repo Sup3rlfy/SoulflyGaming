@@ -1,6 +1,7 @@
 //runes.component.scss
 @use '../../variables' as vars;
 
+/* ----- General Styles ----- */
 .project-image {
   transition: opacity 0.5s ease-in-out;
 }
@@ -8,81 +9,36 @@
 .centered-headline {
   text-align: center;
   margin: 0 auto;
-  width: 100%;
+  width: 90%; /* Always 90% width for navbar and big headings */
 }
 
+/* ----- Page Layout ----- */
 .runes-page {
   padding: 0.2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  align-items: center; /* Center the whole page */
 }
 
-/* ----- Video Section ----- */
-.video-section {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem; // Space between rows
-}
-
-.video-row {
-  width: 95%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2rem;
-  justify-content: center;
-  border-radius: 10px;
-
-  &.reverse {
-    flex-direction: row-reverse;
-  }
-
-  .video-embed {
-    width: 45%;
-    height: 100%;
-    border-radius: 8px;
-  }
-
-  .video-description {
-    padding: 1rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: vars.$gold-700;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-
-  .short-description {
-    font-style: italic;
-    color: vars.$gold-100;
-    margin: 0;
-    padding: 0;
-    border-radius: 8px;
-    height: auto;
-    font-size: 1.3rem;
-  }
-}
-
-/* ----- Layout: Sidebar and Content ----- */
+/* ----- Sidebar + Content Layout ----- */
 .runes-layout {
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  width: 60%;    // ✅ Limit total width like your other pages
-  margin: 0 auto;       // ✅ Center it horizontally on desktop
-  width: 100%;          // ✅ Let it scale nicely (especially mobile)
-  padding: 0rem;      // ✅ Optional, give it slight breathing room
+  width: 60%;    /* Page content centered and limited to 60% */
+  max-width: 1200px; /* Optional: protect from being too wide on big screens */
+  margin: 0 auto;   /* Center horizontally */
+  padding: 0rem;
 }
 
 .runes-sidebar {
   position: sticky;
   top: 60px;
   align-self: flex-start;
-  width: 15%;
+  width: 20%;
   min-width: 140px;
-  max-width: 180px;
-  margin-right: 2rem;
+  max-width: 200px;
 }
 
 .sidebar-box {
@@ -121,60 +77,95 @@
   gap: 2rem;
 }
 
-/* ----- Responsive: Mobile portrait mode ----- */
-@media (max-width: 768px) {
+/* ----- Video Section Layout (Desktop) ----- */
+.video-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.video-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  justify-content: center;
+  border-radius: 10px;
+
+  .video-embed, .project-image {
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .video-description {
+    width: 50%;
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: vars.$gold-700;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .short-description {
+    font-style: italic;
+    color: vars.$gold-100;
+    margin: 0;
+    padding: 0;
+    font-size: 1.3rem;
+  }
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+/* ----- Mobile Portrait + Landscape (true mobile detection) ----- */
+@media (hover: none) and (pointer: coarse) {
   .runes-layout {
-    flex-direction: column; /* Stack layout vertically */
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1rem;
   }
 
   .runes-sidebar {
-    width: 100%; /* Sidebar takes 25% of the screen width */
+    position: static;
+    width: 100%;
     margin: 0 auto 2rem auto;
-    position: static; /* Reset sticky to normal position */
-    top: auto; /* Make sure no sticky top behavior */
-    margin-right: 0; /* Remove any extra right margin */
     min-width: 140px;
     max-width: 500px;
   }
 
   .runes-content {
-    width: 100%; /* Main content takes the remaining 75% */
-    margin: 0 auto; /* Center the content */
+    width: 100%;
   }
 
   .video-row {
-    flex-direction: column; /* Stack video and description vertically */
+    flex-direction: column; /* Stack image/video + description vertically */
     align-items: center;
     gap: 1rem;
 
-    .video-embed {
-      width: 95%; /* Ensure video is centered and responsive */
-      height: auto;
-      aspect-ratio: 16/9;
+    .video-embed, .project-image {
+      width: 100%;
+      aspect-ratio: 16/9; /* Nice responsive video */
+      max-width: 600px; /* Optional: prevent over stretching */
     }
 
     .video-description {
-      width: 95%; /* Ensure description is centered and fits */
+      width: 100%;
       text-align: center;
     }
   }
 
-  /* Remove the reversed layout for mobile */
   .video-row.reverse {
-  flex-direction: column !important; /* Force stacking on mobile */
-  }
-
-  img, video, iframe {
-    max-width: 100%;
-    height: auto;
+    flex-direction: column; /* Always normal stacking on mobile */
   }
 }
 
-/* ----- Responsive: Mobile landscape mode (optional, extra fine tuning) ----- */
-@media (orientation: landscape) and (max-width: 768px) {
-  .video-row {
-    flex-direction: row;
-    align-items: center;
-    
-  }
+/* ----- Default Media Resets (for both mobile and desktop) ----- */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
 }
