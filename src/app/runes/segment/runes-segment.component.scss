@@ -7,19 +7,24 @@
   visibility: hidden;
 }
 
-/* Segment Styles */
 .segment {
   margin-bottom: 2px;
   padding: 10px;
   border-radius: 10px;
   background-color: vars.$dark-gray-700;
-  width: 70%; 
+  width: 70%; /* original width, now we will increase this for more space */
+  margin-left: 15%; /* This shifts it more towards the right side of the screen */
 
-  &.empty {
-    visibility: hidden;
-    height: 0;
-    margin: 0;
-    padding: 0;
+  /* Optional: Use a media query to adjust on smaller screens */
+  @media (max-width: 768px) {
+    width: 95%; /* Ensure it takes more space on smaller screens */
+    margin-left: 5%; /* Bring it back to center on mobile */
+  }
+
+  /* Optional: Ensure right side alignment on wider screens */
+  @media (min-width: 1200px) {
+    width: 60%; /* More control on large screens */
+    margin-left: 20%; /* Off-center it more on large screens */
   }
 }
 
