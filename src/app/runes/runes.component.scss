@@ -27,25 +27,27 @@
 
 .video-row {
   display: flex;
-  flex-direction: row;
+  flex-direction: column; /* Ensure videos and descriptions stack vertically in landscape */
   align-items: center;
-  gap: 2rem;
+  gap: 1rem; /* Reduced gap */
   justify-content: center;
+  width: 100%;
   border-radius: 10px;
   overflow: hidden;
 
   &.reverse {
-    flex-direction: row-reverse;
+    flex-direction: column-reverse;
   }
 
   .video-embed {
-    width: 100%;  /* Full width in landscape mode */
-    max-width: 100%;
+    width: 95%;  /* Make video take up 95% of screen width */
     height: auto;
+    aspect-ratio: 16/9;
     border-radius: 8px;
   }
 
   .video-description {
+    width: 95%;  /* Make description take up 95% of screen width */
     padding: 1rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -69,7 +71,7 @@
 .runes-layout {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 1rem; /* Reduced gap between sidebar and content */
   padding-top: 1rem;
 }
 
@@ -77,10 +79,12 @@
   position: sticky;
   top: 60px;
   align-self: flex-start;
-  width: 15%;
+  width: 30%; /* Sidebar takes up 30% of screen width */
   min-width: 140px;
-  max-width: 180px;
-  margin-right: 2rem;
+  max-width: 200px;
+  margin-right: 1rem;
+  overflow-y: auto; /* Make the sidebar scrollable if content overflows */
+  height: calc(100vh - 60px); /* Ensure sidebar takes up full screen height */
 }
 
 .sidebar-box {
@@ -180,6 +184,8 @@
     width: 30%;  /* Sidebar takes up a larger portion */
     min-width: 140px;
     margin-right: 1rem;
+    overflow-y: auto; /* Make sidebar scrollable */
+    height: calc(100vh - 60px); /* Full screen height for sidebar */
   }
 
   .runes-content {
@@ -194,20 +200,28 @@
 
   /* Ensure image and content inside the segment share space */
   .image-wrapper, .content-wrapper {
-    width: 50%;  /* Split space equally between image and content */
+    width: 50%;  /* Share space equally between image and content */
   }
 
-  /* Video rows should not overflow */
   .video-row {
-    width: 100%;  /* Ensure videos take up the full width */
-    justify-content: space-between; /* Ensure proper spacing between video and description */
+    flex-direction: column; /* Make video stack above its description */
+    gap: 1rem; /* Reduced gap */
+    width: 100%;  /* Ensure videos take up full width */
   }
 
   .video-embed {
-    width: 45%; /* Limit video width to 45% */
+    width: 95%; /* Video occupies 95% of the width */
+    height: auto;
+    aspect-ratio: 16/9;
   }
 
   .video-description {
-    width: 45%; /* Limit description width to 45% */
+    width: 95%; /* Description occupies 95% of the width */
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: vars.$gold-700;
+    border-radius: 8px;
+    cursor: pointer;
   }
 }
