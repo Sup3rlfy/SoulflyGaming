@@ -1,5 +1,6 @@
 //sisyphus.component.scss
 @use './variables' as vars;
+
 .sisyphus-page {
   text-align: center;
   color: #eee;
@@ -9,11 +10,11 @@
     margin: 1rem auto;
     display: block;
     border-radius: 8px;
-    overflow: hidden;  /* Hide overflow content */
-    max-width: 100%;   /* Ensure full width up to 100% */
-    width: 100%;       /* Make it responsive */
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9;  /* Keep aspect ratio */
+    aspect-ratio: 16 / 9;
   }
 
   .links {
@@ -22,6 +23,8 @@
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
+    /* Added property to adjust spacing behavior on larger screens */
+    margin-top: 2rem; /* This was a bit too small, adjust accordingly */
   }
 
   .steam-link,
@@ -42,16 +45,16 @@
   }
 }
 
-// --- Mobile and small screen responsiveness ---
+/* --- Mobile and small screen responsiveness --- */
 @media (max-width: 768px) {
   .sisyphus-page {
     padding: 0.5rem;
 
     .steam-widget {
       width: 100%;
-      max-width: 100%;     /* Ensure it takes up the full width */
+      max-width: 100%;
       height: auto;
-      aspect-ratio: 16 / 9; /* Maintain aspect ratio */
+      aspect-ratio: 16 / 9;
     }
 
     .links {

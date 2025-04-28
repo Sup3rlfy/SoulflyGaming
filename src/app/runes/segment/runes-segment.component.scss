@@ -1,4 +1,4 @@
-//runes-segment.component.scss
+/* runes-segment.component.scss */
 @use '../../../variables' as vars;
 
 /* Empty Anchor (for non-visible segments) */
@@ -25,14 +25,14 @@
 /* Segment inner layout */
 .segment-inner {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 15px;
 }
 
 /* Image wrapper inside segment */
 .image-wrapper {
   flex-shrink: 0;
-  width: 500px;
+  width: 100%;  /* Default width for portrait mode */
   height: auto;
 }
 
@@ -96,14 +96,15 @@
   }
 }
 
-/* Mobile Landscape (optional for horizontal mobile) */
+/* Landscape Mode Adjustments */
 @media (orientation: landscape) and (max-width: 768px) {
   .segment-inner {
     flex-direction: row;
     align-items: center;
     text-align: left;
+
     .image-wrapper, .content-wrapper {
-      width: 45%;
+      width: 50%;  /* Share space equally between image and content */
     }
   }
 }
