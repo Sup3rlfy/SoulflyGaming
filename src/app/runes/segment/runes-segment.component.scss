@@ -13,6 +13,7 @@
   padding: 10px;
   border-radius: 10px;
   background-color: vars.$dark-gray-700;
+  width: 70%; 
 
   &.empty {
     visibility: hidden;
@@ -27,7 +28,7 @@
   display: flex;
   flex-direction: row;
   gap: 15px;
-  width: 70%; /* Ensure this takes up the full available width */
+  width: 100%;
 }
 
 /* Image wrapper inside segment */
@@ -39,7 +40,7 @@
 
 /* Segment Image */
 .segment-image {
-  width: 45%;
+  width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 8px;
