@@ -64,16 +64,16 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) or (orientation: landscape) and (max-width: 768px){
   .segment-inner {
     width: 100%;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: left;
   }
 
   .image-wrapper {
-    width: 100%;
+    width: 80% !important;
   }
 
   .content-wrapper {
@@ -86,20 +86,5 @@
 
   .segment-content {
     font-size: 1rem;
-  }
-}
-
-@media (orientation: landscape) and (max-width: 768px) {
-  .segment-inner {
-    flex-direction: row;
-    align-items: center;
-    text-align: left;
-
-    .image-wrapper{
-      width: 70% !important;
-    };
-    .content-wrapper {
-      width: 95% !important;
-    }
   }
 }

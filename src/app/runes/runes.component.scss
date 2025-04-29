@@ -142,7 +142,10 @@
 }
 
 /* ----- Mobile Portrait + Landscape (true mobile detection) ----- */
-@media (max-width: 768px) {
+@media (max-width: 768px) or (orientation: landscape) and (max-width: 768px){
+  .content{
+    width: 95% !important;
+  }
   .runes-layout {
     flex-direction: column;
     width: 95% !important;
@@ -179,7 +182,10 @@
 
     .video-description {
       width: 100% !important; /* Description takes full width of the wider row */
-      text-align: center;
+      text-align: left !important;
+    }
+    .short-description {
+      text-align: left !important;
     }
   }
 
