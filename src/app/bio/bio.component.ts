@@ -15,7 +15,7 @@ export class BioComponent implements OnInit {
     'assets/images/bio/Me3.jpg',
     'assets/images/bio/Me4.jpg',
     'assets/images/bio/Me5.jpg',
-    // Add more images here
+    'assets/images/bio/Me6.jpg',
   ];
 
   currentImage = 0;

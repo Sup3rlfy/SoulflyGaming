@@ -87,12 +87,11 @@ main {
 
 /* Responsive design */
 @media (max-width: 768px) {
+  .content {
+    width: 100% !important;
+  }
   .content-wrapper {
     flex-direction: column;
-  }
-
-  .content {
-    width: 100%;
   }
 
   .ads-container {
