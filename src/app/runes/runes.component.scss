@@ -189,19 +189,19 @@
   }
 
   .segment-inner {
-    flex-direction: row !important; /* Keep image and content in a row */
+    flex-direction: column !important; /* Keep image and content in a row */
     align-items: flex-start !important; /* Align items to the start */
     text-align: left;
     width: 100% !important;
   }
 
   .image-wrapper {
-    width: 45% !important; /* Adjust image width */
+    width: 90% !important; /* Adjust image width */
     margin-right: 2rem; /* Add some spacing */
   }
 
   .content-wrapper {
-    width: 55% !important; /* Adjust content width */
+    width: 100% !important; /* Adjust content width */
   }
 
   .segment-title {
