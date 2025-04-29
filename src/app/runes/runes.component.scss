@@ -144,7 +144,7 @@
 /* ----- Mobile Styles (Horizontal Phones: 769px to 1200px) ----- */
 @media (min-width: 769px) and (max-width: 1200px) {
   .runes-layout {
-    flex-direction: row; /* Keep sidebar and content in a row */
+    flex-direction: row !important; /* Keep sidebar and content in a row */
     width: 95% !important; /* Give it a wider width on horizontal mobile */
     margin: 0 auto; /* Center the layout */
   }
@@ -177,7 +177,7 @@
   .runes-content {
     flex: 1; /* Content takes the remaining space */
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
     gap: 2rem;
     width: auto !important; /* Adjust width based on available space */
     margin-left: 0;
@@ -216,7 +216,7 @@
 /* ----- Mobile Portrait Styles (Screens up to 768px) ----- */
 @media (max-width: 768px) {
   .runes-layout {
-    flex-direction: column;
+    flex-direction: column !important;
     width: 100% !important; /* Ensure it takes full width */
   }
 
@@ -232,11 +232,12 @@
 
   .runes-content {
     width: 100% !important;
+    flex-direction: column !important;
     margin: 0 auto;
   }
 
   .video-row {
-    flex-direction: column;
+    flex-direction: column !important;
     align-items: center;
     gap: 1rem;
     width: 100% !important; /* Make video row wider on mobile */
