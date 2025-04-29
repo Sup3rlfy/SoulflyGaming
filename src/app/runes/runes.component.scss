@@ -158,7 +158,7 @@
   }
 
   .runes-content {
-    width: 100%;
+    width: 95%;
     margin: 0 auto;
   }
 
@@ -166,15 +166,18 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    width: 95%; /* Make video row wider on mobile */
+    margin-left: auto;
+    margin-right: auto;
 
     .video-embed {
-      width: 95%;
+      width: 100%; /* Video takes full width of the wider row */
       height: auto;
       aspect-ratio: 16/9;
     }
 
     .video-description {
-      width: 95%;
+      width: 100%; /* Description takes full width of the wider row */
       text-align: center;
     }
   }
@@ -186,7 +189,10 @@
   img,
   video,
   iframe {
-    max-width: 100%;
+    max-width: 80%; /* Keep images at around 80% width on mobile */
     height: auto;
+    display: block; /* Ensure images are block-level elements to be centered */
+    margin-left: auto;
+    margin-right: auto;
   }
 }
