@@ -64,7 +64,33 @@
   }
 }
 
-@media (max-width: 1200px) {
+/* Styles for Horizontal Phones (769px to 1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .segment-inner {
+    flex-direction: row !important; /* Keep image and content side by side */
+    align-items: flex-start !important; /* Align to the top */
+    text-align: left;
+    width: 100% !important;
+  }
+
+  .image-wrapper {
+    width: 45% !important; /* Adjust image width for side-by-side layout */
+  }
+
+  .content-wrapper {
+    width: 55% !important; /* Adjust content width for side-by-side layout */
+  }
+
+  .segment-title {
+    font-size: 1rem; /* Adjust font size for smaller screens if needed */
+  }
+
+  .segment-content {
+    font-size: 0.9rem; /* Adjust font size for smaller screens if needed */
+  }
+}
+
+@media (max-width: 768px) {
   .segment-inner {
     width: 100% !important;
     flex-direction: column;

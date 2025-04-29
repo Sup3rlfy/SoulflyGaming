@@ -141,14 +141,83 @@
   }
 }
 
-/* ----- Mobile Portrait + Landscape (true mobile detection) ----- */
-@media (max-width: 1200px) {
-  .content{
-    width: 95% !important;
+/* ----- Mobile Styles (Horizontal Phones: 769px to 1200px) ----- */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .runes-layout {
+    flex-direction: row; /* Keep sidebar and content in a row */
+    width: 95% !important; /* Give it a wider width on horizontal mobile */
+    margin: 0 auto; /* Center the layout */
   }
+
+  .runes-sidebar {
+    position: static; /* No longer sticky on horizontal mobile */
+    top: auto;
+    margin: 0 2rem 0 0; /* Add some right margin to separate from content */
+    align-self: flex-start;
+    flex: 0 0 12%; /* Maintain 12% width */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch; /* Make buttons take full width of sidebar */
+    min-width: unset; /* Allow width to be controlled by flex-basis */
+    max-width: unset;
+  }
+
+  .sidebar-box {
+    width: 100%; /* Make the box fill the sidebar width */
+  }
+
+  .sidebar-button {
+    display: block;
+    width: 100%; /* Make buttons fill the sidebar width */
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .runes-content {
+    flex: 1; /* Content takes the remaining space */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: auto !important; /* Adjust width based on available space */
+    margin-left: 0;
+  }
+
+  /* Apply these styles to the runes-segment component within this context */
+  .content {
+    width: 100% !important;
+  }
+
+  .segment-inner {
+    flex-direction: row !important; /* Keep image and content in a row */
+    align-items: flex-start !important; /* Align items to the start */
+    text-align: left;
+    width: 100% !important;
+  }
+
+  .image-wrapper {
+    width: 45% !important; /* Adjust image width */
+    margin-right: 2rem; /* Add some spacing */
+  }
+
+  .content-wrapper {
+    width: 55% !important; /* Adjust content width */
+  }
+
+  .segment-title {
+    font-size: 1rem; /* Adjust font size if needed */
+  }
+
+  .segment-content {
+    font-size: 0.9rem; /* Adjust font size if needed */
+  }
+}
+
+/* ----- Mobile Portrait Styles (Screens up to 768px) ----- */
+@media (max-width: 768px) {
   .runes-layout {
     flex-direction: column;
-    width: 95% !important;
+    width: 100% !important; /* Ensure it takes full width */
   }
 
   .runes-sidebar {
@@ -175,15 +244,16 @@
     margin-right: auto;
 
     .video-embed {
-      width: 100% !important; /* Video takes full width of the wider row */
+      width: 100% !important; /* Video takes full width */
       height: auto;
       aspect-ratio: 16/9;
     }
 
     .video-description {
-      width: 100% !important; /* Description takes full width of the wider row */
+      width: 100% !important; /* Description takes full width */
       text-align: left !important;
     }
+
     .short-description {
       text-align: left !important;
     }
@@ -192,18 +262,21 @@
   .video-row.reverse {
     flex-direction: column !important;
   }
-  video{
-    max-width: 80% !important;
+
+  video {
+    max-width: 90% !important;
   }
+
   img,
   iframe {
     max-width: 100% !important;
   }
+
   img,
   video,
   iframe {
     height: auto;
-    display: block; /* Ensure images are block-level elements to be centered */
+    display: block;
     margin-left: auto;
     margin-right: auto;
   }
