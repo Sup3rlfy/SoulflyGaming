@@ -211,6 +211,52 @@
   .segment-content {
     font-size: 0.9rem; /* Adjust font size if needed */
   }
+
+  .video-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    justify-content: center;
+    border-radius: 10px;
+  
+    .video-embed,
+    .project-image {
+      width: 50%;
+      height: auto;
+      aspect-ratio: 16/9;
+      border-radius: 8px;
+      object-fit: contain;
+      max-height: unset;
+    }
+  
+    .video-description {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+      font-size: 1rem;
+      line-height: 1.4;
+      color: vars.$gold-700;
+      border-radius: 8px;
+      cursor: pointer;
+      height: auto;
+    }
+  
+    .short-description {
+      width: 100%;
+      font-style: italic;
+      color: vars.$gold-100;
+      margin: 0;
+      padding: 0;
+      font-size: 1.3rem;
+    }
+  
+    &.reverse {
+      flex-direction: row-reverse;
+    }
 }
 
 /* ----- Mobile Portrait Styles (Screens up to 768px) ----- */
