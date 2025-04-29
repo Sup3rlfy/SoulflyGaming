@@ -95,9 +95,11 @@
     align-items: center;
     text-align: left;
 
-    .image-wrapper,
+    .image-wrapper{
+      width: 70% !important;
+    };
     .content-wrapper {
-      width: 45%;
+      width: 95% !important;
     }
   }
 }

@@ -145,6 +145,7 @@
 @media (max-width: 768px) {
   .runes-layout {
     flex-direction: column;
+    width: 95% !important;
   }
 
   .runes-sidebar {
@@ -158,7 +159,7 @@
   }
 
   .runes-content {
-    width: 95%;
+    width: 100% !important;
     margin: 0 auto;
   }
 
@@ -166,18 +167,18 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    width: 95%; /* Make video row wider on mobile */
+    width: 100% !important; /* Make video row wider on mobile */
     margin-left: auto;
     margin-right: auto;
 
     .video-embed {
-      width: 100%; /* Video takes full width of the wider row */
+      width: 100% !important; /* Video takes full width of the wider row */
       height: auto;
       aspect-ratio: 16/9;
     }
 
     .video-description {
-      width: 100%; /* Description takes full width of the wider row */
+      width: 100% !important; /* Description takes full width of the wider row */
       text-align: center;
     }
   }
@@ -185,11 +186,16 @@
   .video-row.reverse {
     flex-direction: column !important;
   }
-
+  video{
+    max-width: 80% !important;
+  }
+  img,
+  iframe {
+    max-width: 100% !important;
+  }
   img,
   video,
   iframe {
-    max-width: 80%; /* Keep images at around 80% width on mobile */
     height: auto;
     display: block; /* Ensure images are block-level elements to be centered */
     margin-left: auto;
