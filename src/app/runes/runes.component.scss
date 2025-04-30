@@ -151,16 +151,18 @@
 
   .runes-sidebar {
     position: static; /* No longer sticky on horizontal mobile */
-    top: auto;
+    top: 20px;
     margin: 0 2rem 0 0; /* Add some right margin to separate from content */
     align-self: flex-start;
-    flex: 0 0 12%; /* Maintain 12% width */
+    flex: 0 0 25%; /* Maintain 12% width */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch; /* Make buttons take full width of sidebar */
     min-width: unset; /* Allow width to be controlled by flex-basis */
     max-width: unset;
+    height: 70vh;
+    overflow-y: auto;
   }
 
   .sidebar-box {
@@ -181,6 +183,7 @@
     gap: 2rem;
     width: auto !important; /* Adjust width based on available space */
     margin-left: 0;
+    overflow-y: auto;
   }
 
   /* Apply these styles to the runes-segment component within this context */
