@@ -1,6 +1,6 @@
 <!--runes.component.html-->
 <div class="runes-page">
-  <h1 class="centered-headline">‎‎‎Runes of Elana ‎‎‎ </h1>
+  <h1 class="centered-headline">‎‎Runes of Elana ‎‎ </h1>
   
 
 
@@ -8,10 +8,12 @@
 <div class="runes-layout">
   <!-- Sidebar Menu -->
   <nav class="runes-sidebar">
-    <div class="sidebar-box">
-      <a *ngFor="let segment of segmentList" class="sidebar-button" [href]="'/runes#' + segment.id">
-        {{ segment.title }}
-      </a>
+    <div class="sidebar-scroll-container">
+      <div class="sidebar-box">
+        <a *ngFor="let segment of segmentList" class="sidebar-button" [href]="'/runes#' + segment.id">
+          {{ segment.title }}
+        </a>
+      </div>
     </div>
   </nav>
 

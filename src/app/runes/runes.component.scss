@@ -148,11 +148,12 @@
     flex-direction: row !important; /* Keep sidebar and content in a row */
     width: 95% !important; /* Give it a wider width on horizontal mobile */
     margin: 0 auto; /* Center the layout */
+    position: relative;
   }
 
   .runes-sidebar {
     position: sticky; /* No longer sticky on horizontal mobile */
-    top: 20px;
+    top: 60px;
     margin: 0 2rem 0 0; /* Add some right margin to separate from content */
     align-self: flex-start;
     flex: 0 0 30%; /* Maintain 12% width */
@@ -162,9 +163,16 @@
     align-items: stretch; /* Make buttons take full width of sidebar */
     min-width: unset; /* Allow width to be controlled by flex-basis */
     max-width: unset;
-    //height: calc(180vh - 80px); /* Initial height for scrollable sidebar, adjust 80px */
+    height: auto; /* Initial height for scrollable sidebar, adjust 80px */
     max-height: calc(300vh - 80px);
-    //overflow-y: auto;
+    overflow: hidden;
+  }
+  .sidebar-scroll-container {
+    overflow-y: auto;
+    max-height: calc(100vh - 80px); // Enable internal scroll
+    padding-right: 0.5rem; // Optional: padding for scrollbar space
+    overscroll-behavior: contain;
+    overflow: hidden;
   }
 
   .sidebar-box {
