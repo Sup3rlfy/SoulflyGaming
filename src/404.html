@@ -22,8 +22,16 @@
     }
 
     .error-container {
+      background-image: url('assets/Loot-Goblin.jpeg'); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 600px;
+      width: 100%;
+      color: white;
       text-align: center;
-      padding: 1rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
     }
 
     h1 {
@@ -34,7 +42,7 @@
 
     p {
       color: oklch(82% 0.15 95.57); /* gold-200 */
-      font-size: 1.1rem;
+      font-size: 1.5rem;
       margin-bottom: 2rem;
     }
 
@@ -44,7 +52,7 @@
       font-size: 1.2rem;
       padding: 0.5rem 1rem;
       background-color: oklch(16% 0.005 300); /* dark-gray-700 */
-      border-radius: 5px;
+      border-radius: 30px;
       transition: background-color 0.3s;
     }
 
@@ -78,27 +86,29 @@
     }
   </style>
 
-  <meta http-equiv="refresh" content="3; url=/" />
-</head>
-<script>
-  let countdown = 3;
-  const countdownEl = document.getElementById('countdown');
-
-  const interval = setInterval(() => {
-    countdown--;
-    countdownEl.textContent = countdown;
-    if (countdown === 0) {
-      clearInterval(interval);
-      window.location.href = '/';
-    }
-  }, 1000);
-</script>
 <body>
   <div class="error-container">
     <h1>404 - Page Not Found</h1>
     <p>Oops! Seems like a Loot-goblin carried away the page you were looking for.</p>
-    <p>Redirecting to the homepage in <span id="countdown">3</span>...</p>
+    <ul><li>Redirecting to the homepage in <span id="countdown">3</span> seconds!</li></ul>
     <a href="/" class="home-link">Back to Home</a>
   </div>
+
+  <script>
+    let countdown = 3;
+    const countdownEl = document.getElementById('countdown');
+
+    const updateCountdown = () => {
+      countdownEl.textContent = countdown;
+      if (countdown === 0) {
+        clearInterval(interval);
+        window.location.href = '/';
+      }
+      countdown--;
+    };
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+  </script>
 </body>
 </html>
