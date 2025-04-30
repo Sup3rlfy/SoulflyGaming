@@ -24,12 +24,25 @@
 }
 
 .image-wrapper {
-  flex-shrink: 0;
   width: 50%;
-  height: auto;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-wrapper img {
+  max-width: 100%;
+  height: auto;
+
+  /* Crop only if tall */
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+
+  /* Allow short images to show fully */
+  max-height: 100%;
 }
 
 .segment-image {
