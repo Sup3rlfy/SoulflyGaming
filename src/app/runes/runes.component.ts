@@ -46,10 +46,30 @@ export class RunesComponent {
                   isEmpty: false
     },
     {
-      id: 'curr',
-      title: 'Current Features',
-      image: 'assets/images/roe2.jpg',
-      content: [`video diary to see more`,
+      id: 'workingOn',
+      title: 'Current Challenges',
+      image: 'assets/images/Loot-Goblin.jpeg',
+      content: [
+        `- A basic npc/opponent mechanic`,
+        `- A funky lootgoblin, stealing all (trash) carfting materials they can lay their hands on, 
+            to help build goblin and orcish fortresses, while also picking up the occasional valuable item or coinage!!`,
+        `- Banking backend and UI, so players can start teleporting cash to their bank (at a small fee of course, bankers gotta live as well!)`,
+        `- Bugfixes`,
+      ],
+      isEmpty: false
+    },
+    {
+      id: 'implemented',
+      title: 'Implemented Features',
+      image: 'assets/images/roe1.jpg',
+      content: [`- Random generated overworld and outside maps with main focus on dungeons!`,
+        `- A wide array of items to pick up, drop and equip`,
+        `- Basic UI for inventory, equipment, wallet and tools, HP-, MP-, XP- and time display`,
+        `- A tool system, allowing for tools to be usable for multiple disciplines!`,
+        `- Mining and Digging`,
+        `- Connsumables featuring potions, scrolls and food`,
+        `- A lot of idea-finding :)`,
+        `- Sound system and area dependent background music`,
       ],
       isEmpty: false
     },
@@ -277,7 +297,7 @@ export class RunesComponent {
         '- top and bot menus deemed unnecessary for the time being',
         '- added bunch of items',
         '- added visual display for items',
-        "- switched utf-8 to unicode. sadly emojis won't work",
+        "- switched utf-8 to unicode. sadly emojis won't work - of course, the plan in the long run is to switch to individual images for each item or character",
         '- item description window started',
         '- reworked map-connections to allow for portals',
         '- added globe displays for hp/mp and bar displays for xp',

@@ -22,14 +22,14 @@
     }
 
     .error-container {
-      background-image: url('assets/Loot-Goblin.jpeg'); /* Replace with your image path */
+      background-image: url('assets/images/Loot-Goblin.jpeg'); /* Replace with your image path */
       background-size: cover;
       background-position: center;
       border-radius: 1rem;
       padding: 2rem;
       max-width: 600px;
       width: 100%;
-      color: white;
+      color: oklch(82% 0.15 95.57);
       text-align: center;
       box-shadow: 0 0 20px rgba(0,0,0,0.6);
     }
@@ -66,12 +66,14 @@
       background-color: oklch(96% 0.01 140); /* green-gray-100 */
       color: oklch(15% 0.06 140); /* green-dark-900 */
     }
-
     body.light-mode h1 {
       color: oklch(40% 0.13 140); /* green-700 */
     }
 
     body.light-mode p {
+      color: oklch(30% 0.12 140); /* green-800 */
+    }
+    body.light-mode .error-container {
       color: oklch(30% 0.12 140); /* green-800 */
     }
 
