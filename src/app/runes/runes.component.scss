@@ -153,7 +153,7 @@
 
   .runes-sidebar {
     position: sticky; /* No longer sticky on horizontal mobile */
-    top: 60px;
+    top: 40px;
     margin: 0 2rem 0 0; /* Add some right margin to separate from content */
     align-self: flex-start;
     flex: 0 0 30%; /* Maintain 12% width */
@@ -169,7 +169,7 @@
   }
   .sidebar-scroll-container {
     overflow-y: auto;
-    max-height: calc(100vh - 80px); // Enable internal scroll
+    max-height: calc(200vh - 80px); // Enable internal scroll
     padding-right: 0.5rem; // Optional: padding for scrollbar space
     overscroll-behavior: contain;
     overflow: hidden;
