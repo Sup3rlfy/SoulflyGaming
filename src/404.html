@@ -1,13 +1,13 @@
-
+<!--404.html-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>404 - Page Not Found</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Link to your compiled CSS file -->
+
   <style>
-    /* Inline styles for the 404 page */
+    /* Inline styles for the 404 page with hardcoded values */
     body {
       margin: 0;
       font-family: sans-serif;
@@ -17,6 +17,8 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      background-color: oklch(15% 0.005 300); /* dark-gray-900 */
+      color: oklch(75% 0.17 95.57); /* gold-300 */
     }
 
     .error-container {
@@ -26,77 +28,77 @@
 
     h1 {
       font-size: 4rem;
-      color: var(--gold-700);
+      color: oklch(50% 0.18 95.57); /* gold-700 */
       margin-bottom: 1rem;
     }
 
     p {
-      color: var(--gold-200);
+      color: oklch(82% 0.15 95.57); /* gold-200 */
       font-size: 1.1rem;
       margin-bottom: 2rem;
     }
 
     .home-link {
-      color: var(--gold-300);
+      color: oklch(75% 0.17 95.57); /* gold-300 */
       text-decoration: none;
       font-size: 1.2rem;
       padding: 0.5rem 1rem;
-      background-color: var(--dark-gray-700);
+      background-color: oklch(16% 0.005 300); /* dark-gray-700 */
       border-radius: 5px;
       transition: background-color 0.3s;
     }
 
     .home-link:hover {
-      color: var(--gold-100);
-      background-color: var(--dark-gray-600);
+      color: oklch(90% 0.12 95.57); /* gold-100 */
+      background-color: oklch(36.98% 0.014 302.71); /* gray-700 */
     }
 
     /* Light Mode */
     body.light-mode {
-      background-color: var(--green-gray-100);
-      color: var(--green-dark-900);
+      background-color: oklch(96% 0.01 140); /* green-gray-100 */
+      color: oklch(15% 0.06 140); /* green-dark-900 */
     }
 
     body.light-mode h1 {
-      color: var(--green-700);
+      color: oklch(40% 0.13 140); /* green-700 */
     }
 
     body.light-mode p {
-      color: var(--green-800);
+      color: oklch(30% 0.12 140); /* green-800 */
     }
 
     body.light-mode .home-link {
-      color: var(--green-600);
-      background-color: var(--green-300);
+      color: oklch(50% 0.14 140); /* green-600 */
+      background-color: oklch(75% 0.09 140); /* green-300 */
     }
 
     body.light-mode .home-link:hover {
-      background-color: var(--green-100);
-      color: var(--green-800);
+      background-color: oklch(90% 0.05 140); /* green-100 */
+      color: oklch(30% 0.12 140); /* green-800 */
     }
   </style>
+
+  <meta http-equiv="refresh" content="3; url=/" />
 </head>
+<script>
+  let countdown = 3;
+  const countdownEl = document.getElementById('countdown');
+
+  const interval = setInterval(() => {
+    countdown--;
+    countdownEl.textContent = countdown;
+    if (countdown === 0) {
+      clearInterval(interval);
+      window.location.href = '/';
+    }
+  }, 1000);
+</script>
 <body>
   <div class="error-container">
     <h1>404 - Page Not Found</h1>
-    <p>Oops! Seems like a Loot-goblin carried away the page you were looking for. Try again?</p>
+    <p>Oops! Seems like a Loot-goblin carried away the page you were looking for.</p>
+    <p>Redirecting to the homepage in <span id="countdown">3</span>...</p>
     <a href="/" class="home-link">Back to Home</a>
   </div>
 </body>
 </html>
-<!-- src/404.html 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Page Not Found</title>
-  <meta http-equiv="refresh" content="0; url=/" />
-</head>
-<body>
-  <h1>404 - Page Not Found</h1>
-  <p>Oops! Seems like a Loot-goblin carried away the page you were looking for. Try again?</p>
-  <p>If you are not redirected, <a href="/">click here</a>.</p>
-</body>
-</html>
--->
