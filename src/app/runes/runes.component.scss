@@ -172,20 +172,12 @@
     padding-right: 0.5rem; // Optional: padding for scrollbar space
     scroll-behavior: smooth;
     overscroll-behavior: contain;
-    align-self: flex-start !important;
-    align-items: flex-start !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
     //overflow: hidden;
   }
 
   .sidebar-box {
     width: 100%; /* Make the box fill the sidebar width */
     border-radius: 8px;
-    align-self: flex-start !important;
-    align-items: flex-start !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
   }
 
   .sidebar-button {
