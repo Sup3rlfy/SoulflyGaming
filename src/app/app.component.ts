@@ -29,7 +29,11 @@ export class AppComponent implements OnInit {
   // Toggle between light and dark modes
   toggleTheme(): void {
     this.isLightMode = !this.isLightMode;
-    document.body.classList.toggle('light-mode', this.isLightMode);
+    if (this.isLightMode) {
+      document.body.classList.add('light-mode');
+    } else {
+      document.body.classList.remove('light-mode');
+    }
   }
 
   ngOnInit() {
