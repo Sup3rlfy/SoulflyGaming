@@ -164,12 +164,12 @@
     min-width: unset; /* Allow width to be controlled by flex-basis */
     max-width: unset;
     height: auto; /* Initial height for scrollable sidebar, adjust 80px */
-    max-height: calc(300vh - 80px);
+    max-height: calc(500vh - 40px);
     overflow: hidden;
   }
   .sidebar-scroll-container {
     overflow-y: auto;
-    max-height: calc(200vh - 80px); // Enable internal scroll
+    max-height: calc(500vh - 40px); // Enable internal scroll
     padding-right: 0.5rem; // Optional: padding for scrollbar space
     overscroll-behavior: contain;
     overflow: hidden;
