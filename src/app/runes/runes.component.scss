@@ -164,15 +164,23 @@
     min-width: unset; /* Allow width to be controlled by flex-basis */
     max-width: unset;
     height: 80vh !important; 
+    overflow-x: hidden;
     //max-height: calc(500vh - 40px);
   }
   .sidebar-scroll-container {
-    overflow-y: auto;
-    max-height: auto; // Enable internal scroll
+    overflow-y: auto;     // Enable vertical scroll
+    overflow-x: hidden;   // Prevent horizontal scroll
+    max-height: auto;     // Enable internal scroll
     padding-right: 0.5rem; // Optional: padding for scrollbar space
     scroll-behavior: smooth;
     overscroll-behavior: contain;
     //overflow: hidden;
+
+    &::-webkit-scrollbar { // Optional: hide scrollbar (for WebKit browsers like Chrome/Safari)
+    width: 0px;
+    background: transparent;   // Optional: hide scrollbar track
+  }
+    scrollbar-width: none; // Firefox: hide scrollbar
   }
 
   .sidebar-box {
