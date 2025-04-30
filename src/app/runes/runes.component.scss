@@ -36,6 +36,7 @@
   position: sticky;
   top: 60px;
   align-self: flex-start;
+  align-items: flex-start;
   flex: 0 0 12%;
   display: flex;
   flex-direction: column;
@@ -50,7 +51,7 @@
   padding: 0.3rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  width: 100%; /* Make the sidebar box take full width of sidebar */
+  width: 100%; 
 }
 
 .sidebar-button {
@@ -78,12 +79,12 @@
 }
 
 .runes-content {
-  flex: 1; /* Allow content to take up remaining space */
+  flex: 1; 
   display: flex;
-  flex-direction: column;
+  flex-direction: column !important;
   gap: 2rem;
-  width: calc(100% - 12%); /* Adjusted width to account for the sidebar */
-  margin-left: 0; /* Remove left margin, this was causing extra space */
+  width: calc(100% - 12%);
+  margin-left: 0; 
 }
 
 /* ----- Video Section Layout (Desktop) ----- */
@@ -91,7 +92,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: 75%; /* Changed to 100% to fill available space */
+  width: 75%;
 }
 
 .video-row {
@@ -215,6 +216,9 @@
   .segment-content {
     font-size: 0.9rem; /* Adjust font size if needed */
   }
+  .video-section {
+    width: 100% !important;
+  }
 
   .video-row {
   display: flex;
@@ -225,9 +229,14 @@
   justify-content: center;
   border-radius: 10px;
 
+  .video-embed {
+  width: 90%;
+  }
+  .project-image {
+    width: 100%;
+  }
   .video-embed,
   .project-image {
-    width: 50%;
     height: auto;
     aspect-ratio: 16/9;
     border-radius: 8px;
@@ -286,6 +295,10 @@
     flex-direction: column !important;
     margin: 0 auto;
   }
+  
+  .video-section {
+    width: 100% !important;
+  }
 
   .video-row {
     flex-direction: column !important;
@@ -296,7 +309,7 @@
     margin-right: auto;
 
     .video-embed {
-      width: 100% !important; /* Video takes full width */
+      width: 90% !important; /* Video takes full width */
       height: auto;
       aspect-ratio: 16/9;
     }
