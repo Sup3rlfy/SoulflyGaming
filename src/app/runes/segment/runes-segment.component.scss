@@ -24,15 +24,6 @@
 }
 
 .image-wrapper {
-  flex-shrink: 0;
-  width: 50%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.image-wrapper {
   width: 50%;
   aspect-ratio: 1 / 1; // Limit max height to width
   overflow: hidden;
