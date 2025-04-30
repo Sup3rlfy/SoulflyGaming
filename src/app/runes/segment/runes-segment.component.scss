@@ -20,26 +20,34 @@
   flex-direction: row;
   gap: 15px;
   width: 100%;
-  align-items: stretch;
+  align-items: center;
 }
 
 .image-wrapper {
-  width: 50%;
-  max-height: 50%; // Don't force height
+  flex-shrink: 0;
+  width: 50%; // or 50% if needed
+  aspect-ratio: 1 / 1; // ensures square area
+  overflow: hidden; // hides overflow parts
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
 .segment-image {
   width: 100%;
-  height: auto;
-  max-height: 100%; // Contain inside parent height
-  object-fit: contain; // Show entire image without cropping unless it exceeds container
-  object-position: center;
-  aspect-ratio: auto; // Remove forced square shape
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
   border-radius: 8px;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; // ✅ Centers title and text inside
+  flex-grow: 1;
+  height: 100%; // important to allow centering
+  width: 50%;
 }
 
 .segment-title {
