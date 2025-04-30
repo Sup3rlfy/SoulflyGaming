@@ -34,6 +34,7 @@ export class AppComponent implements OnInit {
     } else {
       document.body.classList.remove('light-mode');
     }
+    console.log('isLightMode:', this.isLightMode, 'classList:', document.body.classList.value);
   }
 
   ngOnInit() {
