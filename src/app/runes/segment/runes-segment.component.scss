@@ -36,7 +36,7 @@
   width: 100%;
   height: auto;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 14px;
 }
 
 .content-wrapper {
@@ -57,6 +57,7 @@
   font-size: 1rem;
   color: vars.$gold-200;
   line-height: 1.6;
+  width: 95%
 
   p {
     margin: 0;
@@ -74,7 +75,7 @@
   }
 
   .image-wrapper {
-    width: 100% !important; /* Adjust image width for side-by-side layout */
+    width: 90%; /* Adjust image width for side-by-side layout */
   }
 
   .content-wrapper {
