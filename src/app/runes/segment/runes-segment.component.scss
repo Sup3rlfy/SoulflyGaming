@@ -45,10 +45,13 @@
   justify-content: center;
   flex-grow: 1;
   width: 50%;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .segment-title {
   font-size: 1.4rem;
+  margin-top: 0;
   margin-bottom: 0.8rem;
   color: vars.$gold-500;
 }
@@ -56,9 +59,10 @@
 .segment-content {
   font-size: 1rem;
   color: vars.$gold-200;
-  line-height: 1.6;
-  width: 95%
-
+  line-height: 1.3rem;
+  width: 95%;
+  margin: 0 !important;
+  padding: 0 !important;
   p {
     margin: 0 !important;
     padding: 0 !important;
@@ -86,9 +90,6 @@
     font-size: 1rem; /* Adjust font size for smaller screens if needed */
   }
 
-  .segment-content {
-    font-size: 0.9rem; /* Adjust font size for smaller screens if needed */
-  }
 }
 
 @media (max-width: 768px) {
@@ -109,9 +110,5 @@
 
   .segment-title {
     font-size: 1.2rem;
-  }
-
-  .segment-content {
-    font-size: 1rem;
   }
 }
