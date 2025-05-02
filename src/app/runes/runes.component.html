@@ -19,7 +19,7 @@
 
   <!-- Content Section -->
   <div class="runes-content">
-    <runes-segment *ngFor="let segment of segmentList"
+    <runes-segment *ngFor="let paragraph of segmentList" [innerHTML]="paragraph">
       [image]="segment.image"
       [title]="segment.title"
       [content]="segment.content"
