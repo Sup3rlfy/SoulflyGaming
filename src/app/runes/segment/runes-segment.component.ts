@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'runes-segment',
@@ -11,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class RunesSegmentComponent {
   @Input() image!: string;
   @Input() title!: string;
-  @Input() content!: string[];  // <-- changed from string to string[]
+  @Input() content: SafeHtml[] = [];  // <-- changed from string to string[]
   @Input() id!: string;
   @Input() isEmpty: boolean = false;
 }

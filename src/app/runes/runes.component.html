@@ -19,13 +19,14 @@
 
   <!-- Content Section -->
   <div class="runes-content">
-    <runes-segment *ngFor="let paragraph of segmentList" [innerHTML]="paragraph">
+    <runes-segment
+      *ngFor="let segment of segmentList"
       [image]="segment.image"
       [title]="segment.title"
       [content]="segment.content"
       [id]="segment.id"
       [isEmpty]="segment.isEmpty">
-    </runes-segment>
+</runes-segment>
   </div>
 </div>
 
