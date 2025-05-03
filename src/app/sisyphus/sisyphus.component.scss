@@ -5,16 +5,19 @@
   text-align: center;
   color: #eee;
   padding: 1rem;
+  align-items: center;
 
   .steam-widget {
-    padding: 1rem;
+    margin-top: 1rem auto;
+    display: block;
     border-radius: 14px;
-    color: white;
-    margin: 1rem auto; /* 1rem vertical space, centered horizontally */
-    box-sizing: border-box;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    height: 260px;
-    max-width: 646px;
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+    padding-bottom: 0;
+    aspect-ratio: 16 / 9;
     iframe {
       max-width: 100%; /* Ensure the iframe doesn't exceed the widget's width */
       width: 100%;
@@ -24,14 +27,12 @@
   .steam-button {
     background-color: vars.$gold-600;
     color: white;
+    padding: 0.6rem 1rem;
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    width: 100%;
-    text-align: center;
-    font-size: 1rem;
-    padding: 0.8rem 1rem;
+    font-size: 1.1rem;
   }
 
   .steam-button:hover {
@@ -45,14 +46,15 @@
     padding: 0.5rem;
 
     .steam-widget {
-      max-width: 90%; /* Adjust to a percentage for better responsiveness */
-      width: auto;
-      height: auto; /* Let the content determine the height */
-      max-height: none; /* Remove the fixed max-height */
+      width: 90%;
+      max-width: 90%;
+      height: auto;
+      max-height: none;
+      aspect-ratio: 4/3;
       border-radius: 14px;
       iframe {
-        max-width: 100%; /* Ensure the iframe doesn't exceed the widget's width */
-        width: 100%;
+        max-width: 90%; /* Ensure the iframe doesn't exceed the widget's width */
+        width: 90%;
       }
     }
 
@@ -60,6 +62,8 @@
       width: 90%;
       text-align: center;
       font-size: 1rem;
+      padding: 0.8rem 1rem;
+      align-self: center;
     }
   }
 }
