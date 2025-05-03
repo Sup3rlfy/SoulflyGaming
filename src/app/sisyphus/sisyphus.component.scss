@@ -15,7 +15,10 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     height: 260px;
     max-width: 646px;
-    
+    iframe {
+      max-width: 100%; /* Ensure the iframe doesn't exceed the widget's width */
+      width: 100%;
+    }
   }
 
   .steam-button {
@@ -47,6 +50,10 @@
       height: auto; /* Let the content determine the height */
       max-height: none; /* Remove the fixed max-height */
       border-radius: 14px;
+      iframe {
+        max-width: 100%; /* Ensure the iframe doesn't exceed the widget's width */
+        width: 100%;
+      }
     }
 
     .steam-button {
