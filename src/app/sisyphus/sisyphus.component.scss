@@ -10,7 +10,7 @@
   .steam-widget {
     margin-top: 1rem auto;
     display: block;
-    border-radius: 14px;
+    border-radius: 8px;
     overflow: hidden;
     max-width: 100%;
     width: 100%;
@@ -19,6 +19,7 @@
     padding-bottom: 0;
     aspect-ratio: 16 / 9;
     iframe {
+      display: inline-block;
       max-width: 100%; /* Ensure the iframe doesn't exceed the widget's width */
       width: 100%;
     }
@@ -53,12 +54,15 @@
       aspect-ratio: 4/3;
       border-radius: 14px;
       iframe {
+        display: inline-block;
+        display: inline-block;
         max-width: 90%; /* Ensure the iframe doesn't exceed the widget's width */
         width: 90%;
       }
     }
 
     .steam-button {
+      display: inline-block;
       width: 90%;
       text-align: center;
       font-size: 1rem;
