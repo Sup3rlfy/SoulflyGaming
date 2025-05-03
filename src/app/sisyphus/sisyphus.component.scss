@@ -42,10 +42,10 @@
     padding: 0.5rem;
 
     .steam-widget {
-      max-width: 350px;
+      max-width: 90%; /* Adjust to a percentage for better responsiveness */
       width: auto;
-      height: auto;
-      max-height: 400px;
+      height: auto; /* Let the content determine the height */
+      max-height: none; /* Remove the fixed max-height */
       border-radius: 14px;
     }
 
