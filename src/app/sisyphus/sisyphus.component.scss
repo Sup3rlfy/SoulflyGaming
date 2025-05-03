@@ -8,7 +8,7 @@
 
   .steam-widget {
     padding: 1rem;
-    border-radius: 8px;
+    border-radius: 14px;
     color: white;
     margin: 1rem auto; /* 1rem vertical space, centered horizontally */
     box-sizing: border-box;
@@ -43,9 +43,8 @@
     .steam-widget {
       width: 100%;
       max-width: 100%;
-      height: auto;
-      margin-bottom: 0;
-      padding-bottom: 0;
+      height: 400px;
+      border-radius: 14px;
     }
 
     .steam-button {
