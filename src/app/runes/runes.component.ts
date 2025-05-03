@@ -65,7 +65,7 @@ export class RunesComponent {
       {
         id: 'workingOn',
         title: 'Current Challenges',
-        image: 'assets/images/lootgobo.jpeg',
+        image: 'assets/images/lootgobo2.jpg',
         content: [
           `- A basic npc/opponent mechanic`,
           `- A funky lootgoblin, stealing all (trash) carfting materials they can lay their hands on, 
