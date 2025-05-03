@@ -56,6 +56,18 @@
   color: vars.$gold-500;
 }
 
+a {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+}
+
+p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+}
+
 .segment-content {
   font-size: 1rem;
   color: vars.$gold-200;
@@ -68,11 +80,18 @@
     padding: 0 !important;
   }
   .html-paragraph {
-    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
     padding: 0 !important;
 
     p {
-      margin: 0 !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      padding: 0 !important;
+    }
+    a {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
       padding: 0 !important;
     }
   }
