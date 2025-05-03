@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SafePipe } from '../safe.pipe';
 import { RunesSegmentComponent } from './segment/runes-segment.component';
@@ -9,6 +10,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   standalone: true,
   imports: [
     CommonModule,
+    RouterModule,
     SafePipe,
     RunesSegmentComponent,
   ],

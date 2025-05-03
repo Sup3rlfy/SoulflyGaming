@@ -3,6 +3,11 @@ import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 import { TopNavComponent } from './top-nav/top-nav.component';
+import { RunesComponent } from './runes/runes.component';  // Import your component
+import { BioComponent } from './bio/bio.component';
+import { HomeComponent } from './home/home.component';
+import { SisyphusComponent } from './sisyphus/sisyphus.component';  // Import your component
+import { routes } from './app.routes';
 
 @Component({
   selector: 'app-root',
