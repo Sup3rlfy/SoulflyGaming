@@ -15,6 +15,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     height: 260px;
     max-width: 646px;
+    
   }
 
   .steam-button {
@@ -41,8 +42,10 @@
     padding: 0.5rem;
 
     .steam-widget {
-      max-width: 646px;
-      height: 400px;
+      max-width: 350px;
+      width: auto;
+      height: auto;
+      max-height: 400px;
       border-radius: 14px;
     }
 
