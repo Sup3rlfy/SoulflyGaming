@@ -38,7 +38,7 @@ export class RunesComponent {
       {
         id: 'gameDesc',
         title: 'Game Description',
-        image: 'assets/images/roe1.jpg',
+        image: 'assets/images/roe/roe1.jpg',
         content: [`- High fantasy RPG with minimal steampunk elements as inspired by ADOM, Final Fantasy XI online or seen in World of Warcraft`,
                   '- Set in an engaging world with lots of lore, deep background and story',
                   '- Traditional races such as Humans, Dwarves and Elves and new races such as the Irai',
@@ -54,7 +54,7 @@ export class RunesComponent {
       {
         id: 'vision',
         title: 'The Vision',
-        image: 'assets/images/roe4.jpg',
+        image: 'assets/images/roe/roe4.jpg',
         content: [`Ever since my misspent youth in Final Fantasy IX online and untold other games the idea to build my own world and game around it started to form. 
                     The long term goal is to make a good high fantasy MMORPG, set in a world of humans, elves, dwarves, Irai and a few other races as well as hordes 
                     of monsters and the occasional dragon. Since I am still aquireing the skills for such a project, Runes of Elana is going to be a single player 
@@ -65,7 +65,7 @@ export class RunesComponent {
       {
         id: 'workingOn',
         title: 'Current Challenges',
-        image: 'assets/images/lootgobo2.jpg',
+        image: 'assets/images/roe/lootgobo2.jpg',
         content: [
           `- A basic npc/opponent mechanic`,
           `- A funky lootgoblin, stealing all (trash) carfting materials they can lay their hands on, 
@@ -78,7 +78,7 @@ export class RunesComponent {
       {
         id: 'implemented',
         title: 'Implemented Features',
-        image: 'assets/images/roe1.jpg',
+        image: 'assets/images/roe/roe1.jpg',
         content: [`- Random generated overworld and outside maps with main focus on dungeons!`,
           `- A wide array of items to pick up, drop and equip`,
           `- Basic UI for inventory, equipment, wallet and tools, HP-, MP-, XP- and time display`,
@@ -93,7 +93,7 @@ export class RunesComponent {
       {
         id: 'plan',
         title: 'Planned Features',
-        image: 'assets/images/roe2.jpg',
+        image: 'assets/images/roe/roe2.jpg',
         content: [`Players can have a main class...`,
         ],
         isEmpty: false
@@ -101,7 +101,7 @@ export class RunesComponent {
       {
         id: 'class-system',
         title: 'Class System',
-        image: 'assets/images/roe3.jpg',
+        image: 'assets/images/roe/roe3.jpg',
         content: [`Currently the goal is to create a system with main and sub classes, which the player may change at any time at minimal cost. A system to pick 5-10 skills from all of your leveled classes instead of a sub-class may be added as well. 
                   Leveling any class will not only raise the attributes for that class, but will also in a small way
                   make the whole character better, meaning if you played a warrior first, your next class will already start with a bit more strength and hp, or more mana if you played a mage first, etc..
@@ -118,7 +118,7 @@ export class RunesComponent {
       {
         id: 'softCaps',
         title: 'Soft Caps only',
-        image: 'assets/images/roe_5.jpg',
+        image: 'assets/images/roe/roe_5.jpg',
         content: [`The planned max level is at 50, but beyond that you will be able to receive Merit points instead of Level-Ups. Merit points will be used
                   to increase main attributes as well as abileties in the skill trees. These increases will not have any hard caps, but prices will increase ever constantly 
                   and drastically.`,
@@ -134,7 +134,7 @@ export class RunesComponent {
       {
         id: 'runeSys',
         title: 'Rune System',
-        image: 'assets/images/roe2.jpg',
+        image: 'assets/images/roe/roe2.jpg',
         content: [`Enemies will not only drop equipable items but also runes. Players will be able to use up to 10 runes simultaineously, boosting the spells 
                   attributes such as damage, range, mana consumption, duration, area of effect and many more. Runes will not be slotted into any specific item or spell, meaning you can
                   use the same rune for as many spells as you wish, swapping out individual runes depending on the needs of each spell and the availability of your runes.
@@ -153,7 +153,7 @@ export class RunesComponent {
       {
         id: 'skillExp',
         title: 'Skill Experience',
-        image: 'assets/images/roe_5.jpg',
+        image: 'assets/images/roe/roe_5.jpg',
         content: [`Any action you use will pay experince points into multiple exp-pools, slowly increasing your prowess in each of those categories,
                   passively as well as allowing you to spend points in customizeable skill trees.
                   Imagine leveling up in your Lightning magic skill and finally switching from Lightning to a Chain-Lightning spell. Every lightning spellcast having paid
@@ -168,7 +168,7 @@ export class RunesComponent {
       {
         id: 'transp',
         title: 'Transportation',
-        image: 'assets/images/roe_5.jpg',
+        image: 'assets/images/roe/roe_5.jpg',
         content: [`A wide range of different means of transportation:`,
                   '-- Spider based "bus-like" transportation from town to town (*Elder Scrolls Morrowind).',
                   '-- Light-based teleportation from Healers',
@@ -183,7 +183,7 @@ export class RunesComponent {
       {
         id: 'mounts',
         title: 'Breeding Mounts',
-        image: 'assets/images/roe_5.jpg',
+        image: 'assets/images/roe/mount.jpg',
         content: [`Wanted: A iconic mount that players will forever identify with my game world(s)`,
                   'Wanted: Breeding via eggs.',
                   'Not Wanted: Boring old Horses.',
@@ -195,7 +195,7 @@ export class RunesComponent {
       {
         id: 'movLand',
         title: 'Moving Landscapes',
-        image: 'assets/images/roe_5.jpg',
+        image: 'assets/images/roe/roe_5.jpg',
         content: [`Terrains and entire zones that shift their positions and that may only be accessible at certain times (or at the expense of
                   huge ressources outside of those times(time, items/gold)).
                   I am thinking of giant crabs warlking around in the sea, with a town(*Brandon Sanderson's Stormlight Archive) or leveling zones on top or even 
@@ -209,7 +209,7 @@ export class RunesComponent {
       {
         id: 'currencySys',
         title: 'Currencies',
-        image: 'assets/images/roe_5.jpg',
+        image: 'assets/images/roe/wallet.jpg',
         content: [`Runes of Elana will have multiple different currencies, all obtainable ingame. Different traders and nations will prefer one currency over others 
                   and offer better prices in that currency. Certain currencies may also rise or fall in value due to player actions or interactions with each other.
                   Players will have wallets and bank-contracts. Depending on your bank contract, cash in your wallet's teleport case will be ported to your bank at 
@@ -223,7 +223,7 @@ export class RunesComponent {
       {
         id: 'weightSys',
         title: 'Weigth',
-        image: 'assets/images/roe5.jpg',
+        image: 'assets/images/roe/roe5.jpg',
         content: [`Sadly in a game with thousands of players the amount of data needs to be controlled and so there has to be a limit to the amount 
                   you can possess, plus in reality you are also limited to what you may carry. There will be items to increas your weight capacity, basically magic 
                   bags, wallets and belts etc, that may counteract the weight of your items, allowing you to carry more. This will also be tuned to balance melee 
@@ -235,7 +235,7 @@ export class RunesComponent {
       {
         id: 'future',
         title: 'MMORPG plans',
-        image: 'assets/images/roe2.jpg',
+        image: 'assets/images/roe/roe2.jpg',
         content: [`The long term goal is to make a good high fantasy MMORPG, set in a world of humans, elves, dwarves, Irai and a few other races as well as hordes 
                   of monsters as well as the occasional dragon.`,
                 ],
@@ -244,7 +244,7 @@ export class RunesComponent {
       {
         id: 'inspirations',
         title: 'Inspirations',
-        image: 'assets/images/inspiration.jpg',
+        image: 'assets/images/roe/inspiration.jpg',
         content: [`<p>- <a href="https://amzn.to/4iHzVB5">Final Fantasy XI or XIV</a>: mounts, merits, gear-swap, some classes, ...</p>`,
         '<p>- <a href="https://www.warframe.com/de/signup?referrerId=5a090ca03ade7f01fdb4f498">Warframe</a>: the mod system</p>',
         '<p>- <a href="https://www.adom.de/home/index.html">Ancient Domains of Mystery (ADOM)</a>: world building, and lots of other aspects</p>',

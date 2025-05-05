@@ -14,9 +14,9 @@ export class HomeComponent {
     {
       title: 'Sisyphus the Game',
       images: [
-        'assets/images/sis_1.jpg',
-        'assets/images/sis1.jpg',
-        'assets/images/sis2.jpg',
+        'assets/images/sis/sis1.jpg',
+        'assets/images/sis/sis2.jpg',
+        'assets/images/sis/sis3.jpg',
       ],
       link: '/sisyphus',
       description: [
@@ -27,15 +27,17 @@ export class HomeComponent {
     {
       title: 'Runes of Elana',
       images: [
-        'assets/images/roe1.jpg',
-        'assets/images/roe2.jpg',
-        'assets/images/roe_2.jpg',
-        'assets/images/roe3.jpg',
-        'assets/images/roe_3.jpg',
-        'assets/images/roe4.jpg',
-        'assets/images/roe_4.jpg',
-        'assets/images/roe5.jpg',
-        'assets/images/roe_5.jpg',
+        'assets/images/roe/roe1.jpg',
+        'assets/images/roe/roe2.jpg',
+        'assets/images/roe/roe_2.jpg',
+        'assets/images/roe/roe3.jpg',
+        'assets/images/roe/roe_3.jpg',
+        'assets/images/roe/roe4.jpg',
+        'assets/images/roe/roe_4.jpg',
+        'assets/images/roe/roe5.jpg',
+        'assets/images/roe/roe_5.jpg',
+        'assets/images/roe/wallet.jpg',
+        'assets/images/roe/mount.jpg',
       ],
       link: '/runes',
       description: [
