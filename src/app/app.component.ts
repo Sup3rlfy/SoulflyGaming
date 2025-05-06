@@ -3,11 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { RouterOutlet } from '@angular/router';
 import { TopNavComponent } from './top-nav/top-nav.component';
-import { RunesComponent } from './runes/runes.component';  // Import your component
-import { BioComponent } from './bio/bio.component';
-import { HomeComponent } from './home/home.component';
-import { SisyphusComponent } from './sisyphus/sisyphus.component';  // Import your component
-import { routes } from './app.routes';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-root',
@@ -29,31 +25,38 @@ export class AppComponent implements OnInit {
   title = 'Soulfly Gaming';
   isLightMode = false;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    public themeService: ThemeService) {}
+  
+    ngOnInit(): void {
+      this.themeService.initTheme(); // ✅ initialize from cookie
+  
+      this.router.events.subscribe(event => {
+        if (event instanceof NavigationEnd && event.urlAfterRedirects.includes('#')) {
+          this.scrollToFragment(event.urlAfterRedirects);
+        }
+      });
+    }
 
   // Toggle between light and dark modes
   toggleTheme(): void {
+    this.themeService.toggleTheme();
+    /*
     this.isLightMode = !this.isLightMode;
-    if (this.isLightMode) {
-      document.body.classList.add('light-mode');
-    } else {
-      document.body.classList.remove('light-mode');
+    if (typeof window !== 'undefined') {
+      this.cookieService.set('site-theme', this.isLightMode ? 'light' : 'dark', 365, '/');
     }
-    console.log('isLightMode:', this.isLightMode, 'classList:', document.body.classList.value);
+    console.log('Cookie set to:', this.cookieService.get('site-theme'));
+    this.applyTheme();
+    */
   }
 
-  ngOnInit() {
-    // Listen for route changes to scroll to fragments
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        // Check if the URL contains a fragment (i.e., #id)
-        if (event.urlAfterRedirects.includes('#')) {
-          // Scroll to the fragment
-          this.scrollToFragment(event.urlAfterRedirects);
-        }
-      }
-    });
+  private applyTheme(): void {
+    document.body.classList.remove('light-mode', 'dark-mode');
+    document.body.classList.add(this.isLightMode ? 'light-mode' : 'dark-mode');
   }
+
 
   // Function to scroll to the fragment
   private scrollToFragment(url: string) {

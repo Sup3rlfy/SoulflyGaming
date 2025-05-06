@@ -57,6 +57,21 @@ export class HomeComponent {
         'Discover the journey and name behind Soulfly.',
         'Learn how I got here and what drives me.'
       ]
+    },
+    {
+      title: 'Grundstück Marchtrenk zu vermieten!',
+      images: [
+        'assets/images/marchtrenk/marchtrenk.jpg',
+        'assets/images/marchtrenk/marchtrenk3.jpg',
+        'assets/images/marchtrenk/marchtrenk2.jpg',
+        'assets/images/marchtrenk/marchtrenk4.jpg',
+
+      ],
+      link: '/marchtrenk',
+      description: [
+        '- 3800m(U+00B2) ab Jahresende verfügbar',
+        '- Marchtrenk, 1 Minute vom Bahnhof'
+      ]
     }
   ];
   

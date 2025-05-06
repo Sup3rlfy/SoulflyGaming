@@ -1,0 +1,64 @@
+<div class="marchtrenk-container">
+    <h2>Vermietung in Marchtrenk – Bahnhofsnah</h2>
+  
+    <p>
+      Wir befinden uns im Augenblick im Abriss unserer Siloanlage in Marchtrenk, direkt nördlich des Bahnhofs Marchtrenk.
+      Wir sind zuversichtlich bis Ende des Jahres 2025 die Gesamtfläche von 3800m² zur Vermietung anbieten zu können.
+    </p>
+
+    <div class="image-gallery">
+        <div class="main-image-container">
+          <img [src]="images[currentImageIndex]" alt="Gallery Image" class="main-image" />
+        </div>
+      
+        <div class="thumbnail-scroll">
+          <img
+            *ngFor="let image of images; let i = index"
+            [src]="image"
+            [class.active]="i === currentImageIndex"
+            (click)="selectImage(i)"
+            alt="Thumbnail"
+            class="thumbnail"
+          />
+        </div>
+      </div>
+  
+    <h3>Vorteile der Location:</h3>
+    <ul>
+      <li>3800m² Mischbau Grund</li>
+      <li>rel. ruhige Lage: Einfamilienhäuser im Norden und Osten, PKW-Werkstatt im Westen und der Bahnhof im Süden</li>
+      <li>weniger als 20m zum Pendlerparkplatz der ÖBB</li>
+      <li>weniger als 100m zum Bahnhofseingang – perfekt für Pendler</li>
+      <li>Züge sind sehr leise und die Lärmdämmung hervorragend durch Lärmschutzwände</li>
+    </ul>
+  
+    <div class="location-section">
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2660.457086099929!2d14.08802831565824!3d48.19676397922995"
+          width="100%"
+          height="250"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+  
+      <div class="address-box">
+        <h4>Adresse:</h4>
+        <p>Westbahnstraße 24<br>4614 Marchtrenk</p>
+      </div>
+    </div>
+  
+    <div class="interest-box">
+      <h4>Auf Ihr Interesse freuen sich:</h4>
+
+      <p><strong>Name:</strong> Johann Silber sen.</p>
+      <p><strong>Telefon:</strong> <a href="tel:+43 699 1145 0135">+43 699 1145 0135</a></p>
+
+      <p><strong>Name:</strong> Stanislaus Silber</p>
+      <p><strong>Email:</strong> <a href="mailto:nedwalain@yahoo.de">nedwalain"&#64;"yahoo.de</a></p>
+      <p><strong>Telefon:</strong> <a href="tel:+43 660 34 11 840">+43 660 34 11 840</a></p>
+    </div>
+  </div>
