@@ -168,7 +168,7 @@ export class RunesComponent {
       {
         id: 'transp',
         title: 'Transportation',
-        image: 'assets/images/roe/roe_5.jpg',
+        image: 'assets/images/roe/stonecircle.jpg',
         content: [`A wide range of different means of transportation:`,
                   '-- Spider based "bus-like" transportation from town to town (*Elder Scrolls Morrowind).',
                   '-- Light-based teleportation from Healers',

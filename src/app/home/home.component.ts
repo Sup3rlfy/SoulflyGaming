@@ -38,6 +38,7 @@ export class HomeComponent {
         'assets/images/roe/roe_5.jpg',
         'assets/images/roe/wallet.jpg',
         'assets/images/roe/mount.jpg',
+        'assets/images/roe/stonecircle.jpg',
       ],
       link: '/runes',
       description: [
