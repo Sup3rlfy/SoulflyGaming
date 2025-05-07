@@ -77,15 +77,21 @@
     text-align: center;
   
     .main-image-container {
-      width: 1200px;
-      max-height: 500px;
+      width: 850px;
+      height: 460px;
+      background-color: #111; // optional: makes empty space visible
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      border-radius: 12px;
       overflow: hidden;
   
       img.main-image {
-        width: auto;
-        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; // ⚠️ ensures full image is visible
         border-radius: 12px;
-        object-fit: cover;
       }
     }
   
@@ -95,6 +101,7 @@
       padding: 1rem 0;
       gap: 0.75rem;
       scroll-behavior: smooth;
+      justify-content: center;
   
       img.thumbnail {
         height: 80px;
