@@ -70,7 +70,7 @@ export class HomeComponent {
       ],
       link: '/marchtrenk',
       description: [
-        '- 3800m(U+00B2) ab Jahresende verfügbar',
+        '- 3800m² ab Jahresende verfügbar',
         '- Marchtrenk, 1 Minute vom Bahnhof'
       ]
     }
