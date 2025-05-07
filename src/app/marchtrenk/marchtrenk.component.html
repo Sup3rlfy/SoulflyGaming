@@ -5,24 +5,56 @@
         <li>
       Wir befinden uns im Augenblick im Abriss unserer Siloanlage in Marchtrenk, direkt nördlich des Bahnhofs Marchtrenk.
       Wir sind zuversichtlich bis Ende des Jahres 2025 die Gesamtfläche von 3800m² zur Vermietung anbieten zu können.
-    </li></ul>
+        </li>
+    </ul>
 
     <div class="image-gallery">
+        <!-- Slideshow Toggle Button -->
+        <button class="toggle-slideshow" (click)="toggleSlideshow($event)">
+            <span *ngIf="isSlideshowRunning">&#10073;&#10073;</span> <!-- Pause symbol (||) -->
+            <span *ngIf="!isSlideshowRunning">&#9658;</span>          <!-- Play symbol (►) -->
+          </button>
         <div class="main-image-container">
-          <img [src]="images[currentImageIndex]" alt="Gallery Image" class="main-image" />
-        </div>
-      
-        <div class="thumbnail-scroll">
           <img
-            *ngFor="let image of images; let i = index"
-            [src]="image"
-            [class.active]="i === currentImageIndex"
-            (click)="selectImage(i)"
-            alt="Thumbnail"
-            class="thumbnail"
+            class="main-image"
+            [src]="images[currentImageIndex]"
+            alt="Gallery Image"
+            (click)="openImageFullScreen()"
           />
         </div>
+      
+        <div class="thumbnail-scroll-wrapper">
+          <!-- Left Scroll Button 
+          <button class="scroll-arrow left" (click)="scrollThumbnails('left')">‹</button> -->
+      
+          <div class="thumbnail-scroll" #thumbnailContainer>
+            <img
+              *ngFor="let image of images; let i = index"
+              class="thumbnail"
+              [src]="image"
+              [class.active]="i === currentImageIndex"
+              (click)="selectImage(i)"
+              alt="Thumbnail"
+            />
+          </div>
+      
+          <!-- Right Scroll Button 
+          <button class="scroll-arrow right" (click)="scrollThumbnails('right')">›</button> -->
+        </div>
       </div>
+      
+      <!-- Lightbox Overlay -->
+      <div class="lightbox-overlay" *ngIf="isImageFullScreenOpen" (click)="closeImageFullScreen()">
+        <div class="lightbox-content" (click)="$event.stopPropagation()">
+          <button class="close-button" (click)="closeImageFullScreen()">×</button>
+      
+          <!-- Lightbox Nav Arrows -->
+          <button class="lightbox-arrow left" (click)="prevImage($event)">‹</button>
+          <img [src]="images[currentImageIndex]" alt="Enlarged View" />
+          <button class="lightbox-arrow right" (click)="nextImage($event)">›</button>
+        </div>
+      </div>
+      
   
     <h3>Vorteile der Location:</h3>
     <ul>
@@ -37,7 +69,7 @@
       <div class="map-container">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5318.608166638914!2d14.095146676853721!3d48.20075854675982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477392ee4e1050cb%3A0x5f468d23914407b3!2sWestbahnstra%C3%9Fe%2024%2C%204614%20Marchtrenk!5e0!3m2!1sen!2sat!4v1746574214740!5m2!1sen!2sat" 
             width="600" 
-            height="450" 
+            height="300" 
             style="border:0;" 
             allowfullscreen="" 
             loading="lazy" 

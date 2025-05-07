@@ -1,9 +1,12 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { NgFor, NgIf } from '@angular/common';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-marchtrenk',
   standalone: true,
   templateUrl: './marchtrenk.component.html',
+  imports: [NgFor, NgIf],
   styleUrls: ['./marchtrenk.component.scss']
 })
 export class MarchtrenkComponent implements OnInit, OnDestroy {
@@ -16,12 +19,65 @@ export class MarchtrenkComponent implements OnInit, OnDestroy {
   ];
 
   currentImageIndex = 0;
-  private intervalId: any;
+  intervalId: any;
+  isSlideshowRunning = true;
+  isImageFullScreenOpen = false;
+
+  @ViewChild('thumbnailContainer', { static: false }) thumbnailContainer!: ElementRef<HTMLDivElement>;
 
   ngOnInit(): void {
-    this.intervalId = setInterval(() => {
-      this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
-    }, 5000); // change every 5 seconds
+    this.startSlideshow();
+  }
+
+  startSlideshow(): void {
+    this.isSlideshowRunning = true;
+    this.continueSlideshow();
+  }
+
+  continueSlideshow(): void {
+    if (this.isImageFullScreenOpen == false && this.isSlideshowRunning) {
+      this.intervalId = setInterval(() => {
+        this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
+      }, 5000);
+    } else {
+      clearInterval(this.intervalId);
+    }
+  }
+
+  stopSlideshow(): void {
+    clearInterval(this.intervalId);
+    this.isSlideshowRunning = false;
+  }
+
+  toggleSlideshow(event: MouseEvent): void {
+    event.stopPropagation(); // prevent lightbox opening
+    this.isSlideshowRunning ? this.stopSlideshow() : this.startSlideshow();
+  }
+  prevImage(event?: MouseEvent): void {
+    if (event) event.stopPropagation();
+    this.currentImageIndex = (this.currentImageIndex - 1 + this.images.length) % this.images.length;
+  }
+
+  nextImage(event?: MouseEvent): void {
+    if (event) event.stopPropagation();
+    this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
+  }
+
+  scrollThumbnails(direction: 'left' | 'right'): void {
+    const container = this.thumbnailContainer.nativeElement;
+    const scrollAmount = 150;
+    container.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+  }
+
+  openImageFullScreen(): void {
+    this.isImageFullScreenOpen = true;
+    
+    clearInterval(this.intervalId);
+  }
+  
+  closeImageFullScreen(): void {
+    this.isImageFullScreenOpen = false;
+    this.startSlideshow();
   }
 
   selectImage(index: number): void {

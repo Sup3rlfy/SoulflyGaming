@@ -74,7 +74,7 @@ $border-radius: 8px; // or your desired global corner rounding
 }
 
 .theme-toggle {
-  background: none;
+  background: vars.$gray-700;
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
