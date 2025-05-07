@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { SisyphusComponent } from './sisyphus/sisyphus.component';
 import { RunesComponent } from './runes/runes.component';
 import { BioComponent } from './bio/bio.component';
+import { MarchtrenkComponent } from './marchtrenk/marchtrenk.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -11,5 +12,6 @@ export const routes: Routes = [
   { path: 'sisyphus', component: SisyphusComponent },
   { path: 'runes', component: RunesComponent },
   { path: 'bio', component: BioComponent },
+  { path: 'marchtrenk', component: MarchtrenkComponent },
   { path: '**', redirectTo: '' }
 ];

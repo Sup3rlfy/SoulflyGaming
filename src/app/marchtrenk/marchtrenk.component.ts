@@ -8,11 +8,11 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class MarchtrenkComponent implements OnInit, OnDestroy {
   images: string[] = [
-    'assets/images/marchtrenk1.jpg',
-    'assets/images/marchtrenk2.jpg',
-    'assets/images/marchtrenk3.jpg',
-    'assets/images/marchtrenk4.jpg',
-    'assets/images/marchtrenk5.jpg'
+    'assets/images/marchtrenk/marchtrenk.jpg',
+    'assets/images/marchtrenk/marchtrenk2.jpg',
+    'assets/images/marchtrenk/marchtrenk3.jpg',
+    'assets/images/marchtrenk/marchtrenk4.jpg',
+    'assets/images/marchtrenk/marchtrenk6.jpg'
   ];
 
   currentImageIndex = 0;
