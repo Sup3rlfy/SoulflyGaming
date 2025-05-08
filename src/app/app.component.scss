@@ -58,13 +58,13 @@ main {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 1200px;
+  max-width: 70%;
   margin: 0 auto;
   gap: 2rem; /* Space between content and ad */
 }
 
 .content {
-  width: 70%; /* Content width */
+  width: 100%; /* Content width */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -87,7 +87,7 @@ main {
 
 /* Responsive design */
 @media (max-width: 1200px) {
-  .content {
+  .main-content {
     width: 100% !important;
   }
   .content-wrapper {
