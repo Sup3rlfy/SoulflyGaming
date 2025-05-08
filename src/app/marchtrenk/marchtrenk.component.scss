@@ -245,7 +245,7 @@
 
 @media (max-width: 768px) {
   .marchtrenk-container {
-    width: 95% !important; // Further increase width on very small screens
+    width: 70% !important; // Further increase width on very small screens
     padding: 1rem;
 
     h2,
@@ -285,7 +285,9 @@
       }
 
       .main-image-container {
-        width: 95% !important;
+        width: 70% !important;
+        width: 600px;
+        height: 300px;
       }
 
       .thumbnail-scroll-wrapper .thumbnail-scroll {
@@ -302,7 +304,7 @@
 
 @media (min-width: 769px) and (max-width: 1200px) {
   .marchtrenk-container {
-    width: 98% !important; // Slightly wider on these screens
+    width: 70% !important; // Slightly wider on these screens
     padding: 1.75rem;
 
     .location-section {
@@ -317,7 +319,9 @@
 
     .image-gallery {
       .main-image-container {
-        width: 95%;
+        width: 70%;
+        width: 600px;
+        height: 300px;
       }
     }
   }
