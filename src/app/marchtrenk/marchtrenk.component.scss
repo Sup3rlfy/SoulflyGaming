@@ -1,18 +1,20 @@
-//marchtrenk.component.scss
+// marchtrenk.component.scss
 @use '../../variables' as vars;
 
 .marchtrenk-container {
   width: 95%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem; // Adjusted padding for smaller screens
   background-color: vars.$dark-gray-900;
   color: vars.$gold-100;
   border-radius: 12px;
 
-  h2, h3, h4 {
+  h2,
+  h3,
+  h4 {
     color: vars.$gold-600;
-    margin-top: 1.5rem;
+    margin-top: 1rem; // Adjusted margin for smaller screens
   }
 
   ul {
@@ -20,32 +22,36 @@
     padding-left: 0;
 
     li {
-      margin-bottom: 0.5rem;
-      padding-left: 0.75rem;
-      border-left: 4px solid vars.$gold-300;
+      margin-bottom: 0.3rem; // Adjusted margin for smaller screens
+      padding-left: 0.5rem; // Adjusted padding for smaller screens
+      border-left: 3px solid vars.$gold-300; // Slightly smaller border
       color: vars.$gold-200;
+      font-size: 0.9rem; // Slightly smaller font size
     }
   }
 
   .location-section {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1rem; // Adjusted gap for smaller screens
     background-color: vars.$dark-gray-700;
     border-radius: 12px;
-    padding: .5rem;
+    padding: 0.5rem;
 
     .map-container {
-      flex: 1 1 50%;
-      min-width: 300px;
-      overflow: clip;
+      flex: 1 1 100%; // Take full width on smaller screens
+      min-width: auto; // Adjust min-width
+      height: 300px; /* Ensure map has a reasonable height */
+      overflow: hidden;
+      border-radius: 8px;
     }
 
     .address-box {
-      flex: 1 1 40%;
+      flex: 1 1 100%; // Take full width on smaller screens
       background-color: vars.$dark-gray-700;
       padding: 1rem;
       border-radius: 12px;
+      font-size: 0.9rem; // Slightly smaller font size
 
       a {
         color: vars.$gold-300;
@@ -57,23 +63,24 @@
       }
 
       p {
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.5rem; // Adjusted margin for smaller screens
       }
     }
   }
 
   .interest-box {
-    margin-top: 2rem;
+    margin-top: 1.5rem; // Adjusted margin for smaller screens
     padding: 1rem;
     background-color: vars.$dark-gray-700;
     border-radius: 12px;
+    font-size: 0.9rem; // Slightly smaller font size
 
     p {
-      margin: 0.5rem 0;
+      margin: 0.3rem 0; // Adjusted margin for smaller screens
       color: vars.$gold-200;
     }
   }
-  
+
   .image-gallery {
     margin: 2rem 2rem;
     text-align: center;
@@ -171,7 +178,8 @@
       }
     }
   }
-    /* Lightbox styles */
+  
+  /* Lightbox styles */
   .lightbox-overlay {
     position: fixed;
     top: 0;
@@ -184,64 +192,109 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .lightbox-content {
     position: relative;
-    max-width: 90%;
-    max-height: 90%;
-  
+    max-width: 95%; // Adjusted max width for smaller screens
+    max-height: 95%; // Adjusted max height for smaller screens
+
     img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
-      border-radius: 12px;
+      border-radius: 8px;
     }
-  
+
     .close-button {
       position: absolute;
-      top: -10px;
-      right: -10px;
+      top: -15px; // Adjusted position
+      right: -15px; // Adjusted position
       background: white;
       border: none;
-      font-size: 2rem;
+      font-size: 1.5rem; // Adjusted font size
       border-radius: 50%;
       cursor: pointer;
-      width: 40px;
-      height: 40px;
+      width: 30px; // Adjusted size
+      height: 30px; // Adjusted size
       line-height: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+
     .lightbox-arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 3rem;
-        color: white;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-  
-        &.left {
-          left: -60px;
-        }
-  
-        &.right {
-          right: -60px;
-        }
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem; // Adjusted font size
+      color: white;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+
+      &.left {
+        left: 10px; // Adjusted position
+      }
+
+      &.right {
+        right: 10px; // Adjusted position
+      }
     }
   }
 }
 
-
 @media (max-width: 768px) {
   .marchtrenk-container {
-    width: 80% !important;
+    width: 95% !important; // Further increase width on very small screens
     padding: 1rem;
-    
+
+    h2,
+    h3,
+    h4 {
+      font-size: 1.1rem; // Further adjust heading sizes
+      margin-top: 0.8rem;
+    }
+
+    ul li {
+      font-size: 0.85rem;
+      padding-left: 0.4rem;
+      border-left-width: 2px;
+    }
+
+    .location-section {
+      gap: 0.75rem;
+
+      .address-box {
+        font-size: 0.85rem;
+        padding: 0.75rem;
+      }
+    }
+
+    .interest-box {
+      font-size: 0.85rem;
+      padding: 0.75rem;
+      margin-top: 1rem;
+    }
+
     .image-gallery {
-      margin: 1rem auto;
+      margin: 0.5rem;
+
+      .toggle-slideshow {
+        font-size: 1rem;
+        padding: 0.2rem 0.5rem;
+      }
+
       .main-image-container {
-        width: 80% !important;
-        height: auto !important;
+        width: 95% !important;
+      }
+
+      .thumbnail-scroll-wrapper .thumbnail-scroll {
+        padding: 0.3rem 0;
+        gap: 0.3rem;
+
+        img.thumbnail {
+          height: 60px;
+        }
       }
     }
   }
@@ -249,6 +302,23 @@
 
 @media (min-width: 769px) and (max-width: 1200px) {
   .marchtrenk-container {
-    width: 95% !important;
+    width: 98% !important; // Slightly wider on these screens
+    padding: 1.75rem;
+
+    .location-section {
+      .map-container {
+        flex: 1 1 48%;
+      }
+
+      .address-box {
+        flex: 1 1 48%;
+      }
+    }
+
+    .image-gallery {
+      .main-image-container {
+        width: 95%;
+      }
+    }
   }
 }
