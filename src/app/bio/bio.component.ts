@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { LanguageService } from '../../language.service';
 
 @Component({
   selector: 'app-bio',
@@ -20,6 +21,8 @@ export class BioComponent implements OnInit {
   ];
 
   currentImage = 0;
+  
+  constructor(public langService: LanguageService) {} 
 
   ngOnInit() {
     setInterval(() => {

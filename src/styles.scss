@@ -249,11 +249,13 @@ body.light {
     color: vars.$green-800 !important;
   }
 
-  .theme-toggle {
+  .theme-toggle,
+  .lang-toggle {
     background-color: vars.$green-300;
   }
 
-  .theme-toggle:hover {
+  .theme-toggle:hover,
+  .lang-toggle:hover  {
     background-color: vars.$green-100;
   }
 

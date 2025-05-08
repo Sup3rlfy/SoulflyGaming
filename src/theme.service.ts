@@ -5,7 +5,6 @@ import { CookieService } from 'ngx-cookie-service';
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
   private cookieKey = 'site-theme';
-
   constructor(private cookieService: CookieService) {}
 
 

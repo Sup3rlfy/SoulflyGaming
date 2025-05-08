@@ -89,6 +89,20 @@ $border-radius: 8px; // or your desired global corner rounding
   border-radius: $border-radius;
 }
 
+.lang-toggle {
+  background: vars.$gray-700;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  padding: 0;
+  margin-left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $border-radius;
+}
 // --- Mobile responsiveness ---
 @media (max-width: 1200px) {
   .nav-item a {
