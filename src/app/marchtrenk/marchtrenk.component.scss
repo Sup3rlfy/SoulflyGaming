@@ -286,8 +286,8 @@
 
       .main-image-container {
         width: 70% !important;
-        width: 600px;
-        height: 300px;
+        width: 600px !important;;
+        height: 300px !important;;
       }
 
       .thumbnail-scroll-wrapper .thumbnail-scroll {
@@ -302,6 +302,7 @@
   }
 }
 
+/*
 @media (min-width: 769px) and (max-width: 1200px) {
   .marchtrenk-container {
     width: 70% !important; // Slightly wider on these screens
@@ -326,3 +327,4 @@
     }
   }
 }
+  */
