@@ -124,7 +124,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
- /* 
+    /* 
       .scroll-arrow {
         background: white;
         border: none;
@@ -142,36 +142,36 @@
         }
       }
   */
-    .thumbnail-scroll {
-      display: flex;
-      overflow-x: auto;
-      padding: 1rem 0;
-      gap: 0.75rem;
-      scroll-behavior: smooth;
-      justify-content: center;
-  
-      img.thumbnail {
-        height: 100px;
-        border-radius: 8px;
-        cursor: pointer;
-        opacity: 0.6;
-        transition: opacity 0.3s ease;
-        
-  
-        &.active {
-          opacity: 1;
-          border: 2px solid vars.$gold-500;
-        }
-  
-        &:hover {
-          opacity: 1;
+      .thumbnail-scroll {
+        display: flex;
+        overflow-x: auto;
+        padding: 1rem 0;
+        gap: 0.75rem;
+        scroll-behavior: smooth;
+        justify-content: center;
+    
+        img.thumbnail {
+          height: 100px;
+          border-radius: 8px;
+          cursor: pointer;
+          opacity: 0.6;
+          transition: opacity 0.3s ease;
+          
+    
+          &.active {
+            opacity: 1;
+            border: 2px solid vars.$gold-500;
+          }
+    
+          &:hover {
+            opacity: 1;
+          }
         }
       }
     }
   }
-}
-  /* Lightbox styles */
-.lightbox-overlay {
+    /* Lightbox styles */
+  .lightbox-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -236,5 +236,14 @@
   
   .marchtrenk-container{
     max-width: 768px;
+  
+    .image-gallery {
+      max-width: 95%;
+      .main-image-container{
+        width: 768px;
+        height: auto;
+        max-width: 768px;
+      }
+    }
   }
 }
