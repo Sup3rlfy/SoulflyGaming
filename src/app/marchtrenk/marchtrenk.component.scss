@@ -254,12 +254,16 @@
 }
 @media (max-width: 1200px) {
   .marchtrenk-container {
-    max-width: 60% !important;
+    max-width: 70% !important;;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     align-self: start;
     justify-content: center;
+  }
+  .main{ 
+    max-width: 70% !important;;
+
   }
 }
 
@@ -316,10 +320,10 @@
     }
     .image-gallery {
       margin: 0.5rem;
-      max-width: 600px !important;;
+      max-width: 70% !important;;
       height: 300px !important;
       img.main-image {
-        max-width: 100%;
+        max-width: 70% !important;;
         max-height: 275px !important;;
       }
       .toggle-slideshow {
@@ -340,10 +344,10 @@
   .marchtrenk-container {
     .location-section {
       margin: 0.5rem;
-      max-width: 800px !important;;
+      max-width: 70% !important;;
       height: 522px !important;
       img.main-image {
-        max-width: 100%;
+        max-width: 70% !important;;
         max-height: 400px !important;;
       }
     }
