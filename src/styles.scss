@@ -9,8 +9,12 @@ body {
   background-color: vars.$dark-gray-900;
   padding: 1rem;
   font-family: sans-serif;
-  max-width: 95%;
-
+  max-width: 95vw;
+  margin: 0 auto;
+  main {
+    width: 95%;
+    margin: 0 auto;
+  }
   h1 {
     color: vars.$gold-700;
     margin-bottom: 1rem;

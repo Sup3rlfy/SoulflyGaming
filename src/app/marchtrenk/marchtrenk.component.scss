@@ -2,7 +2,8 @@
 @use '../../variables' as vars;
 
 .marchtrenk-container {
-  max-width: 70%;
+  width: 95%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   background-color: vars.$dark-gray-900;
@@ -229,21 +230,25 @@
     }
   }
 }
+
+
 @media (max-width: 768px) {
-  .main{
-    max-width: 70%;
-  }
-  
-  .marchtrenk-container{
-    max-width: 768px;
-  
+  .marchtrenk-container {
+    width: 95% !important;
+    padding: 1rem;
+    
     .image-gallery {
-      max-width: 95%;
-      .main-image-container{
-        width: 768px;
-        height: auto;
-        max-width: 768px;
+      margin: 1rem auto;
+      .main-image-container {
+        width: 100% !important;
+        height: auto !important;
       }
     }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .marchtrenk-container {
+    width: 95% !important;
   }
 }
