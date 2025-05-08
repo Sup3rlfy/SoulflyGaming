@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+//app.component.ts
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { TopNavComponent } from './top-nav/top-nav.component';
