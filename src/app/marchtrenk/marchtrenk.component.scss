@@ -222,18 +222,20 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 2rem; // Adjusted font size
-      color: white;
-      background: transparent;
-      border: none;
+      font-size: 5rem; // Adjusted font size
+      color: vars.$gold-700;
+      background: vars.$dark-gray-700-80;
+      border-color: vars.$gold-700;
+      border-width: 3px;
+      border-radius: 8px;
       cursor: pointer;
 
       &.left {
-        left: 10px; // Adjusted position
+        left: -50px; // Adjusted position
       }
 
       &.right {
-        right: 10px; // Adjusted position
+        right: -50px; // Adjusted position
       }
     }
   }
@@ -324,8 +326,8 @@
     }
 
     .image-gallery {
-      max-width: 900px;
-      height: 450px !important;
+      max-width: 800px;
+      height: 300px !important;
     }
   }
 }
