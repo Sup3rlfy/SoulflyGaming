@@ -90,16 +90,22 @@ $border-radius: 8px; // or your desired global corner rounding
 }
 
 // --- Mobile responsiveness ---
+@media (max-width: 1200px) {
+  .nav-item a {
+    font-size: 0.9rem; // Slightly smaller font
+    padding: 0 6px;      // Reduce side padding to save more space
+  }
+}// --- Mobile responsiveness ---
 @media (max-width: 768px) {
   .nav-item a {
-    font-size: 0.85rem; // Slightly smaller font
+    font-size: 0.7rem; // Slightly smaller font
     padding: 0 6px;      // Reduce side padding to save more space
   }
 }
 
 @media (max-width: 480px) {
   .nav-item a {
-    font-size: 0.75rem; // Even smaller font for very small phones
+    font-size: 0.6rem; // Even smaller font for very small phones
     padding: 0 4px;
   }
 }
