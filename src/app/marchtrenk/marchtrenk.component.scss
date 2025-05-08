@@ -30,6 +30,11 @@
       font-size: 1.2rem; // Slightly smaller font size
     }
   }
+
+  .topic-section, 
+  .vorteile-section{
+    padding-left: 0.75rem;
+  }
   .location-section {
     max-width: 100% !important;
     align-items: center center;
@@ -286,7 +291,7 @@
 
     ul li {
       font-size: 0.85rem;
-      padding-left: 0.4rem;
+      padding-left: 0.75rem;
       border-left-width: 2px;
     }
 
@@ -303,6 +308,7 @@
       font-size: 0.85rem;
       padding: 0.75rem;
       margin-top: 1rem;
+      padding-left: 0.75rem;
     }
     .location-section {
       gap: 1rem;
@@ -352,6 +358,17 @@
       img.main-image {
         max-width: 70% !important;;
         max-height: 400px !important;;
+      }
+      gap: 1rem;
+      .map-container {
+        flex: 1 1 70%; // Take full width on smaller screens
+        min-width: auto; // Adjust min-width
+        height: 270px; /* Ensure map has a reasonable height */  
+      }
+  
+      .address-box {
+        flex: 1 1 80%; // Take full width on smaller screens    
+        font-size: 0.9rem; // Slightly smaller font size
       }
     }
   }
