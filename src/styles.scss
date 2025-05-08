@@ -367,18 +367,6 @@ body.light-mode {
       border-color: vars.$green-600 !important;
     }
 
-  // ☀️ Light mode overrides
-
-    .interest-box {
-      background-color: vars.$green-200;
-
-      p {
-        color: vars.$green-800;
-      }
-    }
-    .thumbnail-scroll img.thumbnail.active {
-      border-color: vars.$green-600;
-    }
     .image-gallery{
       background-color: vars.$green-200 !important;
       .toggle-slideshow {
@@ -388,6 +376,11 @@ body.light-mode {
       .main-image-container{
           background-color: vars.$green-200 !important;
           
+      }
+      .thumbnail-scroll-wrapper .scroll-arrow { 
+        color: vars.$green-600 !important;
+        background: vars.$green-200 !important;
+        border-color: vars.$green-600 !important;   
       }
    }
   }
