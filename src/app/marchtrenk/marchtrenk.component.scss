@@ -31,7 +31,8 @@
     }
   }
   .location-section {
-    max-width: 95% !important;
+    max-width: 100% !important;
+    align-items: center center;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -40,8 +41,6 @@
     padding: .5rem;
 
     .map-container {
-      
-      max-width: 100% !important;
       flex: 1 1 50%;
       height: auto;
       width: auto;
@@ -49,10 +48,8 @@
       border-radius: 12px;
     }
 
-    .address-box {
-      
-      max-width: 95% !important;
-      flex: 1 1 40%;
+    .address-box {   
+      flex: 1 1 35%;
       background-color: vars.$dark-gray-700;
       padding: 1.5rem;
       border-radius: 12px;
@@ -310,9 +307,9 @@
     .location-section {
       gap: 1rem;
       .map-container {
-        flex: 1 1 80%; // Take full width on smaller screens
+        flex: 1 1 70%; // Take full width on smaller screens
         min-width: auto; // Adjust min-width
-        height: 300px; /* Ensure map has a reasonable height */  
+        height: 200px; /* Ensure map has a reasonable height */  
       }
   
       .address-box {
