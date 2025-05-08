@@ -67,7 +67,7 @@ body {
 }
 
 // 🌿 LIGHT MODE
-body.light-mode {
+body.light {
   background-color: vars.$green-gray-100;
   color: vars.$green-dark-900;
 
@@ -228,7 +228,7 @@ body.light-mode {
 }
 
 // 🌿 Light mode nav styling
-body.light-mode {
+body.light {
   .top-nav {
     background-color: vars.$green-300;
   }

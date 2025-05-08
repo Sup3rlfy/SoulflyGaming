@@ -8,6 +8,7 @@ export class ThemeService {
 
   constructor(private cookieService: CookieService) {}
 
+
   setTheme(theme: 'light' | 'dark') {
     // Remove both light and dark theme classes
     document.body.classList.remove('light', 'dark');
@@ -26,7 +27,17 @@ export class ThemeService {
   initTheme() {
     const saved = this.cookieService.get(this.cookieKey);
     // Default to 'dark' if no theme is found in the cookie
-    const theme = saved === 'light' ? 'light' : 'dark';
+    //const theme = saved === 'light' ? 'light' : 'dark';
+
+    //initializes with previously saved cookies
+    let theme: 'light' | 'dark';
+    if (saved === 'light' || saved === 'dark') {
+      theme = saved;
+    } else {
+    // Use system preference if no cookie is set
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    theme = prefersDark ? 'dark' : 'light';
+    }
     this.setTheme(theme);
   }
 
