@@ -29,30 +29,26 @@
       font-size: 0.9rem; // Slightly smaller font size
     }
   }
-
   .location-section {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem; // Adjusted gap for smaller screens
+    gap: 2rem;
     background-color: vars.$dark-gray-700;
     border-radius: 12px;
-    padding: 0.5rem;
+    padding: .5rem;
 
     .map-container {
-      flex: 1 1 100%; // Take full width on smaller screens
-      min-width: auto; // Adjust min-width
-      height: 300px; /* Ensure map has a reasonable height */
+      flex: 1 1 50%;
+      min-width: 300px;
       overflow: hidden;
-      border-radius: 8px;
+      border-radius: 12px;
     }
 
     .address-box {
-      flex: 1 1 100%; // Take full width on smaller screens
+      flex: 1 1 40%;
       background-color: vars.$dark-gray-700;
       padding: 1rem;
       border-radius: 12px;
-      font-size: 0.9rem; // Slightly smaller font size
-
       a {
         color: vars.$gold-300;
         text-decoration: underline;
@@ -61,9 +57,8 @@
           color: vars.$gold-100;
         }
       }
-
       p {
-        margin-bottom: 0.5rem; // Adjusted margin for smaller screens
+        margin-bottom: 0.75rem;
       }
     }
   }
@@ -275,7 +270,23 @@
       padding: 0.75rem;
       margin-top: 1rem;
     }
-
+    .location-section {
+      gap: 1rem;
+      .map-container {
+        flex: 1 1 80%; // Take full width on smaller screens
+        min-width: auto; // Adjust min-width
+        height: 300px; /* Ensure map has a reasonable height */  
+      }
+  
+      .address-box {
+        flex: 1 1 80%; // Take full width on smaller screens    
+        font-size: 0.9rem; // Slightly smaller font size
+  
+        p {
+          margin-bottom: 0.5rem; // Adjusted margin for smaller screens
+        }
+      }
+    }
     .image-gallery {
       margin: 0.5rem;
 

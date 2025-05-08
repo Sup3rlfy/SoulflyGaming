@@ -1,19 +1,9 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- app.component.html -->
+
+<!-- Use custom top navigation component -->
+<app-top-nav></app-top-nav>
 
 
-<nav class="top-nav">
-  <ul class="nav-list-horizontal">
-    <li class="nav-item"><a routerLink="/home" routerLinkActive="active">Home</a></li>
-    <li class="nav-item"><a routerLink="/sisyphus" routerLinkActive="active">Sisyphus the Game</a></li>
-    <li class="nav-item"><a routerLink="/runes" routerLinkActive="active">Runes</a></li>
-    <li class="nav-item"><a routerLink="/bio" routerLinkActive="active">Bio</a></li>
-    <li class="nav-item settings-button">
-      <button class="theme-toggle" (click)="toggleTheme()">
-        {{ isLightMode ? '🌙' : '☀️' }}
-      </button>
-    </li>
-  </ul>
-</nav>
 <!-- Wrapper for main content and ads -->
 <div class="content-wrapper">
   <div class="main-content">
