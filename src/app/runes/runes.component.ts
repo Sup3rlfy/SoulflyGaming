@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+//runes.component.ts
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SafePipe } from '../safe.pipe';
 import { RunesSegmentComponent } from './segment/runes-segment.component';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { RouterModule, ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-runes',
@@ -17,7 +18,8 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   templateUrl: './runes.component.html',
   styleUrls: ['./runes.component.scss']
 })
-export class RunesComponent {
+export class RunesComponent implements OnInit {
+
   segmentList: {
     id: string;
     title: string;
@@ -33,10 +35,10 @@ export class RunesComponent {
     showShort: boolean;
   }[];
 
-  constructor(private sanitizer: DomSanitizer) {
+  constructor(private route: ActivatedRoute, private router: Router, private sanitizer: DomSanitizer) {
     this.segmentList = [
       {
-        id: 'gameDesc',
+        id: 'description',
         title: 'Game Description',
         image: 'assets/images/roe/roe1.jpg',
         content: [`- High fantasy RPG with minimal steampunk elements as inspired by ADOM, Final Fantasy XI online or seen in World of Warcraft`,
@@ -63,7 +65,7 @@ export class RunesComponent {
                     isEmpty: false
       },
       {
-        id: 'workingOn',
+        id: 'current',
         title: 'Current Challenges',
         image: 'assets/images/roe/lootgobo2.jpg',
         content: [
@@ -99,7 +101,7 @@ export class RunesComponent {
         isEmpty: false
       },
       {
-        id: 'class-system',
+        id: 'classSys',
         title: 'Class System',
         image: 'assets/images/roe/roe3.jpg',
         content: [`Currently the goal is to create a system with main and sub classes, which the player may change at any time at minimal cost. A system to pick 5-10 skills from all of your leveled classes instead of a sub-class may be added as well. 
@@ -151,7 +153,7 @@ export class RunesComponent {
         isEmpty: false
       },
       {
-        id: 'skillExp',
+        id: 'skillSys',
         title: 'Skill Experience',
         image: 'assets/images/roe/roe_5.jpg',
         content: [`Any action you use will pay experince points into multiple exp-pools, slowly increasing your prowess in each of those categories,
@@ -166,7 +168,7 @@ export class RunesComponent {
         isEmpty: false
       },
       {
-        id: 'transp',
+        id: 'transport',
         title: 'Transportation',
         image: 'assets/images/roe/stonecircle.jpg',
         content: [`A wide range of different means of transportation:`,
@@ -193,7 +195,7 @@ export class RunesComponent {
         isEmpty: false
       },
       {
-        id: 'movLand',
+        id: 'landscapes',
         title: 'Moving Landscapes',
         image: 'assets/images/roe/roe_5.jpg',
         content: [`Terrains and entire zones that shift their positions and that may only be accessible at certain times (or at the expense of
@@ -207,13 +209,13 @@ export class RunesComponent {
         isEmpty: false
       },
       {
-        id: 'currencySys',
+        id: 'currency',
         title: 'Currencies',
         image: 'assets/images/roe/wallet.jpg',
         content: [`Runes of Elana will have multiple different currencies, all obtainable ingame. Different traders and nations will prefer one currency over others 
                   and offer better prices in that currency. Certain currencies may also rise or fall in value due to player actions or interactions with each other.
                   Players will have wallets and bank-contracts. Depending on your bank contract, cash in your wallet's teleport case will be ported to your bank at 
-                  regular intervals (more frequently if you pay your bank more). Your bank will store all your money in a standardized currency called Realm Standard (R$)
+                  regular intervals (more frequently if you pay your bank more). Your bank will store all your money in a standardized currency called Realm Standard (ℛ$).
                   Your wallet also has a cheque-book, allowing you to pay from your bank account anywhere in the world. Money upon your body on your death may 
                   eventually be stolen if not protected otherwise. There will be NPC's to exchange currencies at certain rates, players may still offer better rates.
       `,
@@ -221,7 +223,7 @@ export class RunesComponent {
         isEmpty: false
       },
       {
-        id: 'weightSys',
+        id: 'weight',
         title: 'Weigth',
         image: 'assets/images/roe/roe5.jpg',
         content: [`Sadly in a game with thousands of players the amount of data needs to be controlled and so there has to be a limit to the amount 
@@ -276,7 +278,7 @@ export class RunesComponent {
 
     /* Video*/
       {
-        id: 'vidDiaryEmpty',
+        id: 'videoDiary',
         title: 'Video Diary',
         image: '',
         content: [``],
@@ -374,5 +376,21 @@ export class RunesComponent {
 
   private sanitize(html: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(html);
-}
+  }
+  ngOnInit() {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const fragment = this.route.snapshot.fragment;
+        if (fragment) {
+          // Delay to ensure DOM is rendered
+          setTimeout(() => {
+            const element = document.getElementById(fragment);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 0);
+        }
+      }
+    });
+  }
 }

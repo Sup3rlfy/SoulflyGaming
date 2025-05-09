@@ -13,7 +13,6 @@ import { LanguageService } from '../../language.service';
 })
 export class TopNavComponent {
   isLightMode = false;
-  currentLang = 'en'; // default fallback
   
   constructor(
     private router: Router,

@@ -10,7 +10,7 @@
   <nav class="runes-sidebar">
     <div class="sidebar-scroll-container">
       <div class="sidebar-box">
-        <a *ngFor="let segment of segmentList" class="sidebar-button" [href]="'/runes#' + segment.id">
+        <a *ngFor="let segment of segmentList" class="sidebar-button" [routerLink]="['/runes']" [fragment]="segment.id">
           {{ segment.title }}
         </a>
       </div>

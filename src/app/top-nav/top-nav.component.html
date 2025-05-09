@@ -12,13 +12,19 @@
   <button class="theme-toggle" (click)="toggleTheme()">
     {{ isLightMode ? '🌙' : '☀️' }}
   </button>
+   <!--
   <button class="lang-toggle" (click)="toggleLanguage()">
     <span *ngIf="langService.lang === 'de'">🇬🇧</span>
     <span *ngIf="langService.lang === 'en'">🇩🇪</span>
   </button>
+ 
+  <button class="lang-toggle" (click)="toggleLanguage()">
+    {{ langService.lang === 'en' ? '🇩🇪' : '🇬🇧' }}
+  </button>
+  -->
   <button class="lang-toggle" (click)="toggleLanguage()">
     <img 
-      [src]="'assets/images/' + (currentLang === 'de' ? 'en' : 'de') + '.png'" 
+      [src]="'assets/images/' + (langService.lang === 'de' ? 'en' : 'de') + '.png'" 
       alt="Language Toggle" 
       width="24" 
       height="24"
