@@ -5,6 +5,7 @@ import { SafePipe } from '../safe.pipe';
 import { RunesSegmentComponent } from './segment/runes-segment.component';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { RouterModule, ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+declare var adsbygoogle: any;
 
 @Component({
   selector: 'app-runes',
@@ -377,6 +378,7 @@ export class RunesComponent implements OnInit {
   private sanitize(html: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
+
   ngOnInit() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
@@ -392,5 +394,13 @@ export class RunesComponent implements OnInit {
         }
       }
     });
+  }
+
+  ngAfterViewInit(): void {
+    try {
+      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+    } catch (e) {
+      console.error('AdSense error', e);
+    }
   }
 }
