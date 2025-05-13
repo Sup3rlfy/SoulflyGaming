@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
-import { interval } from 'rxjs';
+declare var adsbygoogle: any;
 
 @Component({
   selector: 'app-marchtrenk',
@@ -86,5 +86,13 @@ export class MarchtrenkComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     clearInterval(this.intervalId);
+  }
+
+  ngAfterViewInit(): void {
+    try {
+      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+    } catch (e) {
+      console.error('AdSense error', e);
+    }
   }
 }
