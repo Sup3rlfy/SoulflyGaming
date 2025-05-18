@@ -185,7 +185,10 @@ export class RunesComponent implements OnInit {
         id: 'mounts',
         title: 'Breeding Mounts',
         image: 'assets/images/roe/mount.jpg',
-        content: [`Wanted: An iconic mount that players will forever identify with my game world(s)`,
+        content: [`Mounts are actually a really tough subject in my opinion! What i really think the best thing would be and thus is set as my goal, 
+                  is an iconic creature such as Pikachu. You see it anywhere, or justa part of it, and 75% of the world knows it is a Pikachu and the`
+                   ` game is called Pokémon  What is really required is an iconic creature`,
+                  `Wanted: An iconic mount that players will forever identify with my game world(s)`,
                   'Wanted: Breeding via eggs.',
                   'Not Wanted: Boring old Horses.',
                   'Not Tolerated at all: Mounts that break the immersion: aka. no cars, robots or anything that doesn’t fit the game world!.',
