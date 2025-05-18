@@ -55,7 +55,7 @@ export class HomeComponent {
         ],
         de: [
           'Inspiriert von ADOM, Final Fantasy, Warframe uvm.',
-          'Ein Blick auf meine Vision einer Fantasy-Welt und die Entwicklung eines Spiles in selbiger.'
+          'Ein Blick auf meine Vision einer Fantasy-Welt und die Entwicklung eines Spieles in selbiger.'
         ]
       }
     },

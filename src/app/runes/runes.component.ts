@@ -61,7 +61,7 @@ export class RunesComponent implements OnInit {
         image: 'assets/images/roe/roe4.jpg',
         content: [`Ever since my misspent youth in Final Fantasy IX online and untold other games the idea to build my own world and game around it started to form. 
                     The long term goal is to make a good high fantasy MMORPG, set in a world of humans, elves, dwarves, Irai and a few other races as well as hordes 
-                    of monsters and the occasional dragon. Since I am still aquireing the skills for such a project, Runes of Elana is going to be a single player 
+                    of monsters and the occasional dragon. Since I am still aquiring the skills for such a project, Runes of Elana is going to be a single player 
                     precursor to that massive endeavor, hopefully containing many of the features to come in the massive multiplayer version.`,
                   ],
                     isEmpty: false
@@ -88,7 +88,7 @@ export class RunesComponent implements OnInit {
           `- Basic UI for inventory, equipment, wallet and tools, HP-, MP-, XP- and time display`,
           `- A tool system, allowing for tools to be usable for multiple disciplines!`,
           `- Mining and Digging`,
-          `- Connsumables featuring potions, scrolls and food`,
+          `- Consumables featuring potions, scrolls and food`,
           `- A lot of idea-finding :)`,
           `- Sound system and area dependent background music`,
         ],
