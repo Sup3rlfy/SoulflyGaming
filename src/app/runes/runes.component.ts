@@ -185,14 +185,39 @@ export class RunesComponent implements OnInit {
         id: 'mounts',
         title: 'Breeding Mounts',
         image: 'assets/images/roe/mount.jpg',
-        content: [`Mounts are actually a really tough subject in my opinion! What i really think the best thing would be and thus is set as my goal, 
-                  is an iconic creature such as Pikachu. You see it anywhere, or justa part of it, and 75% of the world knows it is a Pikachu and the`
-                   ` game is called Pokémon  What is really required is an iconic creature`,
-                  `Wanted: An iconic mount that players will forever identify with my game world(s)`,
-                  'Wanted: Breeding via eggs.',
-                  'Not Wanted: Boring old Horses.',
-                  'Not Tolerated at all: Mounts that break the immersion: aka. no cars, robots or anything that doesn’t fit the game world!.',
+        content: [`
+                  Mounts are actually a really tough subject in my opinion! Horses are out, well, because... boooring, and also not really fantasy! 
+                  On top of that I think we have all seen a ton of games with really bad riding animations, so it may be quite hard to do right.
 
+                  What I really think the best thing would be — and thus is set as my goal — is an iconic creature such as Pikachu. You see it anywhere, 
+                  or hear the little sounds it makes, and 75% of the world knows it is a Pikachu and the game is called Pokémon. The only game that has 
+                  really achieved this goal would be Final Fantasy with its world-setting Chocobo: you see a glimpse of 'em yellow feathers and you know 
+                  you are looking at a Final Fantasy world.
+                  The only other animal I can think of that is reasonably well suited to be iconic is a Velociraptor, but it has been done to exhaustion, 
+                  is a carnivore, and looks a bit too much like an ostrich or Chocobo anyway...
+
+                  Oh, and there definitely won’t be any of that “everyone riding a tank-sized Triceratops” or even more immersion-breaking cute-skins, 
+                  robot pets, or cars and motorbikes! By the by, if there ever will be anything like costumes or aesthetic gear sets, immersion breaking 
+                  is a big NO-NO there as well, for me.
+
+                  Now, try as I might, it really is not easy to come up with such a creature, with the criteria of being iconic and 'exclusive' to my game. 
+                  Besides these two criteria, it should also be an egg-laying creature, since I think implementing a breeding mechanic would be fun and 
+                  enjoyable for the players. It should be a herbivore or at most an omnivore, so we can reasonably explain how we simply release it in 
+                  the wild after a ride — without it eating up half the local fauna and inhabitants. And, last but not least, while it does not have to 
+                  be intrinsically cute, it sure wouldn’t hurt if it could be portrayed on occasion in a cute manner — if only to apply that cuteness to 
+                  the newly bred babies.
+                  Now I will also say, while having that *one* game-defining mount, there will be a mechanic so that we will see other mounts as well... 
+                  on occasion and seldom enough, so that they will really be a rarity and hopefully a joy to behold.
+
+                  So at the moment I think the AI-generated image to the left shows a creature that could very well closely resemble something that might 
+                  almost be it. In my imagination, it had a shorter neck and a larger, flatter, triangular herbivore mouth or head — but early days, I guess.`,
+                  ` `,
+                  `Short recap:
+                  Wanted: An iconic mount that players will forever identify with my game world(s).
+                  Wanted: Breeding via eggs.
+                  Wanted: Small and bipedal preferably, herbivore or omnivore.
+                  Not Wanted: Boring old horses.
+                  Not Tolerated at all: Mounts that break the immersion — a.k.a. no cars, robots, or anything that doesn’t fit the game world!`
         ],
         isEmpty: false
       },
