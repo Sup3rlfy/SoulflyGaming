@@ -5,6 +5,7 @@ import { SafePipe } from '../safe.pipe';
 import { RunesSegmentComponent } from './segment/runes-segment.component';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { RouterModule, ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { LanguageService } from '../../language.service';
 declare var adsbygoogle: any;
 
 @Component({
@@ -36,7 +37,7 @@ export class RunesComponent implements OnInit {
     showShort: boolean;
   }[];
 
-  constructor(private route: ActivatedRoute, private router: Router, private sanitizer: DomSanitizer) {
+  constructor(private route: ActivatedRoute, private router: Router, private sanitizer: DomSanitizer, public langService: LanguageService) {
     this.segmentList = [
       {
         id: 'description',

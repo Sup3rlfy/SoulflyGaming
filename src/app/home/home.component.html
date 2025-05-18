@@ -6,20 +6,22 @@
       [routerLink]="project.link"
       [ngClass]="{ reverse: i % 2 !== 0 }"
     >
-    <div class="image-wrapper">
-      <img
-        *ngFor="let img of project.images; let j = index"
-        [src]="img"
-        [alt]="project.title"
-        class="project-image"
-        [class.visible]="j === imageIndexes[i]"
-      />
-    </div>
+      <div class="image-wrapper">
+        <img
+          *ngFor="let img of project.images; let j = index"
+          [src]="img"
+          [alt]="project.title[langService.lang]"
+          class="project-image"
+          [class.visible]="j === imageIndexes[i]"
+        />
+      </div>
 
       <div class="project-description">
-        <h2>{{ project.title }}</h2>
-        <p *ngFor="let line of project.description">{{ line }}</p>
-        <span class="link-label">View More →</span>
+        <h2>{{ project.title[langService.lang] }}</h2>
+        <p *ngFor="let line of project.description[langService.lang]">{{ line }}</p>
+        <span class="link-label">
+          {{ langService.lang === 'de' ? 'Mehr dazu →' : 'View More →' }}
+        </span>
       </div>
     </a>
   </div>

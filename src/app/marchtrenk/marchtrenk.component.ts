@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
+import { LanguageService } from '../../language.service';
 declare var adsbygoogle: any;
 
 @Component({
@@ -23,8 +24,10 @@ export class MarchtrenkComponent implements OnInit, OnDestroy {
   intervalId: any;
   isSlideshowRunning = true;
   isImageFullScreenOpen = false;
+  
 
   @ViewChild('thumbnailContainer', { static: false }) thumbnailContainer!: ElementRef<HTMLDivElement>;
+  constructor(public langService: LanguageService) {}
 
   ngOnInit(): void {
     this.startSlideshow();

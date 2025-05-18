@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { LanguageService } from '../../language.service';
 
 @Component({
   selector: 'app-home',
@@ -12,20 +13,26 @@ import { RouterModule } from '@angular/router';
 export class HomeComponent {
   projectList = [
     {
-      title: 'Sisyphus the Game',
+       title: { en: 'Sisyphus the Game', de: 'Sisyphus the Game' },
       images: [
         'assets/images/sis/sis1.jpg',
         'assets/images/sis/sis2.jpg',
         'assets/images/sis/sis3.jpg',
       ],
       link: '/sisyphus',
-      description: [
-        'A challenging single player experience on Steam.',
-        'Jump into the role of Sisyphus and his punishing conquest.'
-      ]
+      description: {
+        en: [
+          'A challenging single player experience on Steam.',
+          'Jump into the role of Sisyphus and his punishing conquest.'
+        ],
+        de: [
+          'Ein herausforderndes Einzelspieler-Erlebnis auf Steam.',
+          'Schlüpfe in die Rolle des Sisyphus und bändige seine Strafe.'
+        ]
+      }
     },
     {
-      title: 'Runes of Elana',
+      title: { en: 'Runes of Elana', de: 'Runes of Elana' },
       images: [
         'assets/images/roe/roe1.jpg',
         'assets/images/roe/roe2.jpg',
@@ -41,25 +48,37 @@ export class HomeComponent {
         'assets/images/roe/stonecircle.jpg',
       ],
       link: '/runes',
-      description: [
-        'Inspired by ADOM, Final Fantasy, Warframe and a great many other games i set out to create my own game world while also honing my skills in Java and JavaFX.',
-        'Check out the state of "Runes of Elana" and what you might expect it to become in the future.'
-      ]
+      description: {
+        en: [
+          'Inspired by ADOM, Final Fantasy, Warframe and many more.',
+          'Explore with me my vision of a rich fantasy world and a game in development set in it!'
+        ],
+        de: [
+          'Inspiriert von ADOM, Final Fantasy, Warframe uvm.',
+          'Ein Blick auf meine Vision einer Fantasy-Welt und die Entwicklung eines Spiles in selbiger.'
+        ]
+      }
     },
     {
-      title: 'About Me',
+      title: { en: 'About Me', de: 'Über mich' },
       images: [
         'assets/images/bio.jpg',
 
       ],
       link: '/bio',
-      description: [
-        'Discover the journey and name behind Soulfly.',
-        'Learn how I got here and what drives me.'
-      ]
+      description: {
+        en: [
+          'Discover the journey and name behind Soulfly.',
+          'Learn how I got here and what drives me.'
+        ],
+        de: [
+          'Erfahre mehr über den Weg und die Person hinter Soulfly.',
+          'Was mich antreibt und wie ich bis hier gekommen bin.'
+        ]
+      }
     },
     {
-      title: 'Grundstück Marchtrenk zu vermieten!',
+      title: { en: 'Plot for Rent in Marchtrenk!', de: 'Grundstück Marchtrenk zu vermieten!' },
       images: [
         'assets/images/marchtrenk/marchtrenk.jpg',
         'assets/images/marchtrenk/marchtrenk3.jpg',
@@ -70,15 +89,24 @@ export class HomeComponent {
 
       ],
       link: '/marchtrenk',
-      description: [
-        '- 4157m² ab Jahresende verfügbar',
-        '- Marchtrenk, weiger als 1 Minute vom Bahnhof',
-        '- Vermietung oder Langzeit-Pacht'
-      ]
+      description: {
+        en: [
+          '- 4157m² available end of year',
+          '- Marchtrenk, less than 1 minute to train station',
+          '- For rent or long-term lease'
+        ],
+        de: [
+          '- 4157m² ab Jahresende verfügbar',
+          '- Marchtrenk, weniger als 1 Minute zum Bahnhof',
+          '- Vermietung oder Langzeit-Pacht'
+        ]
+      }
     }
   ];
-  
+
   imageIndexes: number[] = [];
+
+  constructor(public langService: LanguageService) {} 
 
   ngOnInit() {
     this.imageIndexes = this.projectList.map(() => 0);
