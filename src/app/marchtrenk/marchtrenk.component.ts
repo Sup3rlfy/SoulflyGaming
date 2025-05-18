@@ -15,6 +15,7 @@ export class MarchtrenkComponent implements OnInit, OnDestroy {
     'assets/images/marchtrenk/marchtrenk2.jpg',
     'assets/images/marchtrenk/marchtrenk3.jpg',
     'assets/images/marchtrenk/marchtrenk4.jpg',
+    'assets/images/marchtrenk/marchtrenk5.jpg',
     'assets/images/marchtrenk/marchtrenk6.jpg'
   ];
 
