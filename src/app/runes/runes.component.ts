@@ -139,34 +139,32 @@ export class RunesComponent implements OnInit {
         id: 'runeSys',
         title: 'Rune System',
         image: 'assets/images/roe/roe2.jpg',
-        content: [`Enemies will not only drop equipable items but also runes. Players will be able to use up to 10 runes simultaineously, boosting the spells 
+        content: [`Enemies will not only drop equipable items but also runes. Players will be able to use up to 10 runes simultaneously, boosting the spells 
                   attributes such as damage, range, mana consumption, duration, area of effect and many more. Runes will not be slotted into any specific item or spell, meaning you can
                   use the same rune for as many spells as you wish, swapping out individual runes depending on the needs of each spell and the availability of your runes.
-                  Runes will accumulate heat on use, and if you dont let them cool off you might damage them over time or even explode them if you really overdo it. 
+                  Runes will accumulate heat on use, and if you don't let them cool off you might damage them over time or even explode them if you really overdo it. 
                   Players will be able to trade runes and merge them to higher tiers or grind unwanted runes down into dust to then create runes they need.
-                  There will be adequate substitutes for players that dont use magic, such as necklaces or bracelets full of rune-engraved beast fangs and claws, to the same effect.
+                  There will be adequate substitutes for players that don't use magic, such as necklaces or bracelets full of rune-engraved beast fangs and claws, to the same effect.
 
-                  The inspiration herfore comes from the gear-swapping system in Final Fantasy XI or Warframe's mods and to some degree from Warhammer 40k's Farseers. 
+                  The inspiration herefore comes from the gear-swapping system in Final Fantasy XI or Warframe's mods and to some degree from Warhammer 40k's Farseers. 
                   Where you may swap any of the 16 items in your equipment slots in FFXI within less than a second at any time, this is highly unrealistic, but it
                   gives the desired functionality of being able to boost needed attributes for each individual action precisely. Warhammer's rune-wielding Farseers 
-                  use runes much in the way I am imagening them, and their functionality will be somewhere between those and the mods in Warframe.
-      `,
-    ],
+                  use runes much in the way I am imagining them, and their functionality will be somewhere between those and the mods in Warframe.
+        `],
         isEmpty: false
       },
       {
         id: 'skillSys',
         title: 'Skill Experience',
         image: 'assets/images/roe/roe_5.jpg',
-        content: [`Any action you use will pay experince points into multiple exp-pools, slowly increasing your prowess in each of those categories,
-                  passively as well as allowing you to spend points in customizeable skill trees.
+        content: [`Any action you use will pay experience points into multiple exp-pools, slowly increasing your prowess in each of those categories,
+                  passively as well as allowing you to spend points in customizable skill trees.
                   Imagine leveling up in your Lightning magic skill and finally switching from Lightning to a Chain-Lightning spell. Every lightning spellcast having paid
-                  into the Lighting Spell skill, the Lightning Element Skill, the Destructive magic skill, elemental magic skill and magic skill in general means if you 
-                  just swap from one lightning spell to the other, you will only start that one multiplicator from scratch, while you benefit from an already raised Lightning, 
+                  into the Lightning Spell skill, the Lightning Element Skill, the Destructive magic skill, elemental magic skill and magic skill in general means if you 
+                  just swap from one lightning spell to the other, you will only start that one multiplier from scratch, while you benefit from an already raised Lightning, 
                   Destructive, Elemental and general Magic skill. If you change your class at any point, you will at least already have some points in Magic skills, 
                   better than nothing, right!?.
-      `,
-    ],
+        `],
         isEmpty: false
       },
       {
@@ -179,21 +177,20 @@ export class RunesComponent implements OnInit {
                   '-- Nature-based teleportation by Druids from woods to woods.',
                   '-- RARE Town portal scrolls(*Diablo)',
                   '-- Considering: "Call-To-Player / Party Member" (*WoW-Warlock)',
-                  '-- Considering:  from player to Town (*FFXI Blackmage).'
-      ,
-    ],
+                  '-- Considering: from player to Town (*FFXI Blackmage).'
+        ],
         isEmpty: false
       },
       {
         id: 'mounts',
         title: 'Breeding Mounts',
         image: 'assets/images/roe/mount.jpg',
-        content: [`Wanted: A iconic mount that players will forever identify with my game world(s)`,
+        content: [`Wanted: An iconic mount that players will forever identify with my game world(s)`,
                   'Wanted: Breeding via eggs.',
                   'Not Wanted: Boring old Horses.',
-                  'Not Tolerated at all: Mounts that break the immersion: aka. no cars, robots or anything that doesnt fit the game world!.',
-      
-    ],
+                  'Not Tolerated at all: Mounts that break the immersion: aka. no cars, robots or anything that doesn’t fit the game world!.',
+
+        ],
         isEmpty: false
       },
       {
@@ -201,13 +198,12 @@ export class RunesComponent implements OnInit {
         title: 'Moving Landscapes',
         image: 'assets/images/roe/roe_5.jpg',
         content: [`Terrains and entire zones that shift their positions and that may only be accessible at certain times (or at the expense of
-                  huge ressources outside of those times(time, items/gold)).
-                  I am thinking of giant crabs warlking around in the sea, with a town(*Brandon Sanderson's Stormlight Archive) or leveling zones on top or even 
+                  huge resources outside of those times (time, items/gold)).
+                  I am thinking of giant crabs walking around in the sea, with a town(*Brandon Sanderson's Stormlight Archive) or leveling zones on top or even 
                   a dungeon inside. Depending on their location in the sea, the travel to the crabs could take anywhere between 3 min and 8 hours.
                   I am thinking of giant trees with either slowly moving branches or massive moving trees (*Strange World) that function as access points 
                   to those levels in the tree canopies.
-      `,
-    ],
+        `],
         isEmpty: false
       },
       {
@@ -219,21 +215,19 @@ export class RunesComponent implements OnInit {
                   Players will have wallets and bank-contracts. Depending on your bank contract, cash in your wallet's teleport case will be ported to your bank at 
                   regular intervals (more frequently if you pay your bank more). Your bank will store all your money in a standardized currency called Realm Standard (ℛ$).
                   Your wallet also has a cheque-book, allowing you to pay from your bank account anywhere in the world. Money upon your body on your death may 
-                  eventually be stolen if not protected otherwise. There will be NPC's to exchange currencies at certain rates, players may still offer better rates.
-      `,
-    ],
+                  eventually be stolen if not protected otherwise. There will be NPCs to exchange currencies at certain rates, players may still offer better rates.
+        `],
         isEmpty: false
       },
       {
         id: 'weight',
-        title: 'Weigth',
+        title: 'Weight',
         image: 'assets/images/roe/roe5.jpg',
         content: [`Sadly in a game with thousands of players the amount of data needs to be controlled and so there has to be a limit to the amount 
-                  you can possess, plus in reality you are also limited to what you may carry. There will be items to increas your weight capacity, basically magic 
+                  you can possess, plus in reality you are also limited to what you may carry. There will be items to increase your weight capacity, basically magic 
                   bags, wallets and belts etc, that may counteract the weight of your items, allowing you to carry more. This will also be tuned to balance melee 
-                  and mage classes, so that classes with high strength values will not have an overwhelming advantagein this regard.
-      `,
-    ],
+                  and mage classes, so that classes with high strength values will not have an overwhelming advantage in this regard.
+        `],
         isEmpty: false
       },
       {
@@ -241,8 +235,8 @@ export class RunesComponent implements OnInit {
         title: 'MMORPG plans',
         image: 'assets/images/roe/roe2.jpg',
         content: [`The long term goal is to make a good high fantasy MMORPG, set in a world of humans, elves, dwarves, Irai and a few other races as well as hordes 
-                  of monsters as well as the occasional dragon.`,
-                ],
+                  of monsters as well as the occasional dragon.`
+          ],
         isEmpty: false
       },
       {
@@ -296,7 +290,7 @@ export class RunesComponent implements OnInit {
           '- display changed from fixed map to fixed player (buggy & slow atm)' ,
           '- Digging and Mining introduced' ,
           '- new visual displays for equipment, tools, wallet and item description' ,
-          '- tool system allows for tools to be used for differnet tasks (pickaxe may also chop trees etc.)' ,
+          '- tool system allows for tools to be used for different tasks (pickaxe may also chop trees etc.)' , // fixed: "differnet" → "different"
           '- working equipment display and backend with display options for different sexes' ,
           '- sound system now plays sounds (doors, (un-)equip, pick-up, drop, use item/tool)' ,
           '- ingame time display improvements' ,
@@ -307,47 +301,44 @@ export class RunesComponent implements OnInit {
           '- default action triggers on item double click (equip/unequip etc.)'
         ],
         showShort: false
-      
       },
       {
         url: 'https://www.youtube.com/embed/FXta_dXG0II',
         title: 'approx. Day 100',
-        description: ['After a longer break i got down to starting on a user interface for the inventory and similar displays. The visual inventory got methods to sort, move and resize the inventory and display its total weight. A lot of items got added and filled with values. Item description popup windows were still in the making at that point. A switch from utf-8 to unicode symbols was made. Sadly how to use emojis still eludes me to this day. As a fun part to reward myself I introduced a portal spell that would connect two spots over the same map. I also created a globe display for hp and mp as well as two types of bar displays for xp and whatever else might follow. In the top right corner you will also notice the rudimentary beginnings of an ingame time display.'],
+        description: ['After a longer break I got down to starting on a user interface for the inventory and similar displays. The visual inventory got methods to sort, move and resize the inventory and display its total weight. A lot of items got added and filled with values. Item description popup windows were still in the making at that point. A switch from UTF-8 to Unicode symbols was made. Sadly how to use emojis still eludes me to this day. As a fun part to reward myself I introduced a portal spell that would connect two spots over the same map. I also created a globe display for HP and MP as well as two types of bar displays for XP and whatever else might follow. In the top right corner you will also notice the rudimentary beginnings of an ingame time display.'], // fixed: "i" → "I"
         sdescription: [
           '- visual Inventory added with movement, sorting & resizing',
           '- top and bot menus deemed unnecessary for the time being',
           '- added bunch of items',
           '- added visual display for items',
-          "- switched utf-8 to unicode. sadly emojis won't work - of course, the plan in the long run is to switch to individual images for each item or character",
+          "- switched UTF-8 to Unicode. sadly emojis won't work - of course, the plan in the long run is to switch to individual images for each item or character",
           '- item description window started',
           '- reworked map-connections to allow for portals',
-          '- added globe displays for hp/mp and bar displays for xp',
+          '- added globe displays for HP/MP and bar displays for XP',
           '- started on ingame time display (right top)'
         ],
         showShort: false
-      
-        },
+      },
       {
         url: 'https://www.youtube.com/embed/iEfeIdoi7F0',
         title: 'approx. Day 40',
-        description: ['About a month later I had the vision fixed so it would not show anything past non-transparent tiles. There is still a small issue with corner tiles flickering. The top display now had the ability to display messages. Item pickup got its own nice and stylish loot-menu box. A lot of preliminary work was done for harvesting and minin: Dungeons got different rock types and colors and pickaxes were introduces as first tools. I also implemented some convenience methods for debugging, like random and targeted teleportation and a full display of the map. Outside zones with trees grass and rivers were added to the overworld.'],
-          sdescription: [
-            '- fixed vision range checks for display' ,
-            '- top menu now takes and displays messages',
-            '- pop-up menu for picking up individual items',
-            '- method for pickup-all from same floor tile',
-            '- backend preparations for mining and harvesting:',
-            '-- added pickaxes, colors and ore content for rock',
-            '- new Outside maps for Overworld (trees, grass, rivers)',
-            '- added conveniece methods like teleport and show full map',
-          ],
-          showShort: false
-        
-        },
+        description: ['About a month later I had the vision fixed so it would not show anything past non-transparent tiles. There is still a small issue with corner tiles flickering. The top display now had the ability to display messages. Item pickup got its own nice and stylish loot-menu box. A lot of preliminary work was done for harvesting and mining: Dungeons got different rock types and colors and pickaxes were introduced as first tools. I also implemented some convenience methods for debugging, like random and targeted teleportation and a full display of the map. Outside zones with trees, grass and rivers were added to the overworld.'], // fixed: "minin" → "mining", "introduces" → "introduced"
+        sdescription: [
+          '- fixed vision range checks for display' ,
+          '- top menu now takes and displays messages',
+          '- pop-up menu for picking up individual items',
+          '- method for pickup-all from same floor tile',
+          '- backend preparations for mining and harvesting:',
+          '-- added pickaxes, colors and ore content for rock',
+          '- new Outside maps for Overworld (trees, grass, rivers)',
+          '- added convenience methods like teleport and show full map' // fixed: "conveniece" → "convenience"
+        ],
+        showShort: false
+      },
       {
         url: 'https://www.youtube.com/embed/V3eLi3ytSy8',
         title: 'Day 17',
-        description: ['By day 17 i had my sound player set so it would play some background music depending on the area. The transitions were still a bit abrupt at that point. I built the basics for and item and inventory system and the pick-up method, even though displaying the inventory was still limited to console.'],
+        description: ['By day 17 I had my sound player set so it would play some background music depending on the area. The transitions were still a bit abrupt at that point. I built the basics for an item and inventory system and the pick-up method, even though displaying the inventory was still limited to console.'], // fixed: "i" → "I", "and item" → "an item"
         sdescription: [
           '- basic sound player for background music, transitions with change of map' ,
           '- backend for items and inventory system created',
@@ -355,7 +346,6 @@ export class RunesComponent implements OnInit {
           '- no visual inventory yet, only console-print',
         ],
         showShort: false
-      
       },
       {
         url: 'https://www.youtube.com/embed/uWdd6j2GUt4',
