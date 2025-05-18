@@ -124,13 +124,13 @@ export class RunesComponent implements OnInit {
         title: 'Soft Caps only',
         image: 'assets/images/roe/roe_5.jpg',
         content: [`The planned max level is at 50, but beyond that you will be able to receive Merit points instead of Level-Ups. Merit points will be used
-                  to increase main attributes as well as abileties in the skill trees. These increases will not have any hard caps, but prices will increase ever constantly 
+                  to increase main attributes as well as abilities in the skill trees. These increases will not have any hard caps, but prices will increase ever constantly 
                   and drastically.`,
-                  `Basically players plaing for a decade will have (limited) advantages over players playing a year or two, who again will be having advantages over players
-                  playing a month or two. Players with a 10th of the playtime of others may still be able to have better attributes and abileties than others if they spend 
+                  `Basically players playing for a decade will have (limited) advantages over players playing a year or two, who again will be having advantages over players
+                  playing a month or two. Players with a 10th of the playtime of others may still be able to have better attributes and abilities than others if they spend 
                   them wisely, for example if they only focus on their one main class/job, or if they die less, losing less experience.`,
                   `At certain thresholds of merits invested into the same class, the level may be displayed as 51, 52 ... (or maybe you will earn stars at that point?)
-                  As abileties and attributes will consume ever more rapidly increasing quanteties of merits, star levels will be exponentially more difficult to obtain.`
+                  As abileties and attributes will consume ever more rapidly increasing quantities of merits, star levels will be exponentially more difficult to obtain.`
       ,
     ],
         isEmpty: false
