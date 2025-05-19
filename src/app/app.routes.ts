@@ -5,6 +5,7 @@ import { SisyphusComponent } from './sisyphus/sisyphus.component';
 import { RunesComponent } from './runes/runes.component';
 import { BioComponent } from './bio/bio.component';
 import { MarchtrenkComponent } from './marchtrenk/marchtrenk.component';
+import { SoftSkillsComponent } from './soft-skills/soft-skills.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -13,5 +14,6 @@ export const routes: Routes = [
   { path: 'runes', component: RunesComponent },
   { path: 'bio', component: BioComponent },
   { path: 'marchtrenk', component: MarchtrenkComponent },
+  { path: 'soft-skills', component: SoftSkillsComponent },
   { path: '**', redirectTo: '' }
 ];

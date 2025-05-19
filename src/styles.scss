@@ -24,6 +24,9 @@ body {
   h2 {
     color: vars.$gold-500;
   }
+  h3 {
+    color: vars.$gold-300;
+  }
 
   p {
     color: vars.$gold-200;
@@ -81,7 +84,9 @@ body.light {
     margin-top: 2rem;
     font-size: 1.3rem;
   }
-
+  h3 {
+    color: vars.$green-300;
+  }
   p {
     color: vars.$green-800;
     max-width: 700px;
@@ -177,7 +182,21 @@ body.light {
     border-color: vars.$green-600;
   }
 }
+
+//soft-skills light
+  .soft-skills {
+  
+        background-color: vars.$green-gray-100;
+
+      .section {
+
+        background-color: vars.$green-gray-100;
+    }
+  }
 }
+
+//soft-skills
+
 
 
 //

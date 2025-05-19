@@ -1,0 +1,26 @@
+@use './variables' as vars;
+.soft-skills {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      //background-color: vars.$dark-gray-900;
+      
+    }
+    .question {
+      margin-top: 20px;
+    }
+    .answer {
+      margin-left: 20px;
+      color: #2980b9;
+    }
+    .section {
+      margin-top: 40px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      //background-color: vars.$dark-gray-900;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #16a085;
+    }
