@@ -310,7 +310,23 @@ export class RunesComponent implements OnInit {
       },
     ];
     this.videoList = [
+
       {
+        url: 'https://www.youtube.com/embed/lz8GV1kjo6U',
+        title: 'update 6',
+        description: ["Mobs finally got some basic mob movement and a loot-goblin is now finding its way from one rock to the next, picking up all of the rocks including the occasional other item... Future targets include the Goblin leaving again after a certain quantity is picked up. and all mob behavior needs to get smarter: avoid or seek out players, detect collisions, roam freely or at certain positions etc."],
+        sdescription: [
+          '- finally some basic mob movement ',
+          '- loot-goblins now find and loot rocks, sometimes a bit more',
+          '- Future targets:',
+          '-- Goblin leaving again after a certain quantity is picked up',
+          '-- smarter mob behavior in general: ',
+          '---- avoid or seek out players',
+          '---- detect collisions',
+          '---- roam freely or at certain positions etc.'
+        ],
+        showShort: false
+      },{
         url: 'https://www.youtube.com/embed/KkL5_84KGeM',
         title: 'approx. Day 120',
         description: ["Early in 2025, I finally got to a major issue I had been avoiding for some time: switching from a 'player moving over the map' kind of display to a 'map is moving and player is fixed in the center' display. This still remains buggy, as some of the optimizations for visual updates could not be ported and still have to be rethought and redone at a later point. Still, a lot of other content was added as well: the sound system was advanced to play sounds. Mining and digging holes works now, there is a working item description, a comparison menu between equipped and not equipped items, and the whole equipment, wallet, and tool menus are new. The time display was perfected. There are separate equipment screens for males and females, and other sexes may still be added. A highlight, I think, is my tool system, where every tool may be used for a multitude of tasks. Who says a pickaxe can only hack into walls and rock!? Want to use it as a hatchet to hack down trees? No problem. Or why should you not be able to use a shovel as a sickle to cut down grass or herbs? Money will go directly to your wallet if one is equipped and you have enough space in it. Consumables like potions, food, and scrolls were added. All the visual menus got (double)click-interactivity and a context menu with choices. A new castle zone was added. A hunger meter was added to the HP display."],

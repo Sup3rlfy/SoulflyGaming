@@ -12,6 +12,7 @@ import { LanguageService } from '../../language.service';
 })
 export class BioComponent implements OnInit {
   images = [
+    'assets/images/bio/Me0.jpg',
     'assets/images/bio/Me1.jpg',
     'assets/images/bio/Me2.jpg',
     'assets/images/bio/Me3.jpg',
