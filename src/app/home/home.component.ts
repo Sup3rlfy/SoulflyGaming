@@ -63,7 +63,7 @@ export class HomeComponent {
       title: { en: 'About Me', de: 'Über mich' },
       images: [
         'assets/images/bio.jpg',
-        'assets/images/bio/Me5_.jpg',
+        'assets/images/bio/Me5.jpg',
         'assets/images/bio/Me1.jpg',
 
       ],
