@@ -26,6 +26,17 @@ $border-radius: 8px; // or your desired global corner rounding
   overflow: hidden;
 }
 
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .nav-list-horizontal {
   display: flex;
   justify-content: space-evenly;
