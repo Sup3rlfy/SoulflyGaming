@@ -55,7 +55,8 @@ body {
     }
   }
 
-  a {
+  a, 
+  button {
     color: vars.$gold-300;
     text-decoration: underline;
 
@@ -116,7 +117,8 @@ body.light {
     }
   }
 
-  a {
+  a, 
+  button {
     color: vars.$green-600;
 
     &:hover {

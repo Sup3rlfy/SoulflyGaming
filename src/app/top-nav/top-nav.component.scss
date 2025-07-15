@@ -62,6 +62,7 @@ $border-radius: 8px; // or your desired global corner rounding
   border-radius: $border-radius;
   white-space: nowrap; // FORCE text to stay in one line
   font-size: 1rem; // Base font size
+  cursor: pointer;
 }
 
 
