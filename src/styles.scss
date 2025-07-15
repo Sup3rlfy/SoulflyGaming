@@ -221,6 +221,7 @@ body.light {
 }
 
 .nav-item a,
+.nav-item button,
 .settings-button button {
   display: block;
   width: 100%;
@@ -242,6 +243,7 @@ body.light {
 }
 
 .nav-item a:hover,
+.nav-item button:hover,
 .settings-button button:hover {
   background-color: #444;
 }
@@ -263,6 +265,7 @@ body.light {
   }
 
   .nav-item a:hover,
+  .nav-item button:hover,
   .settings-button button:hover {
     background-color: vars.$green-100 !important; // make hover lighter
     color: vars.$green-800 !important;
