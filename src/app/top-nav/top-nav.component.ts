@@ -50,6 +50,6 @@ export class TopNavComponent {
     }
   }
   goToRunes(): void {
-  this.router.navigate(['/runes'], { fragment: undefined });
+  this.router.navigate(['/runes']);
 }
 }
