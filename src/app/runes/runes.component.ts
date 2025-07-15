@@ -414,22 +414,24 @@ export class RunesComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
 
-  ngOnInit() {
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        const fragment = this.route.snapshot.fragment;
-        if (fragment) {
-          // Delay to ensure DOM is rendered
-          setTimeout(() => {
-            const element = document.getElementById(fragment);
-            if (element) {
-              element.scrollIntoView({ behavior: 'smooth' });
-            }
-          }, 0);
+ ngOnInit() {
+  this.route.fragment.subscribe(fragment => {
+    if (fragment) {
+      // Scroll to fragment
+      setTimeout(() => {
+        const element = document.getElementById(fragment);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
         }
-      }
-    });
-  }
+      }, 0);
+    } else {
+      // Scroll to top when no fragment
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 0);
+    }
+  });
+}
 
   ngAfterViewInit(): void {
     try {
