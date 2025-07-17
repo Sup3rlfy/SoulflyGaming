@@ -75,7 +75,7 @@ export class HomeComponent {
         ],
         de: [
           'Erfahre mehr über den Weg und die Person hinter Soulfly.',
-          'Was mich antreibt und wie ich bis hier gekommen bin.'
+          'Was mich antreibt und wie ich bis hierher gekommen bin.'
         ]
       }
     },
