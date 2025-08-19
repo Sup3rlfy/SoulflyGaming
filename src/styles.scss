@@ -261,6 +261,7 @@ body.light {
   }
 
   .nav-item a,
+  .nav-item button,
   .settings-button button {
     background-color: vars.$green-300;
     color: vars.$green-700 !important; // force override if needed
