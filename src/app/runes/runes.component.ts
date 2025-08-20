@@ -98,7 +98,7 @@ export class RunesComponent implements OnInit {
         id: 'plan',
         title: 'Planned Features',
         image: 'assets/images/roe/roe2.jpg',
-        content: [`Players can have a main class...`,
+        content: [`See more below...`,
         ],
         isEmpty: false
       },
