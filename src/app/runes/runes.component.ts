@@ -310,8 +310,29 @@ export class RunesComponent implements OnInit {
       },
     ];
     this.videoList = [
-
       {
+        url: 'https://youtu.be/hNElf_aT2bc',
+        title: 'Update 8',
+        description: ["The Main or Game menu has been overhauled to show a mage's hand, hovering and manipulating runes in the air, as well as occasionally swapping a few runes for new ones from his rune pouch. Oh - User management has also been added and there are still 4 older versions of the Main menu scene, for those who prefer 'simpler times' I feel like its starting to look like a real game :)"],
+        sdescription: [
+          '- Visual upgrade of the game\'s Main Game Menu',
+          '- It now features a mage\'s hand levitating and occasionally swapping runes for his next spell',
+          '- User management added: Different players can now play on the same pc without mssing up each other\s settings or saves',
+          '- can swap to up to 4 older Main menu scenes'
+        ],
+        showShort: false
+      },{
+        url: 'https://youtu.be/V9n6onfKC98',
+        title: 'Update 7',
+        description: ["New Main menu and lots of new goodies since I started using an AI agent to help me code: Wallets are now not the only thing that can be equipped and unequipped at will as well as filled and emptied: Quivers, Rune pouches and Tool belts now work the same! The quest tracker is completely new and fully functional as intended! An underlying quest log has been added as well, but its still a bit basic and will require some more work."],
+        sdescription: [
+          '- Intro screen and Main Menu added',
+          '- Quest Log and Quest Tracker added',
+          '- Expanded wallets to containers: now Toolbelts, Quivers, Rune pouches and wallets work as intended',
+          '- other bugfixes and quality of life updates'
+        ],
+        showShort: false
+      },{
         url: 'https://www.youtube.com/embed/lz8GV1kjo6U',
         title: 'update 6',
         description: ["Mobs finally got some basic mob movement and a loot-goblin is now finding its way from one rock to the next, picking up all of the rocks including the occasional other item... Future targets include the Goblin leaving again after a certain quantity is picked up. and all mob behavior needs to get smarter: avoid or seek out players, detect collisions, roam freely or at certain positions etc."],
