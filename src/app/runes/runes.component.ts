@@ -311,7 +311,7 @@ export class RunesComponent implements OnInit {
     ];
     this.videoList = [
       {
-        url: 'https://www.youtube.com/embed/playlist?list=PLLysAmH_bPf6THtFrDGYRgU9X6zcbqlgS',
+        url: '<iframe width="560" height="315" src="https://www.youtube.com/embed/hNElf_aT2bc?si=4duFthM6BK6qNM7P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
         title: 'Update 8',
         description: ["The Main or Game menu has been overhauled to show a mage's hand, hovering and manipulating runes in the air, as well as occasionally swapping a few runes for new ones from his rune pouch. Oh - User management has also been added and there are still 4 older versions of the Main menu scene, for those who prefer 'simpler times' I feel like its starting to look like a real game :)"],
         sdescription: [
