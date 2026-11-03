@@ -311,7 +311,7 @@ export class RunesComponent implements OnInit {
     ];
     this.videoList = [
       {
-        url: 'https://www.youtube.com/embed/hNElf_aT2bc?si=ZxakM4L_9BaQEGfb',
+        url: 'https://www.youtube.com/embed/playlist?list=PLLysAmH_bPf6THtFrDGYRgU9X6zcbqlgS',
         title: 'Update 8',
         description: ["The Main or Game menu has been overhauled to show a mage's hand, hovering and manipulating runes in the air, as well as occasionally swapping a few runes for new ones from his rune pouch. Oh - User management has also been added and there are still 4 older versions of the Main menu scene, for those who prefer 'simpler times' I feel like its starting to look like a real game :)"],
         sdescription: [
@@ -323,7 +323,7 @@ export class RunesComponent implements OnInit {
         ],
         showShort: false
       },{
-        url: 'https://www.youtube.com/embed/V9n6onfKC98?si=fLf-D3Vg2y8uhGJ6',
+        url: 'https://www.youtube.com/embed/V9n6onfKC98',
         title: 'Update 7',
         description: ["New Main menu and lots of new goodies since I started using an AI agent to help me code: Wallets are now not the only thing that can be equipped and unequipped at will as well as filled and emptied: Quivers, Rune pouches and Tool belts now work the same! The quest tracker is completely new and fully functional as intended! An underlying quest log has been added as well, but its still a bit basic and will require some more work."],
         sdescription: [
