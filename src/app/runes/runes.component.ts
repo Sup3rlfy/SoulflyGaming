@@ -317,6 +317,7 @@ export class RunesComponent implements OnInit {
         sdescription: [
           '- Visual upgrade of the game\'s Main Game Menu',
           '- It now features a mage\'s hand levitating and occasionally swapping runes for his next spell',
+          '- Of course, sooner or later all the runes are gonna get replaced by neat little rune icons or 3D representations!',
           '- User management added: Different players can now play on the same pc without mssing up each other\s settings or saves',
           '- can swap to up to 4 older Main menu scenes'
         ],
